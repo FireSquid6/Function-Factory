@@ -1,2 +1,1 @@
-init_sprites()
-game_end()
+room = rm_parent
