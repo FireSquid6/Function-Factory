@@ -51,6 +51,8 @@
   },
   "resourceVersion": "1.0",
   "name": "rm_init",
-  "tags": [],
+  "tags": [
+    "not_level",
+  ],
   "resourceType": "GMRoom",
 }

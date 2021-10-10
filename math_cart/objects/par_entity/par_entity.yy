@@ -19,16 +19,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":4,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Math Cart/Code/Objects.yy",
+    "name": "Game Entities",
+    "path": "folders/Math Cart/Code/Game Entities.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_game",
+  "name": "par_entity",
   "tags": [],
   "resourceType": "GMObject",
 }
