@@ -1,1 +1,5 @@
-- placing and removing objects
+- placing objects
+- stopping and starting the level
+- rails
+- level editor
+- Camera
