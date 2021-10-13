@@ -1,4 +1,8 @@
 function start_level()
 {
-	instance_create_layer(0, 0, "lay_wires", obj_wires)
+	//set target
+	global.target = obj_player
+	
+	//create manager objects
+	instance_create_layer(0, 0, "lay_meta", obj_player)
 }

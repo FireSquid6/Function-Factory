@@ -2,4 +2,3 @@
 - stopping and starting the level
 - rails
 - level editor
-- Camera

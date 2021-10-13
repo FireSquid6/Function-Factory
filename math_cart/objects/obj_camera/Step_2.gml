@@ -1,4 +1,4 @@
-if instance_exists(target)
+if instance_exists(global.target)
 {
 	//this code does extra stuff that sets linear interpolation to move the camera
 	//between the mouse and the player depending on if the left shift key is pressed
@@ -7,13 +7,13 @@ if instance_exists(target)
 	var lp=0.4;
 	
 	//move to the target instance
-	cameraX=target.x-(cameraWidth*0.5);
-	cameraY=target.y-(cameraHeight*0.5);
+	cameraX=global.target.x-(cameraWidth*0.5);
+	cameraY=global.target.y-(cameraHeight*0.5);
 	
 	//linear interpolate by variables set earlier
 	//I don't actually know what linear interpolation is, all I know is that it works
-	cameraX=lerp(target.x,mouse_x,lp)-(cameraWidth*0.5);
-	cameraY=lerp(target.y,mouse_y,lp)-(cameraHeight*0.5);
+	cameraX=lerp(global.target.x,mouse_x,lp)-(cameraWidth*0.5);
+	cameraY=lerp(global.target.y,mouse_y,lp)-(cameraHeight*0.5);
 	
 	//stop the camera from showing stuff outside of the room
 	cameraX=clamp(cameraX,0,room_width-cameraWidth);

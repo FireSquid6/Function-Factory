@@ -5,11 +5,11 @@ function setup_camera()
 	displayHeight=display_get_height();
 
 	//my game is in pixel art, so the display scale variable scales it up 2 times
-	displayScale=0.5;
+	displayScale=1;
 
 	//get camera width and height by dividing the display width and height by the display scale
-	cameraWidth=displayWidth*displayScale;
-	cameraHeight=displayHeight*displayScale;
+	cameraWidth=displayWidth div displayScale;
+	cameraHeight=displayHeight div displayScale;
 
 	//set camera to a view
 	view_enabled=true;

@@ -1,9 +1,12 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_rails",
+    "path": "sprites/spr_rails/spr_rails.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -17,18 +20,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":4,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Math Cart/Code/Objects.yy",
+    "name": "Game Entities",
+    "path": "folders/Math Cart/Code/Game Entities.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_game",
+  "name": "obj_rail",
   "tags": [],
   "resourceType": "GMObject",
 }
