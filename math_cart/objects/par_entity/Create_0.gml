@@ -19,3 +19,5 @@ on_destroy = function()
 {
 	
 }
+
+destrutable = true

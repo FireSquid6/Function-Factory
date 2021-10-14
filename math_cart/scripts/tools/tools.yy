@@ -6,7 +6,7 @@
     "path": "folders/Math Cart/Code/Scripts/Logic.yy",
   },
   "resourceVersion": "1.0",
-  "name": "start_level",
+  "name": "tools",
   "tags": [],
   "resourceType": "GMScript",
 }

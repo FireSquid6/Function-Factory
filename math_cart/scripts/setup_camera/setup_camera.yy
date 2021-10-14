@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Math Cart/Code/Scripts.yy",
+    "name": "Backend",
+    "path": "folders/Math Cart/Code/Scripts/Backend.yy",
   },
   "resourceVersion": "1.0",
   "name": "setup_camera",

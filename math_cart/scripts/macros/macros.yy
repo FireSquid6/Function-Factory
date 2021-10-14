@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Logic",
-    "path": "folders/Math Cart/Code/Scripts/Logic.yy",
+    "name": "Scripts",
+    "path": "folders/Math Cart/Code/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "start_level",
+  "name": "macros",
   "tags": [],
   "resourceType": "GMScript",
 }

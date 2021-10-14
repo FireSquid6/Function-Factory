@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Logic",
-    "path": "folders/Math Cart/Code/Scripts/Logic.yy",
+    "name": "Functional",
+    "path": "folders/Math Cart/Code/Scripts/Functional.yy",
   },
   "resourceVersion": "1.0",
-  "name": "start_level",
+  "name": "array_has_value",
   "tags": [],
   "resourceType": "GMScript",
 }
