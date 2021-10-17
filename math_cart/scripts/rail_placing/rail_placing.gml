@@ -1,3 +1,5 @@
+// THIS SCRIPT IS DEPRECATED
+
 //define rail states
 //basically an enum
 //comments afterwards represent priority

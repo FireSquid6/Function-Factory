@@ -4,6 +4,11 @@ on_tick = function()
 	
 }
 
+on_start = function()
+{
+	
+}
+
 //while editing
 on_modify = function()
 {

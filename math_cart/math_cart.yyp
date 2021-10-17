@@ -38,6 +38,7 @@
     {"id":{"name":"__scribble_class_vertex_buffer","path":"scripts/__scribble_class_vertex_buffer/__scribble_class_vertex_buffer.yy",},"order":7,},
     {"id":{"name":"__scribble_gc_collect","path":"scripts/__scribble_gc_collect/__scribble_gc_collect.yy",},"order":8,},
     {"id":{"name":"tools","path":"scripts/tools/tools.yy",},"order":1,},
+    {"id":{"name":"game_data","path":"scripts/game_data/game_data.yy",},"order":4,},
     {"id":{"name":"CleanNgon","path":"scripts/CleanNgon/CleanNgon.yy",},"order":6,},
     {"id":{"name":"__scribble_generate_model","path":"scripts/__scribble_generate_model/__scribble_generate_model.yy",},"order":9,},
     {"id":{"name":"scribble_font_add","path":"scripts/scribble_font_add/scribble_font_add.yy",},"order":0,},

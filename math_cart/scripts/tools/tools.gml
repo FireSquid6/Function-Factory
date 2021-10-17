@@ -33,15 +33,17 @@ function tool_rail(_color) : tool_parent() constructor
 		var cell_x = obj_player.cell_x
 		var cell_y = obj_player.cell_y
 		
-		//make sure there isn't an instance already there
-		//var list = instances_in_cell(cell_x, cell_y, obj_rail, true)
-		//if ds_list_size(list) != 0 exit
-		
 		//debug
 		if keyboard_check(vk_space)
 		{
 			imposter = "sus"
 		}
+		
+		//make sure there isn't an instance already there
+		//var list = instances_in_cell(cell_x, cell_y, obj_rail, true)
+		//if ds_list_size(list) != 0 exit
+		
+		//check if the rail is creating a turn
 		
 		//place the instance
 		var inst = instance_create_layer(cell_x * CELL_SIZE, cell_y * CELL_SIZE, "lay_rails", created_entity)
@@ -62,10 +64,5 @@ function tool_rail(_color) : tool_parent() constructor
 				instance_destroy(target)
 			}
 		}
-	}
-	
-	on_modify = function()
-	{
-		
 	}
 }
