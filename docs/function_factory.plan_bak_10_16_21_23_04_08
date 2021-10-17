@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -375.7103271484375,
-  "Pan.Y": -254.3531494140625,
+  "Pan.X": 862.369140625,
+  "Pan.Y": -313.5185241699219,
   "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -442,7 +442,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -256,
-      "Position.Y": 128,
+      "Position.Y": 144,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -478,7 +478,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -256,
-      "Position.Y": 144,
+      "Position.Y": 160,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -538,7 +538,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -256,
-      "Position.Y": 160,
+      "Position.Y": 176,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -562,7 +562,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -240,
-      "Position.Y": 176,
+      "Position.Y": 192,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -586,7 +586,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -240,
-      "Position.Y": 192,
+      "Position.Y": 208,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -610,7 +610,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -240,
-      "Position.Y": 208,
+      "Position.Y": 224,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -947,7 +947,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "TODO: add demonstration on how player controls and\nwhat modify, place and delete are",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 16 2021 01:28:00"
     }, 
@@ -962,6 +962,30 @@
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 16 2021 01:28:23"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1104,
+      "Position.Y": 176,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "destroy function not working properly",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 16 2021 13:34:16"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -256,
+      "Position.Y": 128,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Broadcast events system",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 16 2021 22:40:09"
     }
   ]
 }

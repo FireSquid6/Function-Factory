@@ -1,4 +1,8 @@
 #macro CELL_SIZE 64
+
+global.editing = true //whether a level is playing or not
+global.designing = true //whether all objects and save should be accessed
+
 enum BORDER_COLORS
 {
 	RAIL = c_yellow,
@@ -8,8 +12,14 @@ enum BORDER_COLORS
 }
 show_debug_message("Player has been created")
 
-toolbar = ["eraser", "rail", "wire"]
-gizmobox = []
+global.broadcast_events = 
+{
+	place : false,
+	destroy : false,
+	modify : false
+}
+
+toolbar = [new tool_rail(PRIMARY_RAIL_COLOR)]
 tool_selected = 0
 
 cell_x = 0

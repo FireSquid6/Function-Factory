@@ -87,9 +87,9 @@ function check_rails(xx, yy, color, force_all_possibilities)
 	
 	//check if there is a rail on each side
 	on_top = is_rail(top_id, color)
-	on_right = is_rail(top_id, color)
-	on_bottom = is_rail(top_id, color)
-	on_left = is_rail(top_id, color)
+	on_right = is_rail(right_id, color)
+	on_bottom = is_rail(bottom_id, color)
+	on_left = is_rail(left_id, color)
 	
 	//remove stuff for force_all_possibilities
 	if !force_all_possibilities
@@ -120,7 +120,7 @@ function check_rails(xx, yy, color, force_all_possibilities)
 		//nodes
 		if on_top array_push(array, global.rail_orientations.nodes.up)
 		if on_right array_push(array, global.rail_orientations.nodes.right)
-		if on_bottom array_push(array, global.rail_orientations.nodes.bottom)
+		if on_bottom array_push(array, global.rail_orientations.nodes.down)
 		if on_left array_push(array, global.rail_orientations.nodes.left)
 		
 		//if the rail still has no friends, make it a starting node

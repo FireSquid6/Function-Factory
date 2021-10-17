@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_rails",
-    "path": "sprites/spr_rails/spr_rails.yy",
+    "name": "spr_pixel",
+    "path": "sprites/spr_pixel/spr_pixel.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,6 +22,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
