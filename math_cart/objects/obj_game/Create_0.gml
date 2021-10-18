@@ -1,7 +1,7 @@
 room = lv_level1
 global.entity_move_speed = 4
 global.in_level = false
-
+global.debug_mode = false
 
 global.first_launch = !file_exists(WELCOME_FILE_NAME)
 
@@ -77,10 +77,6 @@ switch os_type
 		global.controller_type = CONTROLLERS.GAMEPAD
 		break
 	case os_ps5:
-		global.on_desktop = false
-		global.controller_type = CONTROLLERS.GAMEPAD
-		break
-	case os_xboxone:
 		global.on_desktop = false
 		global.controller_type = CONTROLLERS.GAMEPAD
 		break

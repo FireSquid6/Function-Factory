@@ -43,8 +43,8 @@
 - Conditions can be taken as inputs or set beforehand
 - Types of conditions:
   - Greater than
-    - Less than
-    - Equal to
+  - Less than
+  - Equal to
 ### Ejectors
   - Ejectors require a specific block to complete a program
   - The goal of each program is to get the correct number block to each ejector

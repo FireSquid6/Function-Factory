@@ -29,38 +29,6 @@ global.rail_orientations =
 	}
 }
 
-global.unforced_tops = 
-[
-	global.rail_orientations.nodes.down,
-	global.rail_orientations.sides.vertical,
-	global.rail_orientations.corners.bottom_right,
-	global.rail_orientations.corners.bottom_left
-]
-
-global.unforced_rights =
-[
-	global.rail_orientations.nodes.left,
-	global.rail_orientations.sides.horizontal,
-	global.rail_orientations.corners.top_left,
-	global.rail_orientations.corners.top_right
-]
-
-global.unforced_bottoms = 
-[
-	global.rail_orientations.nodes.up,
-	global.rail_orientations.sides.vertical,
-	global.rail_orientations.corners.top_right,
-	global.rail_orientations.corners.top_left
-]
-
-global.unforced_lefts =
-[
-	global.rail_orientations.nodes.left,
-	global.rail_orientations.sides.horizontal,
-	global.rail_orientations.corners.top_left,
-	global.rail_orientations.corners.top_right
-]
-
 //checks if a given object is a rail and in the same color as the other rail
 function is_rail(_id, _color)
 {
@@ -74,71 +42,45 @@ function is_rail(_id, _color)
 	return false
 }
 
-//returns a list of all the possibilities a rail can be
-function check_rails(xx, yy, color, force_all_possibilities)
+//check if two rails can link
+function can_link(selfid, otherid)
 {
-	var array = []
-	var on_top = false, on_right = false, on_bottom = false, on_left = false
-	var top_id, right_id, bottom_id, left_id
-	
-	//get id's of all the things
-	top_id = collision_point(x, y - CELL_SIZE, obj_rail, false, true)
-	right_id = collision_point(x + CELL_SIZE, y, obj_rail, false, true)
-	bottom_id = collision_point(x, y + CELL_SIZE, obj_rail, false, true)
-	left_id = collision_point(x - CELL_SIZE, y, obj_rail, false, true)
-	
-	//check if there is a rail on each side
-	on_top = is_rail(top_id, color)
-	on_right = is_rail(right_id, color)
-	on_bottom = is_rail(bottom_id, color)
-	on_left = is_rail(left_id, color)
-	
-	//remove stuff for force_all_possibilities
-	if !force_all_possibilities
+	if is_rail(otherid, selfid.image_blend)
 	{
-		on_top = array_has_value(global.unforced_tops, top_id.orientation)
-		on_right = array_has_value(global.unforced_rights, right_id.orientation)
-		on_bottom = array_has_value(global.unforced_tops, bottom_id.orientation)
-		on_left = array_has_value(global.unforced_tops, left_id.orientation)
+		if otherid.links < 2 && selfid.links < 2
+		{
+			return true
+		}
 	}
+	return false
+}
+
+//returns the orientation based on which directions the rail needs to link to
+function get_orientation(link_top, link_left, link_right, link_bottom)
+{
+	var links = link_top + link_right + link_bottom + link_left
 	
-	var around_me = on_top + on_bottom + on_left + on_right
-	
-	//add each type (in order of priority)
-	if around_me > 1
+	if links == 2
 	{
-		//sides
-		if on_top && on_bottom array_push(array, global.rail_orientations.sides.vertical)
-		if on_left && on_right array_push(array, global.rail_orientations.sides.horizontal)
-	
-		//corners
-		if on_right && on_top array_push(array, global.rail_orientations.corners.top_right)
-		if on_bottom && on_right array_push(array, global.rail_orientations.corners.bottom_right)
-		if on_bottom && on_left array_push(array, global.rail_orientations.corners.bottom_left)
-		if on_top && on_left array_push(array, global.rail_orientations.corners.top_left)
+		if link_top && link_bottom return global.rail_orientations.sides.horizontal
+		if link_left && link_right return global.rail_orientations.sides.vertical
+		
+		if link_top && link_right return global.rail_orientations.corners.top_right
+		if link_top && link_left return global.rail_orientations.corners.top_left
+		if link_bottom && link_right return global.rail_orientations.corners.bottom_right
+		if link_bottom && link_left return global.rail_orientations.corners.bottom_left
+	}
+	else if links == 1
+	{
+		if link_top return global.rail_orientations.nodes.up
+		if link_bottom return global.rail_orientations.nodes.down
+		if link_right return global.rail_orientations.nodes.right
+		if link_left return global.rail_orientations.nodes.left
 	}
 	else
 	{
-		//nodes
-		if on_top array_push(array, global.rail_orientations.nodes.up)
-		if on_right array_push(array, global.rail_orientations.nodes.right)
-		if on_bottom array_push(array, global.rail_orientations.nodes.down)
-		if on_left array_push(array, global.rail_orientations.nodes.left)
-		
-		//if the rail still has no friends, make it a starting node
-		if array_length(array) < 1
-		{
-			array_push(array, global.rail_orientations.nodes.isolated)
-		}
+		return global.rail_orientations.nodes.isolated
 	}
 	
-	//return the array
-	return array
-	
-}
-
-//forces the surrounding rails to fit to the selected rail
-function force_surrounding_rails()
-{
-	
+	show_error("SOMETHING HAS GONE WRONG WITH RAILS", true)
 }

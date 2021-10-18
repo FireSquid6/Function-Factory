@@ -17,6 +17,7 @@
     {"id":{"name":"scribble_glyph_get","path":"scripts/scribble_glyph_get/scribble_glyph_get.yy",},"order":6,},
     {"id":{"name":"scribble_rgb_to_bgr","path":"scripts/scribble_rgb_to_bgr/scribble_rgb_to_bgr.yy",},"order":1,},
     {"id":{"name":"scribble_Methods","path":"notes/scribble_Methods/scribble_Methods.yy",},"order":9,},
+    {"id":{"name":"spr_rail","path":"sprites/spr_rail/spr_rail.yy",},"order":3,},
     {"id":{"name":"__shd_scribble_bake_outline","path":"shaders/__shd_scribble_bake_outline/__shd_scribble_bake_outline.yy",},"order":12,},
     {"id":{"name":"setup_camera","path":"scripts/setup_camera/setup_camera.yy",},"order":2,},
     {"id":{"name":"CleanLine","path":"scripts/CleanLine/CleanLine.yy",},"order":5,},

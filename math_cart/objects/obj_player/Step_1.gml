@@ -6,7 +6,7 @@ if global.editing
 		case CONTROLLERS.KEYBOARD_AND_MOUSE:
 			key_use = mouse_check_button(mb_left)
 			key_modify = mouse_check_button_pressed(mb_middle)
-			key_destroy = mouse_check_button_pressed(mb_right)
+			key_destroy = mouse_check_button(mb_right)
 			cursor_x = mouse_x
 			cursor_y = mouse_y
 			
@@ -26,7 +26,6 @@ if global.editing
 	pixel_x = cell_x * CELL_SIZE
 	pixel_y = cell_y * CELL_SIZE
 
-	//TODO: broadcast events
 
 	//TODO: change selected tool
 	

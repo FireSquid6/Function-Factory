@@ -25,3 +25,5 @@ tool_selected = 0
 cell_x = 0
 cell_y = 0
 border_color = BORDER_COLORS.RAIL
+
+//gui stuff
