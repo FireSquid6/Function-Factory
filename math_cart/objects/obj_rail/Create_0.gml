@@ -1,6 +1,9 @@
 orientation = global.rail_orientations.nodes.isolated
-image_xscale = 64
-image_yscale = 64
+links = 0
+
+link_top = false
+link_right = false
+link_bottom = false
 link_left = false
 
 //links to image_index function
