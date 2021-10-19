@@ -5,4 +5,8 @@ function start_level()
 	
 	//create manager objects
 	instance_create_layer(0, 0, "lay_meta", obj_player)
+	
+	//get tilemap
+	var layid = layer_get_id("tls_wall")
+	global.wall_map = layer_tilemap_get_id(layid)
 }

@@ -10,3 +10,10 @@
 #macro PRIMARY_RAIL_COLOR make_color_rgb(255, 141, 167) 
 #macro SECONDARY_RAIL_COLOR make_color_rgb(141, 167, 255)
 #macro TERTIARY_RAIL_COLOR make_color_rgb(167, 255, 141)
+
+//config
+#macro DEV_MODE false
+#macro OUTPUT_SPRITES false
+
+#macro DeveloperMode:DEV_MODE true
+#macro InitiateSprite:OUTPUT_SPRITES true

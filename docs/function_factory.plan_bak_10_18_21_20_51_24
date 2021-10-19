@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": -965.0032348632812,
-  "Pan.Y": 10.846325874328613,
+  "Pan.X": 396.82940673828125,
+  "Pan.Y": 23.09142303466797,
   "ZoomLevel": 3,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -13,7 +13,7 @@
   "TaskShadow": 2,
   "ShowIcons": true,
   "NumberTopLevel": true,
-  "NumberingSequence": 3,
+  "NumberingSequence": 0,
   "PulsingTaskSelection": true,
   "GridVisible": true,
   "GridSize": 16,
@@ -44,6 +44,18 @@
       "CreationTime": "Oct 16 2021 00:19:32",
       "BezierLines": false,
       "LineEndings": [384, -160]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -736,
+      "Position.Y": 192,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Pausing",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 18 2021 18:37:46"
     }, 
     {
       "BoardIndex": 0,
@@ -133,15 +145,15 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 112,
-      "Position.Y": 64,
+      "Position.X": 176,
+      "Position.Y": 48,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "TODO: add mockup of editor",
+      "Description": "Level editor mockup",
       "Selected": false,
       "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:22:48"
+      "CreationTime": "Oct 17 2021 23:16:18"
     }, 
     {
       "BoardIndex": 0,
@@ -205,6 +217,57 @@
     }, 
     {
       "BoardIndex": 0,
+      "Position.X": 112,
+      "Position.Y": 64,
+      "ImageDisplaySize.X": 272,
+      "ImageDisplaySize.Y": 208,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "FilePath": ["..", "resources", "mockups", "level_editor.png"],
+      "Selected": false,
+      "TaskType.CurrentChoice": 3,
+      "CreationTime": "Oct 17 2021 23:15:40"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 432,
+      "Position.Y": 96,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Pause/play/etc.",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 17 2021 23:16:26"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 432,
+      "Position.Y": 112,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Toolbox for the player to select rails, gizmos, etc.",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 17 2021 23:16:40"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 432,
+      "Position.Y": 128,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Tooltray for level designers. Has an infinite amount of\neveryting and stuff from it can be added to the\ntoolbox. Only shows up when in level design mode. Also\nallows the designer to use special tools such as:",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 17 2021 23:17:09"
+    }, 
+    {
+      "BoardIndex": 0,
       "Position.X": -1216,
       "Position.Y": 64,
       "Checkbox.Checked": false,
@@ -225,7 +288,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 7,
       "CreationTime": "Oct 16 2021 00:14:43",
       "MapData": [
@@ -405,10 +468,11 @@
       "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Wires",
+      "Description": "Rails",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
-      "CreationTime": "Oct 13 2021 23:57:13"
+      "CreationTime": "Oct 13 2021 23:57:13",
+      "CompletionTime": "Oct 17 2021 23:22:30"
     }, 
     {
       "BoardIndex": 0,
@@ -448,24 +512,24 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": -1360,
-      "Position.Y": 160,
+      "Position.X": -1376,
+      "Position.Y": 112,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Optimizations",
+      "Description": "OPTIMIZATIONS",
       "Selected": false,
-      "TaskType.CurrentChoice": 0,
+      "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 13 2021 23:53:31"
     }, 
     {
       "BoardIndex": 0,
       "Position.X": -1120,
-      "Position.Y": 160,
-      "Checkbox.Checked": false,
+      "Position.Y": 192,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Bugs! (this list will never be fully done)",
+      "Description": "Rails setting top orientation incorrectly when destroyed",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Oct 13 2021 23:52:55"
@@ -589,6 +653,34 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Oct 17 2021 23:09:45"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 432,
+      "Position.Y": 128,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Oct 17 2021 23:18:04",
+      "BezierLines": false,
+      "LineEndings": [256, 256]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 432,
+      "Position.Y": 112,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Oct 17 2021 23:18:15",
+      "BezierLines": false,
+      "LineEndings": [128, 128]
     }, 
     {
       "BoardIndex": 0,
@@ -840,39 +932,88 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 112,
-      "Position.Y": 80,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "TODO: add example level image",
-      "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:23:02"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 112,
+      "Position.X": 432,
       "Position.Y": 96,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "TODO: add demonstration on how player controls and\nwhat modify, place and delete are",
+      "Description": "",
       "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:28:00"
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Oct 17 2021 23:18:22",
+      "BezierLines": false,
+      "LineEndings": [336, 64]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 112,
+      "Position.X": 448,
+      "Position.Y": 192,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "lock tool - locks objects so that the player cannot destroy them",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 17 2021 23:19:07"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 176,
+      "Checkbox.Checked": true,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "rails not setting orientation properly",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 17 2021 23:19:52"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 160,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "BUGS",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 17 2021 23:21:18"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1376,
       "Position.Y": 128,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "TODO: design toolbox",
+      "Description": "Optimize rail code to use arrays for linking",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 17 2021 23:21:36"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -528,
+      "Position.Y": 272,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "level designer tools",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Oct 17 2021 23:22:08"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 288,
+      "Position.Y": -368,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "GUI and UX",
       "Selected": false,
       "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:28:23"
-    }
-  ]
-}
+      "CreationTime": "Oct 18 2021 18:36:31"
+    }, 
+    

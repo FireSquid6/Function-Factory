@@ -3,6 +3,7 @@
     {"id":{"name":"shd_white","path":"shaders/shd_white/shd_white.yy",},"order":0,},
     {"id":{"name":"scribble_font_add_all","path":"scripts/scribble_font_add_all/scribble_font_add_all.yy",},"order":1,},
     {"id":{"name":"CleanSpline","path":"scripts/CleanSpline/CleanSpline.yy",},"order":12,},
+    {"id":{"name":"cell_has_wall","path":"scripts/cell_has_wall/cell_has_wall.yy",},"order":4,},
     {"id":{"name":"CleanConvex","path":"scripts/CleanConvex/CleanConvex.yy",},"order":3,},
     {"id":{"name":"get_cells","path":"scripts/get_cells/get_cells.yy",},"order":1,},
     {"id":{"name":"scribble_font_combine","path":"scripts/scribble_font_combine/scribble_font_combine.yy",},"order":2,},
@@ -112,7 +113,10 @@
   "tutorialPath": "",
   "configs": {
     "name": "Default",
-    "children": [],
+    "children": [
+      {"name":"InitiateSprites","children":[],},
+      {"name":"DeveloperMode","children":[],},
+    ],
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},

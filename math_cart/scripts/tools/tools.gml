@@ -39,7 +39,7 @@ function tool_rail(_color) : tool_parent() constructor
 		//make sure there isn't an instance already there
 		var list = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
-		if ds_list_size(list) == 0
+		if ds_list_size(list) == 0 && !cell_has_wall(cell_x, cell_y)
 		{
 			//place the instance
 			var inst = instance_create_layer(cell_x * CELL_SIZE, cell_y * CELL_SIZE, "lay_rails", created_entity)

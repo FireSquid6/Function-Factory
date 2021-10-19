@@ -1,8 +1,8 @@
-function init_sprites()
+if OUTPUT_SPRITES
 {
 	//basic box
-	#macro BASIC_BOX_HEIGHT 128
-	#macro BASIC_BOX_WIDTH 128
+	#macro BASIC_BOX_HEIGHT 64
+	#macro BASIC_BOX_WIDTH 64
 	var surf = surface_create(BASIC_BOX_WIDTH, BASIC_BOX_HEIGHT)
 	
 	surface_set_target(surf)

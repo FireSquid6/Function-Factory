@@ -3,6 +3,7 @@ global.entity_move_speed = 4
 global.in_level = false
 global.debug_mode = false
 
+#region SAVE MANAGEMENT
 global.first_launch = !file_exists(WELCOME_FILE_NAME)
 
 //if it's the first time launching the game, add a fun note
@@ -18,6 +19,7 @@ else
 {
 	
 }
+#endregion
 
 #region GET THE CORRECT PLATFORM AND INPUT METHOD
 enum CONTROLLERS
