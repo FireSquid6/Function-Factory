@@ -6,5 +6,5 @@ function instances_in_cell(_cellx, _celly, _obj, _notme)
 	var list = ds_list_create()
 	
 	collision_rectangle_list(pixx, pixy, pixx + sizeminusone, pixy + sizeminusone, _obj, false, _notme, list, false)
-	return list
+	if ds_list_size(list) > 0 return list else return 0
 }

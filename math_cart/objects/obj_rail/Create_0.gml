@@ -1,3 +1,5 @@
+event_inherited()
+
 orientation = global.rail_orientations.nodes.isolated
 links = 0
 
@@ -6,11 +8,14 @@ link_right = false
 link_bottom = false
 link_left = false
 
-//links to image_index function
-//can_link function
+tool_ref = -1
 
+//EDITING FUNCTIONS
 on_place = function()
 {
+	//get the correct color
+	image_blend = tool_ref.rail_color
+	
 	//get which rails to link to 
 	top_id = collision_point(x, y - CELL_SIZE, obj_rail, false, true)
 	right_id = collision_point(x + CELL_SIZE, y, obj_rail, false, true)
@@ -95,11 +100,14 @@ on_destroy = function()
 	instance_destroy()
 }
 
-on_modify = function()
+edit_step = function()
 {
-	//do nothing, this shouldn't be needed
+	orientation = get_orientation(link_top, link_left, link_right, link_bottom)
+	links = link_top + link_right + link_bottom + link_left
+	image_index = orientation
 }
 
+//PLAYING FUNCTIONS
 on_tick = function()
 {
 	//check if a number block is in my grid
@@ -107,6 +115,4 @@ on_tick = function()
 		//change the number block's direction
 }
 
-//on placed = unforced
-//on modify = forced
-//on destroy = forced
+

@@ -12,11 +12,14 @@ enum BORDER_COLORS
 }
 show_debug_message("Player has been created")
 
-global.broadcast_events = 
+global.EVENTS =
 {
-	place : false,
-	destroy : false,
-	modify : false
+	ENTITY_PLACED : "event_place",
+	ENTITY_DESTROYED : "event_destroy",
+	ENTITY_MODIFIED : "event_modify",
+	PUZZLE_STARTED : "event_start",
+	PUZZLE_STOPPED : "event_stop",
+	PUZZLE_COMPLETED : "event_complete"
 }
 
 toolbar = [new tool_rail(PRIMARY_RAIL_COLOR)]

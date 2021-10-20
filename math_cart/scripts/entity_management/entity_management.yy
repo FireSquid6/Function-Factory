@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Functional",
-    "path": "folders/Math Cart/Code/Scripts/Functional.yy",
+    "name": "Logic",
+    "path": "folders/Math Cart/Code/Scripts/Logic.yy",
   },
   "resourceVersion": "1.0",
-  "name": "cell_has_wall",
+  "name": "entity_management",
   "tags": [],
   "resourceType": "GMScript",
 }

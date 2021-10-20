@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": false,
-  "Pan.X": 396.82940673828125,
-  "Pan.Y": 23.09142303466797,
-  "ZoomLevel": 3,
+  "Pan.X": 164.79739379882812,
+  "Pan.Y": -265.0322570800781,
+  "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -44,18 +44,6 @@
       "CreationTime": "Oct 16 2021 00:19:32",
       "BezierLines": false,
       "LineEndings": [384, -160]
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": -736,
-      "Position.Y": 192,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Pausing",
-      "Selected": true,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Oct 18 2021 18:37:46"
     }, 
     {
       "BoardIndex": 0,
@@ -145,8 +133,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 176,
-      "Position.Y": 48,
+      "Position.X": 560,
+      "Position.Y": 64,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -217,8 +205,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 112,
-      "Position.Y": 64,
+      "Position.X": 496,
+      "Position.Y": 80,
       "ImageDisplaySize.X": 272,
       "ImageDisplaySize.Y": 208,
       "Checkbox.Checked": false,
@@ -232,8 +220,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": 96,
+      "Position.X": 816,
+      "Position.Y": 112,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -244,8 +232,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": 112,
+      "Position.X": 816,
+      "Position.Y": 128,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -256,8 +244,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": 128,
+      "Position.X": 816,
+      "Position.Y": 144,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -656,8 +644,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": 128,
+      "Position.X": 816,
+      "Position.Y": 144,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -666,12 +654,12 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Oct 17 2021 23:18:04",
       "BezierLines": false,
-      "LineEndings": [256, 256]
+      "LineEndings": [640, 272]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": 112,
+      "Position.X": 816,
+      "Position.Y": 128,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -680,7 +668,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Oct 17 2021 23:18:15",
       "BezierLines": false,
-      "LineEndings": [128, 128]
+      "LineEndings": [512, 144]
     }, 
     {
       "BoardIndex": 0,
@@ -932,8 +920,44 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": 96,
+      "Position.X": 112,
+      "Position.Y": 64,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "TODO: add example level image",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 16 2021 01:23:02"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 112,
+      "Position.Y": 80,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "TODO: add demonstration on how player controls and\nwhat modify, place and delete are",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 16 2021 01:28:00"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 112,
+      "Position.Y": 112,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "TODO: design toolbox",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 16 2021 01:28:23"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 816,
+      "Position.Y": 112,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -942,12 +966,12 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Oct 17 2021 23:18:22",
       "BezierLines": false,
-      "LineEndings": [336, 64]
+      "LineEndings": [720, 80]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 448,
-      "Position.Y": 192,
+      "Position.X": 832,
+      "Position.Y": 208,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -1003,17 +1027,6 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Oct 17 2021 23:22:08"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 288,
-      "Position.Y": -368,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "GUI and UX",
-      "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 18 2021 18:36:31"
-    }, 
-    
+    }
+  ]
+}
