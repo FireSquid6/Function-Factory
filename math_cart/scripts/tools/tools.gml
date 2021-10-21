@@ -59,3 +59,30 @@ function tool_rail(_color) : tool_parent() constructor
 		}
 	}
 }
+
+function tool_dispenser() : tool_parent() constructor
+{
+	created_entity = obj_dispenser
+	use = function()
+	{
+		//make sure nothing is in the spot
+		var cell_x = obj_player.cell_x
+		var cell_y = obj_player.cell_y
+		
+		var has_wall = cell_has_wall(cell_x, cell_y)
+		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
+		
+		if (in_cell == 0 && !has_wall) 
+		{
+			//TODO: make a popup library to get text input for number
+			block_value = 15
+			place_entity(cell_x, cell_y, created_entity, "lay_level", self)
+		}
+		
+	}
+	
+	modify = function()
+	{
+		var list = instances_in_cell(obj_player.cell_x, obj_player.cell_y, created_entity, true)
+	}
+}

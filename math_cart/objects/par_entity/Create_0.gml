@@ -63,3 +63,4 @@ event_complete = function()
 
 //other vars
 destrutable = true
+modable = true

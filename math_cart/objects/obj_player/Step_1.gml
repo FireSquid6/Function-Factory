@@ -6,7 +6,7 @@ switch global.controller_type
 {
 	case CONTROLLERS.KEYBOARD_AND_MOUSE:
 		key_use = mouse_check_button(mb_left)
-		key_modify = mouse_check_button_pressed(mb_middle)
+		key_modify = mouse_check_button_pressed(mb_middle) || keyboard_check_pressed(ord("R"))
 		key_destroy = mouse_check_button(mb_right)
 		
 		cursor_x = mouse_x
@@ -65,15 +65,29 @@ if global.editing
 		global.editing = false
 		broadcast_event(global.EVENTS.PUZZLE_STARTED)
 		//TODO: save current room state
+		
+		tick_time = 0
+		global.tick_count = 0
 	}
 }
 //playing
 else
 {
+	//switch back to editing
 	if key_start
 	{
 		global.editing = true
 		broadcast_event(global.EVENTS.PUZZLE_STOPPED)
 		//TODO: load previous room state
 	}
+	
+	//tick management
+	if tick_time <= 0
+	{
+		tick_time = global.tick_speed
+		global.tick_count ++
+		
+		broadcast_event(global.EVENTS.PUZZLE_TICK)
+	}
+	tick_time --
 }

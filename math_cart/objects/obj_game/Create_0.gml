@@ -21,6 +21,9 @@ else
 }
 #endregion
 
+//init sprites
+init_sprites()
+
 #region GET THE CORRECT PLATFORM AND INPUT METHOD
 enum CONTROLLERS
 {
@@ -100,3 +103,4 @@ switch os_type
 }
 
 #endregion
+

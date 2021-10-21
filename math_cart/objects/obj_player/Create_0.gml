@@ -1,7 +1,9 @@
 #macro CELL_SIZE 64
+#macro DISPENSER_OFFSET 16
 
 global.editing = true //whether a level is playing or not
 global.designing = true //whether all objects and save should be accessed
+global.tick_speed = 15 //time between each tick
 
 enum BORDER_COLORS
 {
@@ -19,7 +21,8 @@ global.EVENTS =
 	ENTITY_MODIFIED : "event_modify",
 	PUZZLE_STARTED : "event_start",
 	PUZZLE_STOPPED : "event_stop",
-	PUZZLE_COMPLETED : "event_complete"
+	PUZZLE_COMPLETED : "event_complete",
+	PUZZLE_TICK: "on_tick"
 }
 
 toolbar = [new tool_rail(PRIMARY_RAIL_COLOR)]

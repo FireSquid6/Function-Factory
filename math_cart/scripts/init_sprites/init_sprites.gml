@@ -1,4 +1,4 @@
-if OUTPUT_SPRITES
+function init_sprites()
 {
 	//basic box
 	#macro BASIC_BOX_HEIGHT 64

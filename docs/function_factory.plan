@@ -3,9 +3,9 @@
   "LockProject": false,
   "BoardIndex": 0,
   "BoardCount": 1,
-  "AutoSave": false,
-  "Pan.X": 180.3701171875,
-  "Pan.Y": -189.22817993164062,
+  "AutoSave": true,
+  "Pan.X": -713.892333984375,
+  "Pan.Y": -306.6505432128906,
   "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -17,8 +17,8 @@
   "PulsingTaskSelection": true,
   "GridVisible": true,
   "GridSize": 16,
-  "BackupInterval": 15,
-  "BackupKeepCount": 3,
+  "BackupInterval": 0,
+  "BackupKeepCount": 1,
   "UndoMaxSteps": 0,
   "AlwaysShowURLButtons": false,
   "IncompleteTasksGlow": true,
@@ -133,7 +133,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 560,
+      "Position.X": 352,
       "Position.Y": 64,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -205,7 +205,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 496,
+      "Position.X": 288,
       "Position.Y": 80,
       "ImageDisplaySize.X": 272,
       "ImageDisplaySize.Y": 208,
@@ -220,7 +220,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 816,
+      "Position.X": 608,
       "Position.Y": 112,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -232,7 +232,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 816,
+      "Position.X": 608,
       "Position.Y": 128,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -244,12 +244,12 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 816,
+      "Position.X": 608,
       "Position.Y": 144,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Tooltray for level designers. Has an infinite amount of\neveryting and stuff from it can be added to the\ntoolbox. Only shows up when in level design mode. Also\nallows the designer to use special tools such as:",
+      "Description": "Tooltray for level designers. Has an infinite amount of\neveryting and stuff from it can be added to the\ntoolbox. Only shows up when in level design mode.",
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 17 2021 23:17:09"
@@ -420,7 +420,7 @@
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Run puzzle system",
+      "Description": "Tick System",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Oct 13 2021 23:54:49"
@@ -644,7 +644,7 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 816,
+      "Position.X": 608,
       "Position.Y": 144,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -654,11 +654,11 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Oct 17 2021 23:18:04",
       "BezierLines": false,
-      "LineEndings": [640, 272]
+      "LineEndings": [432, 272]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 816,
+      "Position.X": 608,
       "Position.Y": 128,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -668,7 +668,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Oct 17 2021 23:18:15",
       "BezierLines": false,
-      "LineEndings": [512, 144]
+      "LineEndings": [304, 144]
     }, 
     {
       "BoardIndex": 0,
@@ -920,43 +920,43 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 112,
+      "Position.X": 288,
+      "Position.Y": 320,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Entities placed from the tooltray will be locked\nby default, meaning that the player cannot\ndestroy or modify them",
+      "Selected": true,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 20 2021 23:20:58"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 288,
+      "Position.Y": 288,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Tools can be dragged from the tooltray into the\ntoolbar or used from the tooltray directly.",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 20 2021 23:20:18"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 80,
       "Position.Y": 64,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "TODO: add example level image",
+      "Description": "Player Controls:\nLMB - Use tool's place function\nRMB - Use tool's delete function\nMMB - Use tool's modify function",
       "Selected": false,
       "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:23:02"
+      "CreationTime": "Oct 20 2021 23:06:19"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 112,
-      "Position.Y": 80,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "TODO: add demonstration on how player controls and\nwhat modify, place and delete are",
-      "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:28:00"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 112,
-      "Position.Y": 112,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "TODO: design toolbox",
-      "Selected": false,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "Oct 16 2021 01:28:23"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 816,
+      "Position.X": 608,
       "Position.Y": 112,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -966,19 +966,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Oct 17 2021 23:18:22",
       "BezierLines": false,
-      "LineEndings": [720, 80]
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 832,
-      "Position.Y": 208,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "lock tool - locks objects so that the player cannot destroy them",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Oct 17 2021 23:19:07"
+      "LineEndings": [512, 80]
     }, 
     {
       "BoardIndex": 0,
@@ -1027,6 +1015,30 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Oct 17 2021 23:22:08"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 928,
+      "Position.Y": -128,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Give game entities a little \"pop\" effect when they're\nplaced",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 20 2021 18:58:17"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 112,
+      "Position.Y": 128,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "The player selects their\ntool by clicking on it in the\ntoolbox",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Oct 20 2021 23:07:33"
     }
   ]
 }

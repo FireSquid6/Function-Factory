@@ -6,11 +6,17 @@ function broadcast_event(event)
 	}
 }
 
-function place_entity(cell_x, cell_y, obj, lay, tool)
+function place_entity(cell_x, cell_y, obj, lay, tool, preplace_function = undefined)
 {
 	var inst = instance_create_layer(cell_x * CELL_SIZE, cell_y * CELL_SIZE, lay, obj)
+	
 	inst.tool_ref = tool
+	if !is_undefined(preplace_function)
+	{
+		preplace_function()
+	}
 	inst.on_place()
+	
 	broadcast_event(global.EVENTS.ENTITY_PLACED)
 	return inst
 }
@@ -32,6 +38,9 @@ function destroy_entity(obj = -1, cell_x = 0, cell_y = 0)
 
 function modify_entity(obj)
 {
-	obj.on_modify()
-	broadcast_event(global.EVENTS.ENTITY_MODIFIED)
+	if obj.modable
+	{
+		obj.on_modify()
+		broadcast_event(global.EVENTS.ENTITY_MODIFIED)
+	}
 }
