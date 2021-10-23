@@ -53,7 +53,7 @@ if global.editing
 	//TODO: change selected tool
 	
 	//do input
-	global.tool = toolbar[tool_selected]
+	global.tool = toolbox[tool_selected]
 
 	if key_use global.tool.use()
 	if key_modify global.tool.modify()

@@ -74,15 +74,27 @@ function tool_dispenser() : tool_parent() constructor
 		
 		if (in_cell == 0 && !has_wall) 
 		{
-			//TODO: make a popup library to get text input for number
-			block_value = 15
+			block_value = 0
+			
+			if global.on_desktop = true
+			{
+				block_value = get_integer("What number should the dispenser dispense?", "")
+			}
 			place_entity(cell_x, cell_y, created_entity, "lay_level", self)
-		}
-		
+		}	
 	}
 	
 	modify = function()
 	{
 		var list = instances_in_cell(obj_player.cell_x, obj_player.cell_y, created_entity, true)
+	}
+	
+	destroy = function()
+	{
+		var instances = instances_in_cell(obj_player.cell_x, obj_player.cell_y, created_entity, true)
+		if instances != 0
+		{
+			destroy_entity(instances[| 0], obj_player.cell_x, obj_player.cell_y)
+		}
 	}
 }

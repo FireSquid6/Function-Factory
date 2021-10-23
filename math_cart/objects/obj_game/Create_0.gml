@@ -1,7 +1,16 @@
+#region SCRIBBLE
+scribble_font_add("fnt_default")
+scribble_font_add("fnt_droid_sans_mono")
+
+#endregion
+
+#region INITIATE GLOBALS
 room = lv_level1
 global.entity_move_speed = 4
 global.in_level = false
 global.debug_mode = false
+
+#endregion
 
 #region SAVE MANAGEMENT
 global.first_launch = !file_exists(WELCOME_FILE_NAME)

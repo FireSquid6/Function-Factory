@@ -25,7 +25,7 @@ global.EVENTS =
 	PUZZLE_TICK: "on_tick"
 }
 
-toolbar = [new tool_rail(PRIMARY_RAIL_COLOR)]
+toolbox = [new tool_dispenser()]
 tool_selected = 0
 
 cell_x = 0
@@ -33,3 +33,5 @@ cell_y = 0
 border_color = BORDER_COLORS.RAIL
 
 //gui stuff
+toolbox_canvas = new modui_canvas()
+tooltray_canvas = new ui_tooltray()

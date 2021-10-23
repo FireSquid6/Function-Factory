@@ -109,8 +109,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Assets",
-    "path": "folders/Math Cart/Assets.yy",
+    "name": "Entities",
+    "path": "folders/Math Cart/Assets/Entities.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_rail",
