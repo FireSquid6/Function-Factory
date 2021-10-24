@@ -36,7 +36,7 @@ event_place = function()
 	
 }
 
-event_destroye = function()
+event_destroy = function()
 {
 	
 }

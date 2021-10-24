@@ -80,13 +80,21 @@ function tool_dispenser() : tool_parent() constructor
 			{
 				block_value = get_integer("What number should the dispenser dispense?", "")
 			}
-			place_entity(cell_x, cell_y, created_entity, "lay_level", self)
+			
+			if !is_undefined(block_value)
+			{
+				place_entity(cell_x, cell_y, created_entity, "lay_level", self)
+			}
 		}	
 	}
 	
 	modify = function()
 	{
 		var list = instances_in_cell(obj_player.cell_x, obj_player.cell_y, created_entity, true)
+		if list != 0
+		{
+			list[|0].on_modify()
+		}
 	}
 	
 	destroy = function()

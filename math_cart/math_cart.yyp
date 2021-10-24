@@ -14,6 +14,7 @@
     {"id":{"name":"scribble_typewriter_add_event","path":"scripts/scribble_typewriter_add_event/scribble_typewriter_add_event.yy",},"order":3,},
     {"id":{"name":"ts_wall","path":"tilesets/ts_wall/ts_wall.yy",},"order":1,},
     {"id":{"name":"CleanTransformAddScale","path":"scripts/CleanTransformAddScale/CleanTransformAddScale.yy",},"order":2,},
+    {"id":{"name":"loop","path":"scripts/loop/loop.yy",},"order":4,},
     {"id":{"name":"__scribble_class_font","path":"scripts/__scribble_class_font/__scribble_class_font.yy",},"order":1,},
     {"id":{"name":"spr_wallts","path":"sprites/spr_wallts/spr_wallts.yy",},"order":0,},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},"order":0,},
