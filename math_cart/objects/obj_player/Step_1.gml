@@ -49,9 +49,7 @@ pixel_y = cell_y * CELL_SIZE
 
 //editing
 if global.editing
-{
-	//TODO: change selected tool
-	
+{	
 	//do input
 	global.tool = toolbox[tool_selected]
 

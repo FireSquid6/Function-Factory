@@ -32,6 +32,24 @@ cell_x = 0
 cell_y = 0
 border_color = BORDER_COLORS.RAIL
 
-//gui stuff
+//toolbox
+var gui_width = display_get_gui_width()
+var gui_height = display_get_gui_height()
+var square_top = gui_height * 0.1
+var square_bottom = gui_height * 0.9
+var square_width = gui_width * 0.1
+
+var toolbox_y_padding = gui_height * 0.05
+var toolbox_x_offset = gui_width * 0.03
+
+toolbox_square = CleanRectangle(-32, square_top, square_width, square_bottom)
+toolbox_square.Blend(c_gray, 0.6)
+toolbox_square.Border(16, c_dkgray, 1)
+toolbox_square.Rounding(16)
+
+//create the canvas
 toolbox_canvas = new modui_canvas()
-tooltray_canvas = new ui_tooltray()
+for (var i = 0; i <= array_length(toolbox); i++)
+{
+	
+}

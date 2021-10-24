@@ -14,10 +14,6 @@ on_place = function()
 	text = scribble(string(block_value))
 	text.starting_format("fnt_droid_sans_mono", c_black)
 	text.align(fa_center, fa_middle)
-	
-	//get what the corner should always be
-	corner_x = x
-	corner_y = y
 }
 
 on_modify = function()

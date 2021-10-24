@@ -52,10 +52,7 @@ function tool_rail(_color) : tool_parent() constructor
 		for (var i = 0; i < ds_list_size(list); i++)
 		{
 			var target = ds_list_find_value(list, i)
-			if is_rail(target, rail_color) 
-			{
-				target.on_destroy()
-			}
+			target.on_destroy()
 		}
 	}
 }
@@ -76,10 +73,7 @@ function tool_dispenser() : tool_parent() constructor
 		{
 			block_value = 0
 			
-			if global.on_desktop = true
-			{
-				block_value = get_integer("What number should the dispenser dispense?", "")
-			}
+			block_value = text_input("What number should the dispenser dispense?")
 			
 			if !is_undefined(block_value)
 			{

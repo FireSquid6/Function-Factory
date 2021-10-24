@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Math Cart/Code/Scripts.yy",
+    "name": "Functional",
+    "path": "folders/Math Cart/Code/Scripts/Functional.yy",
   },
   "resourceVersion": "1.0",
-  "name": "UI",
+  "name": "text_input",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -1,12 +1,23 @@
-- placing objects
+FOR v0.1.0:
 - stopping and starting the level
-- rails
 - level editor
 - toolbox gui
+- saving and loading designed levels
+
+FOR v0.2.0
 - achivements
 	- myballs achievement
+- operators
+- designed levels
+- completing levels
 
-- When an update rail event is triggered:
-	- Update the origin rail
-	- With the four rails around the updated rail:
-		- I
+FOR v0.3.0
+- evaluators
+- wiring system
+- more designed levels
+
+FOR v0.4.0
+- full amount of levels
+
+FOR v1.0.0
+- tested and completed game

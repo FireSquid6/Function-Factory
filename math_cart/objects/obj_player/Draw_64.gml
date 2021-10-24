@@ -8,3 +8,5 @@ if global.debug_mode
 
 	draw_text(0,0,string(rails))
 }
+
+toolbox_square.Draw()

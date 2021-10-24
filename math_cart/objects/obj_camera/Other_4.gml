@@ -2,6 +2,7 @@
 cameraX = 0;
 cameraY = 0;
 
+var test = room
 setup_camera();
 
 //move to the target instance
