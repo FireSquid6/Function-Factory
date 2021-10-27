@@ -15,18 +15,15 @@ function tool_parent() constructor
 	{
 		
 	}
-	
-	element = undefined
 }
 
-function tool_rail(_color) : tool_parent() constructor
+function tool_wall() : tool_parent() constructor
 {
-	//make sure that there is a chosen color
-	if argument_count < 1
-	{
-		_color = c_white
-	}
 	
+}
+
+function tool_rail(_color = c_white) : tool_parent() constructor
+{
 	rail_color = _color
 	created_entity = obj_rail
 	

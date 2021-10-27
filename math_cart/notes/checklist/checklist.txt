@@ -3,6 +3,7 @@ FOR v0.1.0:
 - level editor
 - toolbox gui
 - saving and loading designed levels
+- wall tool
 
 FOR v0.2.0
 - achivements

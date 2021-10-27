@@ -10,3 +10,4 @@ if global.debug_mode
 }
 
 toolbox_square.Draw()
+toolbox_canvas.draw()

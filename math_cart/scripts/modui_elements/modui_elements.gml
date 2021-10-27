@@ -1,8 +1,9 @@
 #region PARENT
 function modui_element_parent() constructor
 {
-	static add_method=function(_method,_event)
+	static add_method=function(_event, _method)
 	{
+		_method = method(self, _method)
 		switch _event
 		{
 			case MODUI_EVENTS.UPDATE:

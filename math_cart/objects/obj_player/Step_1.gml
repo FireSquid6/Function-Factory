@@ -50,6 +50,9 @@ pixel_y = cell_y * CELL_SIZE
 //editing
 if global.editing
 {	
+	//update tool canvas
+	toolbox_canvas.update()
+	
 	//do input
 	global.tool = toolbox[tool_selected]
 

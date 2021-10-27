@@ -1,10 +1,6 @@
 //you can change this at runtime!
 global.modui_debug=false
 
-//Default grid width and height for grid selection
-#macro MODUI_GRID_WIDTH 25
-#macro MODUI_GRID_HEIGHT 25
-
 enum MODUI_EVENTS
 {
 	UPDATE, //every frames

@@ -29,7 +29,7 @@ function modui_canvas() constructor
 	}
 	
 	//update function - run each frame in step event
-	static update=function(_cursorx,_cursory,_clicked)
+	static update=function(_cursorx = display_mouse_get_x(),_cursory = display_mouse_get_y(),_clicked = mouse_check_button_pressed(mb_left))
 	{
 		cursor_x=_cursorx
 		cursor_y=_cursory
