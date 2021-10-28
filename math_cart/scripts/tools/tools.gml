@@ -17,11 +17,6 @@ function tool_parent() constructor
 	}
 }
 
-function tool_wall() : tool_parent() constructor
-{
-	
-}
-
 function tool_rail(_color = c_white) : tool_parent() constructor
 {
 	rail_color = _color

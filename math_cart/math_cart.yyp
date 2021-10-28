@@ -191,7 +191,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/fonts","resourceVersion":"1.0","name":"fnt_default.yy","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.5.589",
+    "IDEVersion": "2.3.6.595",
   },
   "resourceVersion": "1.4",
   "name": "math_cart",

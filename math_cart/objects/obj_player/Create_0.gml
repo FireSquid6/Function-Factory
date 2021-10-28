@@ -39,7 +39,8 @@ if global.designing = true
 cell_x = 0
 cell_y = 0
 border_color = BORDER_COLORS.RAIL
-toolbox_selected = true
+toolbox_selected = false
+last_toolbox_selected = false
 
 //toolbox
 var gui_width = display_get_gui_width()

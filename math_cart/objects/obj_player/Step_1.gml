@@ -88,6 +88,9 @@ if global.editing
 		tick_time = 0
 		global.tick_count = 0
 	}
+	
+	//set last_toolbox_selected
+	last_toolbox_selected = toolbox_selected
 }
 //playing
 else
