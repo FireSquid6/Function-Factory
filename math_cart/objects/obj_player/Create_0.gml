@@ -25,7 +25,7 @@ global.EVENTS =
 	PUZZLE_TICK: "on_tick"
 }
 
-toolbox = [new tool_rail(), new tool_dispenser(), new tool_rail(), new tool_rail(), new tool_rail()]
+toolbox = [new tool_rail(), new tool_dispenser()]
 tool_selected = 0
 
 #macro MAX_PLAYER_TOOL_INDEX 5
@@ -39,6 +39,7 @@ if global.designing = true
 cell_x = 0
 cell_y = 0
 border_color = BORDER_COLORS.RAIL
+toolbox_selected = true
 
 //toolbox
 var gui_width = display_get_gui_width()
@@ -49,7 +50,7 @@ global.square_width = gui_width * 0.1 //width of the toolbox
 var square_height = square_bottom - global.square_top //height of the toolbox
 
 global.tools_amount = MAX_PLAYER_TOOL_INDEX + 1 //total amount of tools
-global.tool_sprite_height = square_height div global.tools_amount
+global.tool_sprite_height = square_height div (global.tools_amount * 2)
 
 toolbox_square = CleanRectangle(-32, global.square_top, global.square_width, square_bottom)
 toolbox_square.Blend(c_gray, 0.6)

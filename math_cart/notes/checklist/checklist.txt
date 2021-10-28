@@ -2,6 +2,8 @@ FOR v0.1.0:
 - stopping and starting the level
 - level editor
 - toolbox gui
+	- only shows when you mouse over to it
+	- when mouse is inside, disable placing
 - saving and loading designed levels
 - wall tool
 

@@ -107,6 +107,11 @@ edit_step = function()
 	image_index = orientation
 }
 
+play_step = function()
+{
+	image_index = orientation
+}
+
 //PLAYING FUNCTIONS
 on_tick = function()
 {

@@ -50,8 +50,26 @@ pixel_y = cell_y * CELL_SIZE
 //editing
 if global.editing
 {	
-	//update tool canvas
-	toolbox_canvas.update()
+	//TODO: check if mouse is in collision with toolbox
+	//update canvas
+	if toolbox_selected
+	{
+		toolbox_canvas.update()
+	}
+	
+	//if mouse in toolbox, set inputs to 0
+	var top, left, bottom, right
+	top = toolbox_square.__top
+	bottom = toolbox_square.__bottom
+	right = toolbox_square.__right
+	left = toolbox_square.__left
+	
+	if point_in_rectangle(cursor_x, cursor_y, left, top, right, bottom)
+	{
+		key_use = false
+		key_modify = false
+		key_destroy = false
+	}
 	
 	//do input
 	global.tool = toolbox[tool_selected]

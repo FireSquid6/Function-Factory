@@ -4,7 +4,6 @@ image_blend = c_red
 
 value = 0
 
-spd = CELL_SIZE / global.tick_speed 
 live = false
 
 cell_x = x div CELL_SIZE
@@ -38,8 +37,8 @@ if live
 		//check if i need to change directions
 		
 		//calculate the position I need to be at by the next tick
-		var next_cell_x = cell_x + lengthdir_x(1, dir)
-		var next_cell_y = cell_y + lengthdir_y(1, dir)
+		var next_cell_x = cell_x + lengthdir_x(CELL_SIZE, dir)
+		var next_cell_y = cell_y + lengthdir_y(CELL_SIZE, dir)
 		
 		var next_x = next_cell_x * CELL_SIZE
 		var next_y = next_cell_y * CELL_SIZE
