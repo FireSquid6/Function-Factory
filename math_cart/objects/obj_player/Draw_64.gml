@@ -6,7 +6,7 @@ if global.debug_mode
 	if !global.editing
 	{
 		draw_set_color(c_red)
-		draw_line_width(0, 0, gui_width, gui_height, 10)
+		draw_line_width(0, 0, gui_width, 0, 10)
 		draw_line_width(0, 0, 0, gui_height, 10)
 		draw_line_width(0, gui_height, gui_width, gui_height, 10)
 		draw_line_width(gui_width, gui_height, gui_width, 0, 10)
@@ -15,4 +15,4 @@ if global.debug_mode
 
 //toolbox
 toolbox_square.Draw()
-if toolbox_selected toolbox_canvas.draw()
+toolbox_canvas.draw()

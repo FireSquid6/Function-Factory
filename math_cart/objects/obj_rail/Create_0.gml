@@ -104,20 +104,4 @@ edit_step = function()
 {
 	orientation = get_orientation(link_top, link_left, link_right, link_bottom)
 	links = link_top + link_right + link_bottom + link_left
-	image_index = orientation
 }
-
-play_step = function()
-{
-	image_index = orientation
-}
-
-//PLAYING FUNCTIONS
-on_tick = function()
-{
-	//check if a number block is in my grid
-	//if I am an angle:
-		//change the number block's direction
-}
-
-

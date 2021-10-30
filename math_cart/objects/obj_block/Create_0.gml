@@ -6,6 +6,10 @@ value = 0
 
 live = false
 
+//move x
+x += (CELL_SIZE - sprite_width) / 2
+y += (CELL_SIZE - sprite_height) /2
+
 cell_x = x div CELL_SIZE
 cell_y = y div CELL_SIZE
 

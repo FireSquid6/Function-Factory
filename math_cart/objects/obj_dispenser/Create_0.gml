@@ -55,6 +55,4 @@ on_modify = function()
 event_start = function()
 {
 	var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
-	inst.x += lengthdir_x(22, dir)
-	inst.y += lengthdir_y(22, dir)
 }

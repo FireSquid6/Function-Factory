@@ -52,10 +52,7 @@ if global.editing
 {	
 	//TODO: check if mouse is in collision with toolbox
 	//update canvas
-	if toolbox_selected
-	{
-		toolbox_canvas.update()
-	}
+	toolbox_canvas.update(display_mouse_get_x(), display_mouse_get_y(), mouse_check_button(mb_left))
 	
 	//if mouse in toolbox, set inputs to 0
 	var top, left, bottom, right
@@ -88,9 +85,6 @@ if global.editing
 		tick_time = 0
 		global.tick_count = 0
 	}
-	
-	//set last_toolbox_selected
-	last_toolbox_selected = toolbox_selected
 }
 //playing
 else
