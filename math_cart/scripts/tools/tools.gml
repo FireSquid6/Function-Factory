@@ -26,12 +26,15 @@ function tool_rail(_color = c_white) : tool_parent() constructor
 	use = function()
 	{
 		var cell_x = obj_player.cell_x
-
-var cell_y = obj_player.cell_y
+		var cell_y = obj_player.cell_y
 		
 		var has_wall = cell_has_wall(cell_x, cell_y)
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
+		if keyboard_check(vk_lcontrol)
+		{
+			imposter = "sus"
+		}
 		
 		if (in_cell == 0 && !has_wall) 
 		{

@@ -30,6 +30,7 @@
     {"id":{"name":"__scribble_class_page","path":"scripts/__scribble_class_page/__scribble_class_page.yy",},"order":6,},
     {"id":{"name":"CleanBatchEndDraw","path":"scripts/CleanBatchEndDraw/CleanBatchEndDraw.yy",},"order":2,},
     {"id":{"name":"scribble_font_set_style_family","path":"scripts/scribble_font_set_style_family/scribble_font_set_style_family.yy",},"order":5,},
+    {"id":{"name":"cell_mask","path":"sprites/cell_mask/cell_mask.yy",},"order":3,},
     {"id":{"name":"scribble_glyph_set","path":"scripts/scribble_glyph_set/scribble_glyph_set.yy",},"order":7,},
     {"id":{"name":"instances_in_cell","path":"scripts/instances_in_cell/instances_in_cell.yy",},"order":2,},
     {"id":{"name":"__scribble_class_model","path":"scripts/__scribble_class_model/__scribble_class_model.yy",},"order":3,},

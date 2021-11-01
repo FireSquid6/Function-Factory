@@ -4,7 +4,7 @@ image_blend = c_red
 
 value = 0
 
-live = false
+rail_id = noone
 
 //move x
 x += (CELL_SIZE - sprite_width) / 2
@@ -17,15 +17,20 @@ hspd = 0
 vspd = 0
 dir = 0
 
-var list = instances_in_cell(cell_x, cell_y, obj_rail, true)
-
-if list != 0 
+//get whatever dispensed me
+dispenser_id = collision_point(x, y, obj_dispenser, false, true)
+if dispenser_id == noone //something has gone wrong
 {
-	live = true
-	rail_id = list[|0]
+	show_error("the programmer is a moron. (block couldn't find dispenser at" + string(x) + ", " + string(y) + ")", true)
 }
 
-if live
+//check if there's a rail in front of me
+var dispenser_dir = dispenser_id.dir
+var list = instances_in_cell(cell_x + lengthdir_x(1, dispenser_dir), cell_y + lengthdir_y(1, dispenser_dir), obj_rail, true)
+rail_id = list[|0]
+
+//if there is a rail in front of me, get real
+if rail_id != noone
 {
 	rail_color = rail_id.image_blend
 	
@@ -54,4 +59,9 @@ if live
 		hspd = xdist / global.tick_speed 
 		vspd = ydist / global.tick_speed 
 	}
+}
+//if there's no rail, die
+else
+{
+	instance_destroy()
 }
