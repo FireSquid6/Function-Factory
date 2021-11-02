@@ -25,6 +25,9 @@ if dispenser_id == noone //something has gone wrong
 }
 
 //check if there's a rail in front of me
+//note for future me when he comes back:
+	//currently working on getting the block to detect which dispenser dispensed it and which direction it should check for a rail
+	//rail id needs to be something for the block to exist
 var dispenser_dir = dispenser_id.dir
 var list = instances_in_cell(cell_x + lengthdir_x(1, dispenser_dir), cell_y + lengthdir_y(1, dispenser_dir), obj_rail, true)
 rail_id = list[|0]
