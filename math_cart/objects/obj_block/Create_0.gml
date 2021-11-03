@@ -5,10 +5,14 @@ image_blend = c_red
 value = 0
 
 rail_id = noone
+rail_color = c_white
 
-//move x
-x += (CELL_SIZE - sprite_width) / 2
-y += (CELL_SIZE - sprite_height) /2
+//move 
+offset_x = (CELL_SIZE - sprite_width) / 2
+offset_y = (CELL_SIZE - sprite_height) /2
+
+x += offset_x
+y += offset_y
 
 cell_x = x div CELL_SIZE
 cell_y = y div CELL_SIZE
@@ -46,14 +50,19 @@ if rail_id != noone
 
 	on_tick = function()
 	{
+		//get rail ID
+		var list = instances_in_cell(cell_x, cell_y, obj_rail)
+		
 		//check if i need to change directions
 		
-		//calculate the position I need to be at by the next tick
-		var next_cell_x = cell_x + lengthdir_x(CELL_SIZE, dir)
-		var next_cell_y = cell_y + lengthdir_y(CELL_SIZE, dir)
+		//check if I need to stop
 		
-		var next_x = next_cell_x * CELL_SIZE
-		var next_y = next_cell_y * CELL_SIZE
+		//calculate the position I need to be at by the next tick
+		var next_cell_x = cell_x + lengthdir_x(1, dir)
+		var next_cell_y = cell_y + lengthdir_y(1, dir)
+		
+		var next_x = (next_cell_x * CELL_SIZE) + offset_x
+		var next_y = (next_cell_y * CELL_SIZE) + offset_y
 		
 		var xdist = next_x - x
 		var ydist = next_y - y

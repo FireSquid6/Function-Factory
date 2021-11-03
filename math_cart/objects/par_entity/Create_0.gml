@@ -1,3 +1,6 @@
+cell_x = 0
+cell_y = 0
+
 //while playing
 on_tick = function()
 {

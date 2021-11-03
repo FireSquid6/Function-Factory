@@ -67,6 +67,7 @@
     {"id":{"name":"rm_parent","path":"rooms/rm_parent/rm_parent.yy",},"order":1,},
     {"id":{"name":"ts_floor","path":"tilesets/ts_floor/ts_floor.yy",},"order":1,},
     {"id":{"name":"CleanBatchDrawVertexBuffer","path":"scripts/CleanBatchDrawVertexBuffer/CleanBatchDrawVertexBuffer.yy",},"order":1,},
+    {"id":{"name":"rail_in_cell","path":"scripts/rail_in_cell/rail_in_cell.yy",},"order":6,},
     {"id":{"name":"CleanTransformOriginSet","path":"scripts/CleanTransformOriginSet/CleanTransformOriginSet.yy",},"order":5,},
     {"id":{"name":"__shd_scribble_msdf","path":"shaders/__shd_scribble_msdf/__shd_scribble_msdf.yy",},"order":13,},
     {"id":{"name":"text_input","path":"scripts/text_input/text_input.yy",},"order":5,},
