@@ -51,7 +51,7 @@ if rail_id != noone
 	on_tick = function()
 	{
 		//get rail ID
-		var list = instances_in_cell(cell_x, cell_y, obj_rail)
+		var rail = rail_in_cell(cell_x, cell_y, rail_color)
 		
 		//check if i need to change directions
 		
