@@ -6,7 +6,7 @@
     "path": "folders/Math Cart/Code/Scripts/Functional/Cell Checking.yy",
   },
   "resourceVersion": "1.0",
-  "name": "get_cells",
+  "name": "is_orientation",
   "tags": [],
   "resourceType": "GMScript",
 }

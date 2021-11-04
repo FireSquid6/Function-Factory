@@ -21,6 +21,8 @@ hspd = 0
 vspd = 0
 dir = 0
 
+moving = false
+
 //get whatever dispensed me
 dispenser_id = collision_point(x, y, obj_dispenser, false, true)
 if dispenser_id == noone //something has gone wrong
@@ -29,9 +31,6 @@ if dispenser_id == noone //something has gone wrong
 }
 
 //check if there's a rail in front of me
-//note for future me when he comes back:
-	//currently working on getting the block to detect which dispenser dispensed it and which direction it should check for a rail
-	//rail id needs to be something for the block to exist
 var dispenser_dir = dispenser_id.dir
 var list = instances_in_cell(cell_x + lengthdir_x(1, dispenser_dir), cell_y + lengthdir_y(1, dispenser_dir), obj_rail, true)
 rail_id = list[|0]
@@ -40,6 +39,7 @@ rail_id = list[|0]
 if rail_id != noone
 {
 	rail_color = rail_id.image_blend
+	moving = true
 	
 	play_step = function()
 	{
@@ -54,12 +54,47 @@ if rail_id != noone
 		var rail = rail_in_cell(cell_x, cell_y, rail_color)
 		
 		//check if i need to change directions
+		if is_turn(rail.orientation)
+		{
+			//if we're moving horizontally
+			if dir == 0 || dir == 180
+			{
+				//turn up
+				if rail.orientation == global.rail_orientations.corners.top_left || rail.orientation == global.rail_orientations.corners.top_right
+				{
+					dir = 90
+				}
+				//turn down
+				else
+				{
+					dir = 270
+				}
+			}
+			//if we're moving vertically
+			else
+			{
+				//turn left
+				if rail.orientation == global.rail_orientations.corners.top_left || rail.orientation == global.rail_orientations.corners.bottom_left
+				{
+					dir = 270
+				}
+				//turn right
+				else
+				{
+					dir = 0
+				}
+			}
+		}
 		
 		//check if I need to stop
+		if is_node(rail.orientation)
+		{
+			moving = false
+		}
 		
 		//calculate the position I need to be at by the next tick
-		var next_cell_x = cell_x + lengthdir_x(1, dir)
-		var next_cell_y = cell_y + lengthdir_y(1, dir)
+		var next_cell_x = cell_x + lengthdir_x(moving, dir)
+		var next_cell_y = cell_y + lengthdir_y(moving, dir)
 		
 		var next_x = (next_cell_x * CELL_SIZE) + offset_x
 		var next_y = (next_cell_y * CELL_SIZE) + offset_y
