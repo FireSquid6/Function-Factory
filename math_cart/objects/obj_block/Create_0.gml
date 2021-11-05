@@ -53,43 +53,50 @@ if rail_id != noone
 		//get rail ID
 		var rail = rail_in_cell(cell_x, cell_y, rail_color)
 		
-		//check if i need to change directions
-		if is_turn(rail.orientation)
+		if rail != noone //if rail exists
 		{
-			//if we're moving horizontally
-			if dir == 0 || dir == 180
+			//check if i need to change directions
+			if is_turn(rail.orientation)
 			{
-				//turn up
-				if rail.orientation == global.rail_orientations.corners.top_left || rail.orientation == global.rail_orientations.corners.top_right
+				//if we're moving horizontally
+				if dir == 0 || dir == 180
 				{
-					dir = 90
+					//turn up
+					if rail.orientation == global.rail_orientations.corners.top_left || rail.orientation == global.rail_orientations.corners.top_right
+					{
+						dir = 90
+					}
+					//turn down
+					else
+					{
+						dir = 270
+					}
 				}
-				//turn down
+				//if we're moving vertically
 				else
 				{
-					dir = 270
+					//turn left
+					if rail.orientation == global.rail_orientations.corners.top_left || rail.orientation == global.rail_orientations.corners.bottom_left
+					{
+						dir = 180
+					}
+					//turn right
+					else
+					{
+						dir = 0
+					}
 				}
 			}
-			//if we're moving vertically
-			else
-			{
-				//turn left
-				if rail.orientation == global.rail_orientations.corners.top_left || rail.orientation == global.rail_orientations.corners.bottom_left
-				{
-					dir = 270
-				}
-				//turn right
-				else
-				{
-					dir = 0
-				}
-			}
-		}
 		
-		//check if I need to stop
-		if is_node(rail.orientation)
-		{
-			moving = false
+			//check if I need to stop
+			if is_node(rail.orientation)
+			{
+				//make sure that if a node is detected, it's not the starting node
+				if !rail_in_cell(cell_x + lengthdir_x(1, dir), cell_y + lengthdir_y(1, dir), rail_color)
+				{
+					moving = false
+				}
+			}
 		}
 		
 		//calculate the position I need to be at by the next tick
@@ -105,6 +112,11 @@ if rail_id != noone
 		//calculate the speed I need to move at to get there
 		hspd = xdist / global.tick_speed 
 		vspd = ydist / global.tick_speed 
+	}
+	
+	event_stop = function()
+	{
+		instance_destroy()
 	}
 }
 //if there's no rail, die

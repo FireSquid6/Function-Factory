@@ -1,8 +1,8 @@
 function is_node(orientation)
 {
 	return ((orientation == global.rail_orientations.nodes.isolated) || (orientation == global.rail_orientations.nodes.right) 
-	|| (orientation == global.rail_orientations.nodes.left) || (orientation == global.rail_orientations.nodes.top) ||
-	(orientation == global.rail_orientations.nodes.bottom))
+	|| (orientation == global.rail_orientations.nodes.left) || (orientation == global.rail_orientations.nodes.up) ||
+	(orientation == global.rail_orientations.nodes.down))
 }
 
 function is_turn(orientation)

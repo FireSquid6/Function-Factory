@@ -55,4 +55,5 @@ on_modify = function()
 event_start = function()
 {
 	var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
+	inst.dir = dir
 }
