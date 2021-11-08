@@ -91,10 +91,46 @@ if rail_id != noone
 			//check if I need to stop
 			if is_node(rail.orientation)
 			{
-				//make sure that if a node is detected, it's not the starting node
 				if !rail_in_cell(cell_x + lengthdir_x(1, dir), cell_y + lengthdir_y(1, dir), rail_color)
 				{
-					moving = false
+					//get the inverse direction 
+					var invdir = dir
+					repeat 2
+					{
+						invdir += 90
+						invdir = loop(invdir, 0, 259)
+					}
+					
+					//get the rail's direction
+					var raildir = 0
+					switch rail.orientation
+					{
+						case global.rail_orientations.nodes.up:
+							raildir = 90
+							break
+						case global.rail_orientations.nodes.left:
+							raildir = 270
+							break
+						case global.rail_orientations.nodes.right:
+							raildir = 0
+							break
+						case global.rail_orientations.nodes.down:
+							raildir = 180
+							break
+						default:
+							show_error("what have you done", true)
+							break
+					}
+					
+					if invdir != raildir
+					{
+						//cry about it 
+					}
+					//if nothing funky is going on, stop
+					else
+					{
+						moving = false
+					}
 				}
 			}
 		}
