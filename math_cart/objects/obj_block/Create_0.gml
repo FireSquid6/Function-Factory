@@ -98,7 +98,7 @@ if rail_id != noone
 					repeat 2
 					{
 						invdir += 90
-						invdir = loop(invdir, 0, 259)
+						invdir = loop(invdir, 0, 359)
 					}
 					
 					//get the rail's direction
@@ -109,22 +109,24 @@ if rail_id != noone
 							raildir = 90
 							break
 						case global.rail_orientations.nodes.left:
-							raildir = 270
+							raildir = 180
 							break
 						case global.rail_orientations.nodes.right:
 							raildir = 0
 							break
 						case global.rail_orientations.nodes.down:
-							raildir = 180
+							raildir = 270
 							break
 						default:
 							show_error("what have you done", true)
 							break
 					}
 					
+					//if something funky is going on
 					if invdir != raildir
 					{
-						//cry about it 
+						//force the block to go with the rail
+						dir = raildir
 					}
 					//if nothing funky is going on, stop
 					else
