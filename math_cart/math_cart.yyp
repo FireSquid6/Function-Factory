@@ -80,6 +80,7 @@
     {"id":{"name":"modui_config","path":"scripts/modui_config/modui_config.yy",},"order":3,},
     {"id":{"name":"level_saving","path":"scripts/level_saving/level_saving.yy",},"order":3,},
     {"id":{"name":"CleanEllipse","path":"scripts/CleanEllipse/CleanEllipse.yy",},"order":4,},
+    {"id":{"name":"obj_ejector","path":"objects/obj_ejector/obj_ejector.yy",},"order":5,},
     {"id":{"name":"scribble_font_has_character","path":"scripts/scribble_font_has_character/scribble_font_has_character.yy",},"order":3,},
     {"id":{"name":"CleanSegment","path":"scripts/CleanSegment/CleanSegment.yy",},"order":11,},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},"order":1,},

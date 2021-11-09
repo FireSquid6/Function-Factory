@@ -2,14 +2,25 @@ event_inherited()
 
 image_blend = c_red
 
-value = 0
+block_value = 0
 
 rail_id = noone
 rail_color = c_white
 
+//when called tells this rail to start moving to the pinged location
+//only works if rail isn't moving
+ping_self = function(ping_cell_x, ping_cell_y)
+{
+	if !moving
+	{
+		dir = point_direction(cell_x, cell_y, ping_cell_x, ping_cell_y)
+		moving = true
+	}
+}
+
 //move 
 offset_x = (CELL_SIZE - sprite_width) / 2
-offset_y = (CELL_SIZE - sprite_height) /2
+offset_y = (CELL_SIZE - sprite_height) / 2
 
 x += offset_x
 y += offset_y
@@ -25,8 +36,9 @@ moving = false
 
 //get whatever dispensed me
 dispenser_id = collision_point(x, y, obj_dispenser, false, true)
-if dispenser_id == noone //something has gone wrong
+if dispenser_id == noone //check if it's an operator instead
 {
+	//check if it's an operator
 	show_error("the programmer is a moron. (block couldn't find dispenser at" + string(x) + ", " + string(y) + ")", true)
 }
 

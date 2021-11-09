@@ -25,7 +25,7 @@ global.EVENTS =
 	PUZZLE_TICK: "on_tick"
 }
 
-toolbox = [new tool_rail(), new tool_dispenser()]
+toolbox = [new tool_rail(PRIMARY_RAIL_COLOR), new tool_dispenser(), new tool_ejector()]
 tool_selected = 0
 
 #macro MAX_PLAYER_TOOL_INDEX 5

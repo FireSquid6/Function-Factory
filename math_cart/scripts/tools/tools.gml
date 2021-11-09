@@ -57,6 +57,8 @@ function tool_rail(_color = c_white) : tool_parent() constructor
 function tool_dispenser() : tool_parent() constructor
 {
 	created_entity = obj_dispenser
+	input_text = "What number should the dispenser dispense?"
+	
 	use = function()
 	{
 		//make sure nothing is in the spot
@@ -70,7 +72,7 @@ function tool_dispenser() : tool_parent() constructor
 		{
 			block_value = 0
 			
-			block_value = text_input("What number should the dispenser dispense?")
+			block_value = text_input(input_text)
 			
 			if !is_undefined(block_value)
 			{
@@ -96,4 +98,10 @@ function tool_dispenser() : tool_parent() constructor
 			destroy_entity(instances[| 0], obj_player.cell_x, obj_player.cell_y)
 		}
 	}
+}
+
+function tool_ejector() : tool_dispenser() constructor
+{
+	created_entity = obj_ejector
+	input_text = "What number does the ejector require?"
 }

@@ -1,5 +1,8 @@
 function start_level()
 {
+	//reset globals
+	global.ejectors_required = 0
+	
 	//set target
 	global.target = obj_player
 	
