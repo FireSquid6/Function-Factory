@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": -853.5435791015625,
-  "Pan.Y": 111.38111877441406,
-  "ZoomLevel": 4,
+  "Pan.X": 992.087646484375,
+  "Pan.Y": 386.79248046875,
+  "ZoomLevel": 5,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -109,11 +109,11 @@
       "BoardIndex": 0,
       "Position.X": 784,
       "Position.Y": -176,
-      "Checkbox.Checked": false,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Rail",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Oct 16 2021 00:45:35"
     }, 
@@ -158,7 +158,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 784,
-      "Position.Y": -160,
+      "Position.Y": -128,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -182,7 +182,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 784,
-      "Position.Y": -144,
+      "Position.Y": -112,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -194,7 +194,7 @@
     {
       "BoardIndex": 0,
       "Position.X": 784,
-      "Position.Y": -128,
+      "Position.Y": -96,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -1039,6 +1039,30 @@
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 20 2021 23:07:33"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 784,
+      "Position.Y": -160,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Go for 90's ASCII astetic\n",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Nov 9 2021 20:52:12"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 784,
+      "Position.Y": -144,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Artystyle:\n- Supposed to look like and old computer\n- Mostly black and green with blue highlights",
+      "Selected": true,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Nov 9 2021 20:52:30"
     }
   ]
 }
