@@ -1,8 +1,3 @@
-if global.debug_mode
-{
-	
-}
-
 //toolbox
 if global.toolbox_selected 
 {

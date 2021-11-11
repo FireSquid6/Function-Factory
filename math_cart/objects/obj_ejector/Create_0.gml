@@ -29,6 +29,27 @@ on_destroy = function()
 	global.ejectors_required -= 1
 }
 
+event_start = function()
+{
+	check_x_addend = 0
+	check_y_addend = 0
+	switch dir
+	{
+		case 0:
+			check_x_addend = 1
+			break
+		case 90:
+			check_y_addend = -1
+			break
+		case 180:
+			check_x_addend = -1
+			break
+		case 270:
+			check_y_addend = -1
+			break
+	}
+}
+
 on_tick = function()
 {
 	if !pinged //if no block has been told to move into me
@@ -39,7 +60,7 @@ on_tick = function()
 		}
 		
 		//check if there's a block in the cell i'm facing
-		var list = instances_in_cell(cell_x + lengthdir_x(1, dir), cell_y + lengthdir_x(1, dir), obj_block, true)
+		var list = instances_in_cell(cell_x + check_x_addend, cell_y + check_y_addend, obj_block, true)
 	
 		if list != 0
 		{

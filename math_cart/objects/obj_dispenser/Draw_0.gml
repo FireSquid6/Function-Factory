@@ -6,6 +6,4 @@ if global.debug_mode
 	draw_text(x, y, string(x))
 	draw_text(x, y + 10, string(y))
 	draw_text(x, y + 20, string(dir))
-	draw_text(x, y + 40, string(x / CELL_SIZE))
-	draw_text(x, y + 50, string(y / CELL_SIZE))
 }
