@@ -4,8 +4,15 @@ if global.debug_mode
 }
 
 //toolbox
-toolbox_square.Draw()
-toolbox_canvas.draw()
+if global.toolbox_selected 
+{
+	toolbox_square.Draw()
+	toolbox_canvas.draw()
+}
+else
+{
+	unselected_toolbox.Draw()
+}
 
 //draw red outline if playing
 var gui_width = display_get_width()

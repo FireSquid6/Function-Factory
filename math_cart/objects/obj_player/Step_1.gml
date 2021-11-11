@@ -51,24 +51,47 @@ pixel_y = cell_y * CELL_SIZE
 if global.editing
 {	
 	//TODO: check if mouse is in collision with toolbox
-	//update canvas
-	toolbox_canvas.update(display_mouse_get_x(), display_mouse_get_y(), mouse_check_button(mb_left))
-	
-	//if mouse in toolbox, set inputs to 0
-	var top, left, bottom, right
-	top = toolbox_square.__top
-	bottom = toolbox_square.__bottom
-	right = toolbox_square.__right
-	left = toolbox_square.__left
-	
-	if point_in_rectangle(cursor_x, cursor_y, left, top, right, bottom)
+	//if toolbox is selected
+	if global.toolbox_selected
 	{
-		key_use = false
-		key_modify = false
-		key_destroy = false
+		//update canvas
+		toolbox_canvas.update(display_mouse_get_x(), display_mouse_get_y(), mouse_check_button(mb_left))
+	
+		//if mouse in toolbox, set inputs to 0
+		var top, left, bottom, right
+		top = toolbox_square.__top
+		bottom = toolbox_square.__bottom
+		right = toolbox_square.__right
+		left = toolbox_square.__left
+		if point_in_rectangle(cursor_x, cursor_y, left, top, right, bottom)
+		{
+			//set all inputs to false
+			key_use = false
+			key_modify = false
+			key_destroy = false
+		}
+		//if the mouse isn't in the toolbox, set toolbox_selected to false
+		else
+		{
+			global.toolbox_selected = false
+		}
+	}
+	//if toolbox not selected
+	else
+	{
+		//if the mouse is in the minibox, go to toolbox selected
+		var top, left, bottom, right
+		top = unselected_toolbox.__top
+		bottom = unselected_toolbox.__bottom
+		right = unselected_toolbox.__right
+		left = unselected_toolbox.__left
+		if point_in_rectangle(cursor_x, cursor_y, left, top, right, bottom)
+		{
+			global.toolbox_selected = true
+		}
 	}
 	
-	//do input
+	//PLACE OBJECTS
 	global.tool = toolbox[tool_selected]
 
 	if key_use global.tool.use()

@@ -53,10 +53,17 @@ var square_height = square_bottom - global.square_top //height of the toolbox
 global.tools_amount = MAX_PLAYER_TOOL_INDEX + 1 //total amount of tools
 global.tool_sprite_height = square_height div (global.tools_amount * 2)
 
+global.toolbox_selected = false
+
 toolbox_square = CleanRectangle(-32, global.square_top, global.square_width, square_bottom)
 toolbox_square.Blend(c_gray, 0.6)
 toolbox_square.Border(16, c_dkgray, 1)
 toolbox_square.Rounding(16)
+
+unselected_toolbox = CleanRectangle(-32, global.square_top, 16, square_bottom)
+unselected_toolbox.Blend(c_gray, 0.6)
+unselected_toolbox.Border(16, c_dkgray, 1)
+unselected_toolbox.Rounding(16)
 
 //TODO: add stuff for designer box and 
 //create the canvas
