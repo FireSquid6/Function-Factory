@@ -14,6 +14,14 @@ pinged = false //whether the ejector has pinged a block to move into it
 on_place = function()
 {
 	global.ejectors_required += 1
+	
+	//get value
+	block_value = tool_ref.block_value
+	
+	//get scribble text
+	text = scribble(string(block_value))
+	text.starting_format("fnt_droid_sans_mono", c_black)
+	text.align(fa_center, fa_middle)
 }
 
 on_destroy = function()
@@ -25,6 +33,11 @@ on_tick = function()
 {
 	if !pinged //if no block has been told to move into me
 	{
+		if keyboard_check(vk_alt)
+		{
+			imposter = "sus"
+		}
+		
 		//check if there's a block in the cell i'm facing
 		var list = instances_in_cell(cell_x + lengthdir_x(1, dir), cell_y + lengthdir_x(1, dir), obj_block, true)
 	

@@ -117,7 +117,6 @@ else
 	{
 		global.editing = true
 		broadcast_event(global.EVENTS.PUZZLE_STOPPED)
-		//TODO: load previous room state
 	}
 	
 	//tick management
