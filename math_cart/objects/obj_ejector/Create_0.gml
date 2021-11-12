@@ -65,7 +65,8 @@ on_tick = function()
 		if list != 0
 		{
 			//check if it has the correct number
-			if list[|0].block_value == block_value
+			var blockid = list[|0]
+			if blockid.block_value == block_value
 			{
 				list[|0].ping_self(cell_x, cell_y) //ping block to move to self
 				pinged = true //set pinged to true

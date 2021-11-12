@@ -7,15 +7,17 @@ block_value = 0
 rail_id = noone
 rail_color = c_white
 
+pinged = false
+
 //when called tells this rail to start moving to the pinged location
 //only works if rail isn't moving
 ping_self = function(ping_cell_x, ping_cell_y)
 {
-	if !moving
-	{
-		dir = point_direction(cell_x, cell_y, ping_cell_x, ping_cell_y)
-		moving = true
-	}
+	pinged = true //note to self: implement a system later that turns this to false when it gets to the pinged cell
+				  //if something in the future isn't working this is why
+				  //I'm sorry future self
+	dir = point_direction(cell_x, cell_y, ping_cell_x, ping_cell_y)
+	moving = true
 }
 
 //move 
@@ -65,7 +67,7 @@ if rail_id != noone
 		//get rail ID
 		var rail = rail_in_cell(cell_x, cell_y, rail_color)
 		
-		if rail != noone //if rail exists
+		if rail != noone && !pinged//if rail exists and I'm not being forced to a location
 		{
 			//check if i need to change directions
 			if is_turn(rail.orientation)
