@@ -12,4 +12,6 @@ function start_level()
 	//get tilemap
 	var layid = layer_get_id("tls_wall")
 	global.wall_map = layer_tilemap_get_id(layid)
+	
+	show_debug_message("Level has been started")
 }

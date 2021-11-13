@@ -74,13 +74,14 @@ on_tick = function()
 			
 		}
 	}
-	else
+	else if !completed
 	{
 		list = instances_in_cell(cell_x, cell_y, obj_block, true)
 		if list != 0
 		{
 			instance_destroy(list[|0])
 			completed = true
+			global.ejectors_completed ++
 		}
 	}
 }

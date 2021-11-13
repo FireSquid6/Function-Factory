@@ -3,6 +3,7 @@ function broadcast_event(event)
 	if !array_has_value(global.events, event)
 	{
 		array_push(global.events, event)
+		show_debug_message("Pushed event " + event)
 	}
 }
 

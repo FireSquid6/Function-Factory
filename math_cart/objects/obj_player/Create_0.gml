@@ -4,6 +4,7 @@
 global.editing = true //whether a level is playing or not
 global.designing = true //whether all objects and save should be accessed
 global.tick_speed = 15 //time between each tick
+global.events = []
 
 enum BORDER_COLORS
 {
@@ -42,6 +43,8 @@ border_color = BORDER_COLORS.RAIL
 toolbox_selected = false
 last_toolbox_selected = false
 
+#region EVIL GUI STUFF DO NOT OPEN
+
 //toolbox
 var gui_width = display_get_gui_width()
 var gui_height = display_get_gui_height()
@@ -73,3 +76,5 @@ for (var i = 0; i < array_length(toolbox); i++)
 	var element = new toolbox_tool(spr_circle, i)
 	toolbox_canvas.add_element(element)
 }
+
+#endregion

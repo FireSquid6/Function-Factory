@@ -131,8 +131,12 @@ if rail_id != noone
 						case global.rail_orientations.nodes.down:
 							raildir = 270
 							break
+						case global.rail_orientations.nodes.isolated:
+							raildir = 0
+							moving = false
+							break
 						default:
-							show_error("what have you done", true)
+							show_error("Found a non-node rail orientation when block " + string(id) + " when is_node for " + string(rail) + " returned true", true)
 							break
 					}
 					

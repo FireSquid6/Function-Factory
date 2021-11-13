@@ -1,4 +1,9 @@
 //reset broadcast
+if global.events != []
+{
+	show_debug_message("Events reset.")
+}
+
 global.events = []
 
 //get input
@@ -102,11 +107,12 @@ if global.editing
 	if key_start
 	{
 		global.editing = false
+		
 		broadcast_event(global.EVENTS.PUZZLE_STARTED)
-		//TODO: save current room state
 		
 		tick_time = 0
 		global.tick_count = 0
+		global.ejectors_completed = 0
 	}
 }
 //playing
@@ -128,4 +134,11 @@ else
 		broadcast_event(global.EVENTS.PUZZLE_TICK)
 	}
 	tick_time --
+	
+	//check if puzzle is completed
+	if global.ejectors_required == global.ejectors_completed
+	{
+		broadcast_event(global.EVENTS.PUZZLE_COMPLETED)
+		//do whatever is neccessary for puzzle completion
+	}
 }
