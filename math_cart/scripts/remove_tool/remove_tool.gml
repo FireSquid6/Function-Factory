@@ -15,7 +15,7 @@ function meta_remove_tool()
 {
 	return
 	{
-		description: "remove a tool"
+		description: "remove a tool",
 		arguments: ["index"]
 	}
 }

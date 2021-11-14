@@ -125,7 +125,7 @@
   },
   "parent": {
     "name": "Levels",
-    "path": "folders/Math Cart/Code/Scripts/Shell/Levels.yy",
+    "path": "folders/Math Cart/Rooms/Levels.yy",
   },
   "resourceVersion": "1.0",
   "name": "lv_level1",

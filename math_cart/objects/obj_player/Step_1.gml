@@ -1,9 +1,4 @@
 //reset broadcast
-if global.events != []
-{
-	show_debug_message("Events reset.")
-}
-
 global.events = []
 
 //get input
