@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Math Cart/Code/Objects.yy",
+    "name": "Logic",
+    "path": "folders/Math Cart/Code/Scripts/Logic.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_player",

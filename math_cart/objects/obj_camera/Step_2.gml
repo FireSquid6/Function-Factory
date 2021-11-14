@@ -4,8 +4,11 @@ var movex = 0, movey = 0
 //get inputs
 if global.controller_type = CONTROLLERS.KEYBOARD_AND_MOUSE
 {
-	movex = keyboard_check(ord("D")) - keyboard_check(ord("A"))
-	movey = keyboard_check(ord("S")) - keyboard_check(ord("W"))
+	if !obj_shell.isOpen
+	{
+		movex = keyboard_check(ord("D")) - keyboard_check(ord("A"))
+		movey = keyboard_check(ord("S")) - keyboard_check(ord("W"))
+	}
 }
 
 //move based on inputs

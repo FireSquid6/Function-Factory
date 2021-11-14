@@ -16,8 +16,8 @@ switch global.controller_type
 		
 		cursor_x = mouse_x
 		cursor_y = mouse_y
-			
-		key_start = keyboard_check_pressed(vk_space)
+		
+		key_start = (keyboard_check_pressed(vk_space) && !obj_shell.isOpen)
 			
 		break
 	case CONTROLLERS.GAMEPAD:

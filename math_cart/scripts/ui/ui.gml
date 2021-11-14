@@ -58,3 +58,15 @@ function toolbox_tool(_sprite, _pos) : modui_button_sprite(_sprite, 1, 0, 0) con
 		//if player's selected tool equals array_position, draw an outline
 	})
 }
+
+function get_toolbox_canvas(toolbox)
+{
+	var canvas = new modui_canvas()
+	for (var i = 0; i < array_length(toolbox); i++)
+	{
+		var element = new toolbox_tool(spr_circle, i)
+		canvas.add_element(element)
+	}
+	
+	return canvas
+}
