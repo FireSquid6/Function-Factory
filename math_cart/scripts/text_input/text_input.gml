@@ -1,4 +1,4 @@
-function text_input(text, def = "")
+function text_input(text, _default = "")
 {
-	return get_integer(text, def)
+	return get_integer(text, _default)
 }

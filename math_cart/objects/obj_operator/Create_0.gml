@@ -19,3 +19,25 @@ divide = function(n1, n2)
 }
 
 #endregion
+
+operation = add
+
+on_place = function()
+{
+	input = text_input("What operation should the operator perform (+, -, *, /)")
+	switch input
+	{
+		case "+":
+			operation = add 
+			break
+		case "-":
+			operation = subtract
+			break
+		case "*":
+			operation = multiply
+			break
+		case "/":
+			operation = divide 
+			break
+	}
+}
