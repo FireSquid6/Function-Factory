@@ -105,3 +105,31 @@ function tool_ejector() : tool_dispenser() constructor
 	created_entity = obj_ejector
 	input_text = "What number does the ejector require?"
 }
+
+function tool_operator() : tool_dispenser() constructor
+{
+	created_entity = obj_operator
+	input_text = "What operation should the operator do (+, -, /, *)"
+	
+	use = function()
+	{
+		//make sure nothing is in the spot
+		var cell_x = obj_player.cell_x
+		var cell_y = obj_player.cell_y
+		
+		var has_wall = cell_has_wall(cell_x, cell_y)
+		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
+		
+		if (in_cell == 0 && !has_wall) 
+		{
+			block_value = 0
+			
+			block_value = text_input(input_text)
+			
+			if !is_undefined(block_value)
+			{
+				place_entity(cell_x, cell_y, created_entity, "lay_level", self)
+			}
+		}	
+	}
+}

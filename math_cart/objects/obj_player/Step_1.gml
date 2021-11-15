@@ -134,6 +134,7 @@ else
 	if global.ejectors_required == global.ejectors_completed
 	{
 		broadcast_event(global.EVENTS.PUZZLE_COMPLETED)
+		global.editing = true
 		//do whatever is neccessary for puzzle completion
 	}
 }

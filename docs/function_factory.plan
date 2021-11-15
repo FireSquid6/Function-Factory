@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": 992.087646484375,
-  "Pan.Y": 386.79248046875,
-  "ZoomLevel": 5,
+  "Pan.X": -991.5960693359375,
+  "Pan.Y": 4.548788070678711,
+  "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -157,18 +157,6 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 784,
-      "Position.Y": -128,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Operators",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Oct 16 2021 00:48:45"
-    }, 
-    {
-      "BoardIndex": 0,
       "Position.X": 928,
       "Position.Y": -144,
       "Checkbox.Checked": false,
@@ -178,30 +166,6 @@
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 16 2021 00:49:24"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 784,
-      "Position.Y": -112,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Dispensers",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Oct 16 2021 00:49:51"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 784,
-      "Position.Y": -96,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Evaluators",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Oct 16 2021 00:50:03"
     }, 
     {
       "BoardIndex": 0,
@@ -1039,30 +1003,6 @@
       "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Oct 20 2021 23:07:33"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 784,
-      "Position.Y": -160,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Go for 90's ASCII astetic\n",
-      "Selected": false,
-      "TaskType.CurrentChoice": 0,
-      "CreationTime": "Nov 9 2021 20:52:12"
-    }, 
-    {
-      "BoardIndex": 0,
-      "Position.X": 784,
-      "Position.Y": -144,
-      "Checkbox.Checked": false,
-      "Progression.Current": 0,
-      "Progression.Max": 0,
-      "Description": "Artystyle:\n- Supposed to look like and old computer\n- Mostly black and green with blue highlights",
-      "Selected": true,
-      "TaskType.CurrentChoice": 2,
-      "CreationTime": "Nov 9 2021 20:52:30"
     }
   ]
 }

@@ -11,7 +11,6 @@ function sh_toggle_designing(args)
 		//load in correct tools
 		return "Now exiting designer mode"
 	}
-	
 }
 
 function meta_toggle_designing(args)

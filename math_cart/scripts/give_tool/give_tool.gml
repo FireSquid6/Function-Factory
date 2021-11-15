@@ -3,7 +3,7 @@ function sh_give_tool(args)
 	if global.in_level
 	{
 		var tool
-		switch args[0]
+		switch args[1]
 		{
 			case "rail":
 				tool = new tool_rail(c_white)
@@ -13,6 +13,9 @@ function sh_give_tool(args)
 				break
 			case "ejector":
 				tool = new tool_ejector()
+				break
+			default:
+				return "That tool does not exist"
 				break
 		}
 		with obj_player
