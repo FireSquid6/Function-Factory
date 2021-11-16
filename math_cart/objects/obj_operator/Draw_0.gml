@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, x + offset_x, y + offset_y, image_xscale, image_yscale, dir - 90, image_blend, image_alpha)

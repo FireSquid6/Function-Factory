@@ -45,7 +45,7 @@ event_start = function()
 			check_x_addend = -1
 			break
 		case 270:
-			check_y_addend = -1
+			check_y_addend = 1
 			break
 	}
 }
@@ -54,11 +54,6 @@ on_tick = function()
 {
 	if !pinged //if no block has been told to move into me
 	{
-		if keyboard_check(vk_alt)
-		{
-			imposter = "sus"
-		}
-		
 		//check if there's a block in the cell i'm facing
 		var list = instances_in_cell(cell_x + check_x_addend, cell_y + check_y_addend, obj_block, true)
 	

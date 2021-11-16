@@ -109,8 +109,6 @@ function tool_ejector() : tool_dispenser() constructor
 function tool_operator() : tool_dispenser() constructor
 {
 	created_entity = obj_operator
-	input_text = "What operation should the operator do (+, -, /, *)"
-	
 	use = function()
 	{
 		//make sure nothing is in the spot
@@ -122,14 +120,7 @@ function tool_operator() : tool_dispenser() constructor
 		
 		if (in_cell == 0 && !has_wall) 
 		{
-			block_value = 0
-			
-			block_value = text_input(input_text)
-			
-			if !is_undefined(block_value)
-			{
-				place_entity(cell_x, cell_y, created_entity, "lay_level", self)
-			}
+			place_entity(cell_x, cell_y, created_entity, "lay_level", self)
 		}	
 	}
 }
