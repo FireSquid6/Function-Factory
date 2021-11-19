@@ -69,3 +69,14 @@ on_place = function()
 			break
 	}
 }
+
+on_modify = function()
+{
+	var posmat = []
+	var rotmat = []
+	
+	posmat[0][0] = x
+	posmat[1][0] = y
+	
+	matrix_build()
+}

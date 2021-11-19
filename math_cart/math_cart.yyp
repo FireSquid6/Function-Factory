@@ -81,6 +81,7 @@
     {"id":{"name":"scribble_font_add_msdf","path":"scripts/scribble_font_add_msdf/scribble_font_add_msdf.yy",},"order":3,},
     {"id":{"name":"CleanCircle","path":"scripts/CleanCircle/CleanCircle.yy",},"order":2,},
     {"id":{"name":"modui_config","path":"scripts/modui_config/modui_config.yy",},"order":3,},
+    {"id":{"name":"FireMatBuild","path":"scripts/FireMatBuild/FireMatBuild.yy",},"order":0,},
     {"id":{"name":"level_saving","path":"scripts/level_saving/level_saving.yy",},"order":2,},
     {"id":{"name":"CleanEllipse","path":"scripts/CleanEllipse/CleanEllipse.yy",},"order":4,},
     {"id":{"name":"obj_ejector","path":"objects/obj_ejector/obj_ejector.yy",},"order":5,},
@@ -123,6 +124,7 @@
     {"id":{"name":"CleanBatchEndReturnVertexBuffer","path":"scripts/CleanBatchEndReturnVertexBuffer/CleanBatchEndReturnVertexBuffer.yy",},"order":3,},
     {"id":{"name":"CleanTransformAddSkew","path":"scripts/CleanTransformAddSkew/CleanTransformAddSkew.yy",},"order":3,},
     {"id":{"name":"CleanTransformOriginGet","path":"scripts/CleanTransformOriginGet/CleanTransformOriginGet.yy",},"order":4,},
+    {"id":{"name":"Operations","path":"scripts/Operations/Operations.yy",},"order":1,},
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"order":3,},
     {"id":{"name":"scribble_font_add_from_sprite","path":"scripts/scribble_font_add_from_sprite/scribble_font_add_from_sprite.yy",},"order":2,},
     {"id":{"name":"spr_operator","path":"sprites/spr_operator/spr_operator.yy",},"order":4,},
@@ -206,6 +208,7 @@
     {"folderPath":"folders/Libraries/rt-shell/Objects.yy","order":0,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Libraries/rt-shell.yy","order":4,"resourceVersion":"1.0","name":"rt-shell","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Math Cart/Code/Scripts/Shell.yy","order":3,"resourceVersion":"1.0","name":"Shell","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Libraries/FireMat.yy","order":5,"resourceVersion":"1.0","name":"FireMat","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
