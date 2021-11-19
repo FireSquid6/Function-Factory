@@ -56,6 +56,7 @@
     {"id":{"name":"modui_elements","path":"scripts/modui_elements/modui_elements.yy",},"order":2,},
     {"id":{"name":"CleanNgon","path":"scripts/CleanNgon/CleanNgon.yy",},"order":6,},
     {"id":{"name":"__scribble_generate_model","path":"scripts/__scribble_generate_model/__scribble_generate_model.yy",},"order":9,},
+    {"id":{"name":"vector","path":"scripts/vector/vector.yy",},"order":8,},
     {"id":{"name":"scribble_font_add","path":"scripts/scribble_font_add/scribble_font_add.yy",},"order":0,},
     {"id":{"name":"scribble","path":"scripts/scribble/scribble.yy",},"order":8,},
     {"id":{"name":"CleanTriangle","path":"scripts/CleanTriangle/CleanTriangle.yy",},"order":13,},
