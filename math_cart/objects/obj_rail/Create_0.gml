@@ -105,3 +105,13 @@ edit_step = function()
 	orientation = get_orientation(link_top, link_left, link_right, link_bottom)
 	links = link_top + link_right + link_bottom + link_left
 }
+
+debug_draw = function()
+{
+	draw_coordinates()
+	var half_cell = CELL_SIZE div 2
+	draw_text(x + half_cell, y, string(link_top))
+	draw_text(x + CELL_SIZE - 6, y + half_cell, string(link_right))
+	draw_text(x, y + half_cell, string(link_left))
+	draw_text(x + half_cell, y + CELL_SIZE - 6, string(link_bottom))
+}

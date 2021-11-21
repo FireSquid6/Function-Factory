@@ -58,3 +58,15 @@ event_start = function()
 	inst.dir = dir
 	inst.block_value = block_value
 }
+
+debug_draw = function()
+{
+	draw_coordinates()
+	draw_text(x, y-30, "DIR: "+string(dir))
+}
+
+surface_draw = function()
+{
+	draw_sprite_ext(sprite_index, image_index, x + offset_x, y + offset_y, image_xscale, image_yscale, dir - 90, image_blend, image_alpha)
+	text.draw(x + sprite_width div 2, y + sprite_width div 2)
+}

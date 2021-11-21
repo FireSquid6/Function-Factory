@@ -64,6 +64,23 @@ event_complete = function()
 	
 }
 
+//draw functions
+surface_draw = function()
+{
+	draw_self()
+}
+
+debug_draw = function()
+{
+	draw_coordinates()
+}
+
+draw_coordinates = function()
+{
+	draw_text(x, y, "CELLX: "+string(cell_x))
+	draw_text(x, y+15, "CELLY: "+string(cell_y))
+}
+
 //other vars
 destrutable = true
 modable = true

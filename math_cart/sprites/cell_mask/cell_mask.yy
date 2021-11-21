@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Entities",
-    "path": "folders/Math Cart/Assets/Entities.yy",
+    "name": "Assets",
+    "path": "folders/Math Cart/Assets.yy",
   },
   "resourceVersion": "1.0",
   "name": "cell_mask",

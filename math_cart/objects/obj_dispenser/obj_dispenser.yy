@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_dispenser",
-    "path": "sprites/spr_dispenser/spr_dispenser.yy",
+    "name": "spr_io",
+    "path": "sprites/spr_io/spr_io.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,13 +25,12 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Entities",
-    "path": "folders/Math Cart/Code/Game Entities.yy",
+    "name": "Inputers",
+    "path": "folders/Math Cart/Code/Game Entities/Inputers.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_dispenser",
