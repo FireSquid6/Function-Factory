@@ -8,6 +8,9 @@ link_right = false
 link_bottom = false
 link_left = false
 
+funnel = false
+funnel_index = -1
+
 tool_ref = -1
 
 //EDITING FUNCTIONS
@@ -47,12 +50,67 @@ on_place = function()
 	
 	//link to those rails
 	orientation = get_orientation(link_top, link_left, link_right, link_bottom)
-	//this code sucks
+	
+
+
+#region this code sucks
+	
 	//update the surrounding rails' links
 	if instance_exists(top_id) top_id.link_bottom = link_top
 	if instance_exists(right_id) right_id.link_left = link_right
 	if instance_exists(left_id) left_id.link_right = link_left
 	if instance_exists(bottom_id) bottom_id.link_top = link_bottom
+	
+	//check if there's an inputer I need to link to
+	//create an array
+	var inputer_list = 
+	[
+		collision_point(x, y - CELL_SIZE, obj_rail, false, true), //top
+		collision_point(x + CELL_SIZE, y, obj_rail, false, true), //right
+		collision_point(x - CELL_SIZE, y, obj_rail, false, true), //bottom
+		collision_point(x, y + CELL_SIZE, obj_rail, false, true) //left
+	]
+	
+	//stupid evil dumb hack to get it to detect inputers
+	//add up all the elements
+	//they will equal (-4 * (length - 1)) if there's no inputers around the rail since noone is really just -4 in disguise
+	var array_total = 0
+	var length = array_length(inputer_list)
+	for (var i = 0; i < inputer_list; i++)
+	{
+		array_total += inputer_list[i]
+	}
+	
+	if array_total != (-4 * (length - 1)) //stupid evil hack based on the way gamemaker works
+	{
+		for (var i = 0; i < inputer_list; i++)
+		{
+			if inputer_list[i] != noone //if there is an id
+			{
+				if array_contains(inputer_list[i].input_x, cell_x) && array_contains(inputer_list[i].input_x, cell_y) //if the input object wants to accept blocks on my as an input
+				{ 
+					funnel = true
+					switch i
+					{
+						case 0: //up
+							funnel_index = global.rail_orientations.inputs.up
+							break
+						case 1: //right
+							funnel_index = global.rail_orientations.inputs.right
+							break
+						case 2: //down
+							funnel_index = global.rail_orientations.inputs.down
+							break
+						case 3: //left
+							funnel_index = global.rail_orientations.inputs.left
+							break
+					}
+					break
+				}
+			}
+		}
+	}
+	#endregion
 }
 
 on_destroy = function()
@@ -114,4 +172,13 @@ debug_draw = function()
 	draw_text(x + CELL_SIZE - 6, y + half_cell, string(link_right))
 	draw_text(x, y + half_cell, string(link_left))
 	draw_text(x + half_cell, y + CELL_SIZE - 6, string(link_bottom))
+}
+
+surface_draw = function()
+{
+	draw_self()
+	if funnel 
+	{
+		draw_sprite_ext(spr_rail, funnel_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+	}
 }

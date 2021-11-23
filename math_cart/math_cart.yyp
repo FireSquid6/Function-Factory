@@ -110,6 +110,7 @@
     {"id":{"name":"init_sprites","path":"scripts/init_sprites/init_sprites.yy",},"order":0,},
     {"id":{"name":"CleanBatchBegin","path":"scripts/CleanBatchBegin/CleanBatchBegin.yy",},"order":0,},
     {"id":{"name":"obj_operator","path":"objects/obj_operator/obj_operator.yy",},"order":2,},
+    {"id":{"name":"par_inputer","path":"objects/par_inputer/par_inputer.yy",},"order":3,},
     {"id":{"name":"ico_rail_outline","path":"sprites/ico_rail_outline/ico_rail_outline.yy",},"order":1,},
     {"id":{"name":"obj_dispenser","path":"objects/obj_dispenser/obj_dispenser.yy",},"order":0,},
     {"id":{"name":"debug","path":"scripts/debug/debug.yy",},"order":1,},
