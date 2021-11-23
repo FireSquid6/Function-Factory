@@ -1,5 +1,13 @@
 function tool_parent() constructor
 {
+	sprite = spr_circle
+	outline = noone
+	
+	bbox_left_offset = 0
+	bbox_right_offset = 0
+	bbox_top_offset = 0
+	bbox_bottom_offset = 0
+	
 	created_entity = noone
 	use = function()
 	{
@@ -14,6 +22,11 @@ function tool_parent() constructor
 	modify = function()
 	{
 		
+	}
+	
+	create_ui_element = function(xx, yy)
+	{
+		var element = new modui_button_sprite(sprite, 1, xx, yy)
 	}
 }
 
@@ -31,11 +44,6 @@ function tool_rail(_color = c_white) : tool_parent() constructor
 		var has_wall = cell_has_wall(cell_x, cell_y)
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
-		if keyboard_check(vk_lcontrol)
-		{
-			imposter = "sus"
-		}
-		
 		if (in_cell == 0 && !has_wall) 
 		{
 			place_entity(cell_x, cell_y, created_entity, "lay_rails", self)
@@ -52,6 +60,11 @@ function tool_rail(_color = c_white) : tool_parent() constructor
 			target.on_destroy()
 		}
 	}
+}
+
+function tool_barrier(color = PRIMARY_RAIL_COLOR) constructor
+{
+	
 }
 
 function tool_dispenser() : tool_parent() constructor
