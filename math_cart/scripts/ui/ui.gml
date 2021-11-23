@@ -1,6 +1,7 @@
-function toolbox_tool(_sprite, _pos) : modui_button_sprite(_sprite, 1, 0, 0) constructor
+function toolbox_tool(_sprite, _outline, _pos) : modui_button_sprite(_sprite, 1, 0, 0) constructor
 {
 	array_position = _pos
+	outline_sprite = _outline
 	
 	add_method(MODUI_EVENTS.INIT, function()
 	{
@@ -13,16 +14,8 @@ function toolbox_tool(_sprite, _pos) : modui_button_sprite(_sprite, 1, 0, 0) con
 			yy += global.tool_sprite_height div 2 //move by first offset
 			yy += global.tool_sprite_height * 2 * array_position //move based on position
 			
-			//scale
-			sprite_width = sprite_get_width(sprite_index)
-			if sprite_width != global.tool_sprite_height
-			{
-				var xscale = global.tool_sprite_height / sprite_width
-				var yscale = global.tool_sprite_height / sprite_width
-			}
 			
-			//move x
-			xx += (global.square_width - (sprite_width * xscale)) div 2
+			
 			
 			//floor x and y
 			xx = floor(xx)
@@ -40,14 +33,6 @@ function toolbox_tool(_sprite, _pos) : modui_button_sprite(_sprite, 1, 0, 0) con
 	{
 		obj_player.tool_selected = array_position
 	})
-	
-	if global.designing = true
-	{
-		add_method(MODUI_EVENTS.SELECTED, function()
-		{
-			//if right clicked switch from toolbox to designer area
-		})
-	}
 	
 	add_method(MODUI_EVENTS.UPDATE, function()
 	{

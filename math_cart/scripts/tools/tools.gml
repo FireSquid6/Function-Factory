@@ -23,11 +23,6 @@ function tool_parent() constructor
 	{
 		
 	}
-	
-	create_ui_element = function(xx, yy)
-	{
-		var element = new modui_button_sprite(sprite, 1, xx, yy)
-	}
 }
 
 function tool_rail(_color = c_white) : tool_parent() constructor
@@ -134,6 +129,20 @@ function tool_operator() : tool_dispenser() constructor
 		if (in_cell == 0 && !has_wall) 
 		{
 			place_entity(cell_x, cell_y, created_entity, "lay_level", self)
-		}	
+		}
+	}
+}
+
+//get the total amount of tools
+var list = variable_instance_get_names(global)
+var target = 0
+global.total_tools = 0
+
+for (var i = 0; i < list; i++)
+{
+	target = list[| i]
+	if (string_last_pos_ext("tool_", target, 1) !=0 && is_method(variable_instance_get(global, target)))
+	{
+		global.total_tools ++
 	}
 }

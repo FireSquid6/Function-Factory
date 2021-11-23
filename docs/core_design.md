@@ -18,3 +18,5 @@ Core Feelings:
  - Eureka - the "ah ha!" moment once you figure out a puzzle
  - Fiero - positive feedback after performing a skilled task well
  - Curiosity - interest in pursuing the next puzzle
+
+# DESIGNER - PLAYER INTERACTION
