@@ -1,9 +1,4 @@
 event_inherited()
-//OVERRIDE PARENT STUFF
-event_start = function()
-{
-	
-}
 
 //set vars
 image_blend = c_yellow
@@ -79,4 +74,10 @@ on_tick = function()
 			global.ejectors_completed ++
 		}
 	}
+}
+
+surface_draw = function()
+{
+	draw_self_rotated()
+	text.draw(x + sprite_width div 2, y + sprite_width div 2)
 }

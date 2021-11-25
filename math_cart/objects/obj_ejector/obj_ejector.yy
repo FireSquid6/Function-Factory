@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_dispenser",
-    "path": "objects/obj_dispenser/obj_dispenser.yy",
+    "name": "par_inputer",
+    "path": "objects/par_inputer/par_inputer.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

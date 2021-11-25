@@ -2,6 +2,8 @@ event_inherited()
 
 image_blend = DISPENSER_COLOR
 
+add_output(cell_x + 1, cell_y)
+
 on_place = function()
 {
 	//get value
@@ -13,16 +15,9 @@ on_place = function()
 	text.align(fa_center, fa_middle)
 }
 
-on_modify = function()
-{
-	rotate()
-}
-
 event_start = function()
 {
-	var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
-	inst.dir = dir
-	inst.block_value = block_value
+	output_block(block_value, 0)
 }
 
 debug_draw = function()
@@ -33,6 +28,6 @@ debug_draw = function()
 
 surface_draw = function()
 {
-	draw_sprite_ext(sprite_index, image_index, x + offset_x, y + offset_y, image_xscale, image_yscale, dir - 90, image_blend, image_alpha)
+	draw_self_rotated()
 	text.draw(x + sprite_width div 2, y + sprite_width div 2)
 }

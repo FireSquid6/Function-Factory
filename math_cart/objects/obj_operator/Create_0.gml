@@ -17,18 +17,26 @@ divide = function(n1, n2)
 {
 	return n1 div n2
 }
+raise_to = function(n1, n2)
+{
+	return power(n1, n2)
+}
+
+operator_symbols = 
+{
+	addition : "+",
+	subtraction : "-",
+	multiplication: "×",
+	division : "÷"
+	exponential : "^"
+	equate : "="
+	modulus: "%"
+}
 
 #endregion
 
 dir = 0
 operation = add
-inputs = 
-[
-	{
-		check_x_addend : 0,
-		check_y_addend : 0
-	}
-]
 
 event_start = function()
 {
@@ -71,11 +79,9 @@ on_place = function()
 	}
 }
 
-on_modify = function()
+surface_draw = function()
 {
-	var posmat = []
-	var rotmat = []
-	
-	posmat[0][0] = x
-	posmat[1][0] = y
+	draw_self_rotated()
+	draw_sprite_ext(spr_operator_io, image_index, x, y, image_xscale, image_yscale, dir - 90, c_white, 1)
+	text.draw(x + sprite_width div 2, y + sprite_width div 2)
 }

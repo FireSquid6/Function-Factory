@@ -30,6 +30,14 @@ function tool_rail(_color = c_white) : tool_parent() constructor
 	rail_color = _color
 	created_entity = obj_rail
 	
+	sprite = ico_rail_base
+	outline = ico_rail_outline
+	
+	bbox_left_offset = 4
+	bbox_right_offset = -4
+	bbox_top_offset = 4
+	bbox_bottom_offset = -4
+	
 	//methods
 	use = function()
 	{
@@ -66,6 +74,14 @@ function tool_dispenser() : tool_parent() constructor
 {
 	created_entity = obj_dispenser
 	input_text = "What number should the dispenser dispense?"
+	
+	sprite = ico_dispenser_base
+	outline = ico_dispenser_outline
+	
+	bbox_left_offset = 3
+	bbox_right_offset = -3
+	bbox_top_offset = 3
+	bbox_bottom_offset = -3
 	
 	use = function()
 	{
@@ -116,6 +132,14 @@ function tool_ejector() : tool_dispenser() constructor
 
 function tool_operator() : tool_dispenser() constructor
 {
+	sprite = ico_operator_base
+	outline = ico_operator_outline
+	
+	bbox_left_offset = 1
+	bbox_right_offset = -1
+	bbox_top_offset = 1
+	bbox_bottom_offset = -1
+	
 	created_entity = obj_operator
 	use = function()
 	{
