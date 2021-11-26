@@ -27,9 +27,9 @@ operator_symbols =
 	addition : "+",
 	subtraction : "-",
 	multiplication: "×",
-	division : "÷"
-	exponential : "^"
-	equate : "="
+	division : "÷",
+	exponential : "^",
+	equate : "=",
 	modulus: "%"
 }
 

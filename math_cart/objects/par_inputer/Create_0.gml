@@ -1,5 +1,33 @@
 event_inherited()
 
+sprite = sprite_index
+sprite_index = cell_mask
+
+corner_list = 
+[
+	{
+		x : "bbox_left",
+		y : "bbox_top",
+		dir: 0
+	},
+	{
+		x : "bbox_right",
+		y : "bbox_top",
+		dir : 270
+	},
+	{
+		x : "bbox_right",
+		y : "bbox_bottom",
+		dir: 180
+	},
+	{
+		x : "bbox_left",
+		y : "bbox_bottom",
+		dir: 90
+	}
+]
+index = 0
+
 input_positions = []
 output_positions = []
 
@@ -13,7 +41,7 @@ add_input = function(_cellX, _cellY)
 	array_push(input_positions,
 	{
 		x : _cellY,
-		y: _cellY
+		y : _cellY
 	})
 }
 
@@ -78,23 +106,36 @@ input_block = function(_id)
 rotate = function()
 {	
 	//rotate
-	dir += 90
-	dir = loop(dir, 0, 359)
+	index += 1
+	if index > 3 index = 0
 	
-	//CALCULATE THE NEW POSITION
-	//get the point of rotation
-	var px = x + (CELL_SIZE / 2)
-	var py = y + (CELL_SIZE / 2)
-	
-	//get the difference between the current position and the point of rotation
-	var xdiff = x - px
-	var ydiff = y - py
-	
-	//get the new position
-	x = px + (ydiff * -1)
-	y = py + xdiff
-	
-	//CALCULATE IO ROTATIONS
+	//move io
+	var target
+	var varlist = ["input_positions", "output_positions"]
+	for (var i = 0; i < array_length(varlist); i++)
+	{
+		var array = variable_instance_get(id, varlist[i])
+		for (var j = 0; j < array_length(array); j++)
+		{
+			target = array[j]
+			
+			//move
+			var _dir = point_direction(cell_x, cell_y, target.x, target.y)
+			_dir -= 90
+			_dir = loop(_dir, 0, 270)
+			
+			var ldirx = lengthdir_x(1, _dir)
+			var ldiry = lengthdir_y(1, _dir)
+			
+			target.x = cell_x + ldirx
+			target.y = cell_y + ldiry
+			
+			//set
+			array[j] = target
+		}
+		
+		variable_instance_set(id, varlist[i], array)
+	}
 }
 
 on_modify = function()
@@ -104,10 +145,12 @@ on_modify = function()
 
 draw_self_rotated= function()
 {
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, dir - 90, image_blend, image_alpha)
+	var xx = variable_instance_get(id, corner_list[index].x)
+	var yy = variable_instance_get(id, corner_list[index].y)
+	draw_sprite_ext(sprite, image_index, xx, yy, image_xscale, image_yscale, corner_list[index].dir, image_blend, image_alpha)
 }
 
-debug_draw = function()
+draw_io = function()
 {
 	//draw a square at every input position
 	draw_set_color(c_green)
@@ -118,7 +161,7 @@ debug_draw = function()
 	{
 		xx = input_positions[i].x * CELL_SIZE
 		yy = input_positions[i].y * CELL_SIZE
-		draw_rectangle(xx, yy, xx + CELL_SIZE - 1, yy + CELL_SIZE - 1)
+		draw_rectangle(xx, yy, xx + CELL_SIZE - 1, yy + CELL_SIZE - 1, false)
 	}
 	
 	//draw a square at every output position
@@ -128,8 +171,14 @@ debug_draw = function()
 	var xx, yy
 	for (var i = 0; i < array_length(output_positions); i++) 
 	{
-		xx = input_positions[i].x * CELL_SIZE
-		yy = input_positions[i].y * CELL_SIZE
-		draw_rectangle(xx, yy, xx + CELL_SIZE - 1, yy + CELL_SIZE - 1)
+		xx = output_positions[i].x * CELL_SIZE
+		yy = output_positions[i].y * CELL_SIZE
+		draw_rectangle(xx, yy, xx + CELL_SIZE - 1, yy + CELL_SIZE - 1, false)
 	}
+}
+
+debug_draw = function()
+{
+	draw_io()
+	draw_coordinates()
 }

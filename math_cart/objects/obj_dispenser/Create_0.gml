@@ -1,8 +1,9 @@
 event_inherited()
 
 image_blend = DISPENSER_COLOR
+image_index =1
 
-add_output(cell_x + 1, cell_y)
+add_output(cell_x, cell_y - 1)
 
 on_place = function()
 {
@@ -22,6 +23,7 @@ event_start = function()
 
 debug_draw = function()
 {
+	draw_io()
 	draw_coordinates()
 	draw_text(x, y-30, "DIR: "+string(dir))
 }

@@ -53,7 +53,7 @@ on_place = function()
 	
 
 
-#region this code sucks
+	#region this code sucks
 	
 	//update the surrounding rails' links
 	if instance_exists(top_id) top_id.link_bottom = link_top
@@ -65,10 +65,10 @@ on_place = function()
 	//create an array
 	var inputer_list = 
 	[
-		collision_point(x, y - CELL_SIZE, obj_rail, false, true), //top
-		collision_point(x + CELL_SIZE, y, obj_rail, false, true), //right
-		collision_point(x - CELL_SIZE, y, obj_rail, false, true), //bottom
-		collision_point(x, y + CELL_SIZE, obj_rail, false, true) //left
+		collision_point(x, y - CELL_SIZE, par_inputer, false, true), //top
+		collision_point(x + CELL_SIZE, y, par_inputer, false, true), //right
+		collision_point(x - CELL_SIZE, y, par_inputer, false, true), //bottom
+		collision_point(x, y + CELL_SIZE, par_inputer, false, true) //left
 	]
 	
 	//stupid evil dumb hack to get it to detect inputers
@@ -76,14 +76,14 @@ on_place = function()
 	//they will equal (-4 * (length - 1)) if there's no inputers around the rail since noone is really just -4 in disguise
 	var array_total = 0
 	var length = array_length(inputer_list)
-	for (var i = 0; i < inputer_list; i++)
+	for (var i = 0; i < length; i++)
 	{
 		array_total += inputer_list[i]
 	}
 	
-	if array_total != (-4 * (length - 1)) //stupid evil hack based on the way gamemaker works
+	if array_total != (-4 * length) //stupid evil hack based on the way gamemaker works
 	{
-		for (var i = 0; i < inputer_list; i++)
+		for (var i = 0; i < length; i++)
 		{
 			if inputer_list[i] != noone //if there is an id
 			{

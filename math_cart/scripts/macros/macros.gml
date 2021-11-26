@@ -24,3 +24,4 @@
 #macro OUTPUT_SPRITES false
 #macro DeveloperMode:DEV_MODE true
 #macro InitiateSprite:OUTPUT_SPRITES true
+

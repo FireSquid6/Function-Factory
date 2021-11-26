@@ -1,5 +1,5 @@
-cell_x = 0
-cell_y = 0
+cell_x = x div CELL_SIZE
+cell_y = y div CELL_SIZE
 
 //while playing
 on_tick = function()
@@ -77,6 +77,9 @@ debug_draw = function()
 
 draw_coordinates = function()
 {
+	draw_set_color(c_white)
+	draw_set_alpha(1)
+	draw_set_font(fnt_default)
 	draw_text(x, y, "CELLX: "+string(cell_x))
 	draw_text(x, y+15, "CELLY: "+string(cell_y))
 }

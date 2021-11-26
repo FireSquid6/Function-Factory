@@ -1,7 +1,8 @@
 event_inherited()
 
 //set vars
-image_blend = c_yellow
+image_blend = EJECTOR_COLOR
+image_index = 2
 completed = false //whether the ejector has the correct value or not
 pinged = false //whether the ejector has pinged a block to move into it
 

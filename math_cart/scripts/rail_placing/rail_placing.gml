@@ -30,9 +30,9 @@ global.rail_orientations =
 	
 	inputs:
 	{
-		up : 13
-		right : 14
-		down : 12
+		up : 13,
+		right : 14,
+		down : 12,
 		left: 11
 	}
 }

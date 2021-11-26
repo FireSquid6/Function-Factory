@@ -25,7 +25,7 @@ function tool_parent() constructor
 	}
 }
 
-function tool_rail(_color = c_white) : tool_parent() constructor
+function tool_rail(_color = PRIMARY_RAIL_COLOR) : tool_parent() constructor
 {
 	rail_color = _color
 	created_entity = obj_rail
@@ -126,6 +126,9 @@ function tool_dispenser() : tool_parent() constructor
 
 function tool_ejector() : tool_dispenser() constructor
 {
+	sprite = ico_ejector_base
+	outline = ico_ejector_outline
+	
 	created_entity = obj_ejector
 	input_text = "What number does the ejector require?"
 }
@@ -158,15 +161,15 @@ function tool_operator() : tool_dispenser() constructor
 }
 
 //get the total amount of tools
-var list = variable_instance_get_names(global)
-var target = 0
-global.total_tools = 0
+//var list = variable_instance_get_names(global)
+//var target = 0
+//global.total_tools = 0
 
-for (var i = 0; i < list; i++)
-{
-	target = list[| i]
-	if (string_last_pos_ext("tool_", target, 1) !=0 && is_method(variable_instance_get(global, target)))
-	{
-		global.total_tools ++
-	}
-}
+//for (var i = 0; i < array_length(list); i++)
+//{
+//	target = list[| i]
+//	if (string_last_pos_ext("tool_", target, 1) !=0 && is_method(variable_instance_get(global, target)))
+//	{
+//		global.total_tools ++
+//	}
+//}

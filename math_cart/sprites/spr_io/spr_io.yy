@@ -35,7 +35,7 @@
     "spriteId": {"name":"spr_io","path":"sprites/spr_io/spr_io.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 10.0,
+    "playbackSpeed": 0.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
