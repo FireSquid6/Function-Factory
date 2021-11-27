@@ -44,7 +44,7 @@
     {"id":{"name":"spr_background_tile","path":"sprites/spr_background_tile/spr_background_tile.yy",},"order":7,},
     {"id":{"name":"__CleanSystem","path":"scripts/__CleanSystem/__CleanSystem.yy",},"order":0,},
     {"id":{"name":"CleanTransformAddMove","path":"scripts/CleanTransformAddMove/CleanTransformAddMove.yy",},"order":0,},
-    {"id":{"name":"toggle_designing","path":"scripts/toggle_designing/toggle_designing.yy",},"order":3,},
+    {"id":{"name":"design","path":"scripts/design/design.yy",},"order":3,},
     {"id":{"name":"par_entity","path":"objects/par_entity/par_entity.yy",},"order":1,},
     {"id":{"name":"CleanTransformReset","path":"scripts/CleanTransformReset/CleanTransformReset.yy",},"order":6,},
     {"id":{"name":"ui","path":"scripts/ui/ui.yy",},"order":0,},
@@ -57,6 +57,7 @@
     {"id":{"name":"__scribble_gc_collect","path":"scripts/__scribble_gc_collect/__scribble_gc_collect.yy",},"order":8,},
     {"id":{"name":"tools","path":"scripts/tools/tools.yy",},"order":2,},
     {"id":{"name":"game_data","path":"scripts/game_data/game_data.yy",},"order":0,},
+    {"id":{"name":"array_push_array","path":"scripts/array_push_array/array_push_array.yy",},"order":9,},
     {"id":{"name":"modui_elements","path":"scripts/modui_elements/modui_elements.yy",},"order":2,},
     {"id":{"name":"CleanNgon","path":"scripts/CleanNgon/CleanNgon.yy",},"order":6,},
     {"id":{"name":"spr_basic_box","path":"sprites/spr_basic_box/spr_basic_box.yy",},"order":6,},
@@ -168,7 +169,6 @@
   "configs": {
     "name": "Default",
     "children": [
-      {"name":"InitiateSprites","children":[],},
       {"name":"DeveloperMode","children":[],},
     ],
   },

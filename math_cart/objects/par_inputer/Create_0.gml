@@ -37,10 +37,10 @@ offset_y = 0
 
 //adds an input to the input array
 add_input = function(_cellX, _cellY)
-{
+{	
 	array_push(input_positions,
 	{
-		x : _cellY,
+		x : _cellX,
 		y : _cellY
 	})
 }
@@ -60,7 +60,9 @@ add_output = function(_cellX, _cellY)
 output_block = function(_number, _index)
 {
 	var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
-	inst.block_value = _number
+	inst.init_self(
+		point_direction(cell_x, cell_y, output_positions[_index].x, output_positions[_index].y),
+		_number)
 }
 
 //checks if there's a block in all of hte inputs
@@ -92,6 +94,8 @@ check_inputs = function()
 		
 		if !set array[i] = noone
 	}
+	
+	return array
 }
 
 //tells a specific block to come inside the inputer

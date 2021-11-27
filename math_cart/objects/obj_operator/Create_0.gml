@@ -38,25 +38,30 @@ operator_symbols =
 dir = 0
 operation = add
 
-event_start = function()
+add_input(cell_x, cell_y - 1)
+add_input(cell_x + 1, cell_y)
+add_output(cell_x, cell_y + 1)
+
+block_cache = []
+
+
+switch operation
 {
-	check_x_addend = 0
-	check_y_addend = 0
-	switch dir
-	{
-		case 0:
-			inputs[0].check_x_addend = 1
-			break
-		case 90:
-			inputs[0].check_y_addend = -1
-			break
-		case 180:
-			inputs[0].check_x_addend = -1
-			break
-		case 270:
-			inputs[0].check_y_addend = 1
-			break
-	}
+	case add:
+		operation_symbol = "+"
+		break
+	case subtract:
+		operation_symbol = "-"
+		break
+	case multiply:
+		operation_symbol = "×"
+		break
+	case divide:
+		operation_symbol = "÷"
+		break
+	default:
+		operation_symbol = "?"
+		break
 }
 
 on_place = function()
@@ -79,9 +84,43 @@ on_place = function()
 	}
 }
 
+on_tick = function()
+{
+	//tell all blocks in my input squares to move into me
+	var array = check_inputs()
+	for (var i = 0; i < array_length(array); i++)
+	{
+		if array[i] != noone
+		{
+			array[i].ping_self(cell_x, cell_y)
+		}
+	}
+	
+	//delete all blocks inside of me and add them to my block_cache array
+	var list = instances_in_cell(cell_x, cell_y, obj_block, false)
+	if list != 0
+	{
+		for (var i = 0; i < ds_list_size(list); i++)
+		{
+			array_push(block_cache, list[| i].block_value)
+			list[| i].on_destroy()
+			instance_destroy(list[| i])
+		}
+	}
+	
+	//if block_cache is full, output a block
+	if array_length(block_cache) == 2
+	{
+		var num = operation(block_cache[0], block_cache[1])
+		output_block(num, 0)
+	}
+}
+
 surface_draw = function()
 {
-	draw_self_rotated()
-	draw_sprite_ext(spr_operator_io, image_index, x, y, image_xscale, image_yscale, dir - 90, c_white, 1)
-	text.draw(x + sprite_width div 2, y + sprite_width div 2)
+	draw_self()
+	
+	var xx = variable_instance_get(id, corner_list[index].x)
+	var yy = variable_instance_get(id, corner_list[index].y)
+	draw_sprite_ext(spr_operator_io, image_index, xx, yy, image_xscale, image_yscale, corner_list[index].dir, image_blend, image_alpha)
 }

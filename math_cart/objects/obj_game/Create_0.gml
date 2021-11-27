@@ -14,6 +14,7 @@ global.debug_mode = false
 
 #region SAVE MANAGEMENT
 global.first_launch = !file_exists(WELCOME_FILE_NAME)
+file_text_open_write("devmode.funcpref") //init stuff in dev mode
 
 //if it's the first time launching the game, add a fun note
 if global.first_launch
@@ -22,16 +23,38 @@ if global.first_launch
 	var str = "IMPORTANT: THIS FILE IS HOW THE GAME KNOWS IF IT'S THE FIRST TIME OPENING THE GAME OR NOT. DON'T DELETE IT UNLESS YOU KNOW WHAT YOU'RE DOING!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nalso hello random player in this file. \nPlease create the file 'myballs.txt' in this directory and put whatever you want in it for an achievement."
 	file_text_write_string(file, str)
 	file_text_close(file)
+	
+	global.user_preferences = 
+	{
+		debug_on : false,
+		developer : file_exists("devmode.funcpref"),
+		master_volume : 1,
+		effect_volume : 1,
+		music_volume : 1,
+		
+		key_bindings :
+		{
+			
+		},
+		
+		gamepad_bindings:
+		{
+			
+		},
+		
+		graphics:
+		{
+			
+		}
+	}
+	
 }
 //otherwise load the save file
 else
 {
-	
+	global.user_preferences = buffer_load(SETTINGS_FILE_NAME)
 }
 #endregion
-
-//init sprites
-init_sprites()
 
 #region GET THE CORRECT PLATFORM AND INPUT METHOD
 enum CONTROLLERS

@@ -31,14 +31,8 @@ global.tick_speed = 15 //time between each tick
 global.toolbox_selected = false //whether the cursor is in the toolbox or not
 global.events = [] //broadcasted events
 
-toolbox = [new tool_rail(PRIMARY_RAIL_COLOR), new tool_dispenser(), new tool_ejector(), new tool_operator()]
+toolbox = [new tool_dispenser(), new tool_ejector(), new tool_operator()]
 tool_selected = 0
-
-//if designing, add all designer tools to a seperate menu
-if global.designing
-{
-	//add all tools to past MAX_PLAYER_TOOL_INDEX
-}
 
 cell_x = 0
 cell_y = 0

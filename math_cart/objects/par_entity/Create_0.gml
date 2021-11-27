@@ -87,3 +87,4 @@ draw_coordinates = function()
 //other vars
 destrutable = true
 modable = true
+awake = true

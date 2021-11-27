@@ -2,6 +2,7 @@
 #macro SAVE_FILE_EXTENTION ".funcsave"
 #macro META_FILE_EXTENTION ".funcmeta"
 #macro WELCOME_FILE_NAME "README.txt"
+#macro SETTINGS_FILE_NAME "preferences.funcpref"
 
 //colors
 #macro WALL_COLOR make_color_rgb(21, 19, 48)

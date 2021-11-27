@@ -1,12 +1,15 @@
 //toolbox
-if global.toolbox_selected 
+if global.designing
 {
-	toolbox_square.Draw()
-	toolbox_canvas.draw()
-}
-else
-{
-	unselected_toolbox.Draw()
+	if global.toolbox_selected 
+	{
+		toolbox_square.Draw()
+		toolbox_canvas.draw()
+	}
+	else
+	{
+		unselected_toolbox.Draw()
+	}
 }
 
 //draw red outline if playing

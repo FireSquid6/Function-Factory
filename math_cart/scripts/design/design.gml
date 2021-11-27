@@ -1,4 +1,4 @@
-function sh_toggle_designing(args)
+function sh_designer_mode(args)
 {
 	global.designing = !global.designing
 	if global.designing
@@ -13,7 +13,7 @@ function sh_toggle_designing(args)
 	}
 }
 
-function meta_toggle_designing(args)
+function meta_designer_mode(args)
 {
 	return 
 	{

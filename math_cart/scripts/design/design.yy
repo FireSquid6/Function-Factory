@@ -6,7 +6,7 @@
     "path": "folders/Math Cart/Code/Scripts/Shell.yy",
   },
   "resourceVersion": "1.0",
-  "name": "toggle_designing",
+  "name": "design",
   "tags": [],
   "resourceType": "GMScript",
 }

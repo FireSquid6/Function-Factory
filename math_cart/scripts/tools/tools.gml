@@ -57,10 +57,13 @@ function tool_rail(_color = PRIMARY_RAIL_COLOR) : tool_parent() constructor
 	{
 		var list = instances_in_cell(obj_player.cell_x, obj_player.cell_y, created_entity, true)
 		
-		for (var i = 0; i < ds_list_size(list); i++)
+		if list != 0
 		{
-			var target = ds_list_find_value(list, i)
-			target.on_destroy()
+			for (var i = 0; i < ds_list_size(list); i++)
+			{
+				var target = ds_list_find_value(list, i)
+				target.on_destroy()
+			}
 		}
 	}
 }

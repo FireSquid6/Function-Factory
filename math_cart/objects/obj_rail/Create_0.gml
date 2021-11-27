@@ -67,8 +67,8 @@ on_place = function()
 	[
 		collision_point(x, y - CELL_SIZE, par_inputer, false, true), //top
 		collision_point(x + CELL_SIZE, y, par_inputer, false, true), //right
-		collision_point(x - CELL_SIZE, y, par_inputer, false, true), //bottom
-		collision_point(x, y + CELL_SIZE, par_inputer, false, true) //left
+		collision_point(x - CELL_SIZE, y, par_inputer, false, true), //left
+		collision_point(x, y + CELL_SIZE, par_inputer, false, true) //bottom
 	]
 	
 	//stupid evil dumb hack to get it to detect inputers
@@ -87,7 +87,19 @@ on_place = function()
 		{
 			if inputer_list[i] != noone //if there is an id
 			{
-				if array_contains(inputer_list[i].input_x, cell_x) && array_contains(inputer_list[i].input_x, cell_y) //if the input object wants to accept blocks on my as an input
+				var a = inputer_list[i].input_positions
+				var b = inputer_list[i].output_positions
+				var array = array_push_array(a, b)
+				var has_pos = false
+				for (var j = 0; j < array_length(array); j++)
+				{
+					if array[j].x == cell_x && array[j].y == cell_y 
+					{
+						has_pos = true
+					}
+				}
+				
+				if has_pos //if the input object wants to accept blocks on my as an input
 				{ 
 					funnel = true
 					switch i
@@ -161,7 +173,7 @@ on_destroy = function()
 edit_step = function()
 {
 	orientation = get_orientation(link_top, link_left, link_right, link_bottom)
-	links = link_top + link_right + link_bottom + link_left
+	links = link_top + link_right + link_bottom + link_left + funnel
 }
 
 debug_draw = function()
