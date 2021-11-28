@@ -4,26 +4,39 @@ scribble_font_add("fnt_droid_sans_mono")
 
 #endregion
 
-#region INITIATE GLOBALS
-room = lv_level1
-global.entity_move_speed = 4
-global.in_level = false
-global.debug_mode = false
+#region DEV MODE MANAGEMENT
+
+var dev_struct, buff, str
+if file_exists(DEV_FILE_NAME)
+{
+	buff = buffer_load(DEV_FILE_NAME)
+	str = buffer_read(buff, buffer_string)
+	dev_struct = json_parse(str)
+}
+else
+{
+	dev_struct = 
+	{
+		on : false,
+		note : "Only mess with this file if you know what you're doing"
+	}
+	str = json_stringify(dev_struct)
+	buff = buffer_create(1, buffer_grow, 1)
+	buffer_write(buff, buffer_string, str)
+	
+	buffer_save(buff, DEV_FILE_NAME)
+}
+
+global.dev_mode = dev_struct.on
 
 #endregion
 
 #region SAVE MANAGEMENT
-global.first_launch = !file_exists(WELCOME_FILE_NAME)
-file_text_open_write("devmode.funcpref") //init stuff in dev mode
+global.first_launch = !file_exists(SETTINGS_FILE_NAME)
 
-//if it's the first time launching the game, add a fun note
+//if it's the first time launching the game
 if global.first_launch
-{
-	var file = file_text_open_write(WELCOME_FILE_NAME)
-	var str = "IMPORTANT: THIS FILE IS HOW THE GAME KNOWS IF IT'S THE FIRST TIME OPENING THE GAME OR NOT. DON'T DELETE IT UNLESS YOU KNOW WHAT YOU'RE DOING!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nalso hello random player in this file. \nPlease create the file 'myballs.txt' in this directory and put whatever you want in it for an achievement."
-	file_text_write_string(file, str)
-	file_text_close(file)
-	
+{	
 	global.user_preferences = 
 	{
 		debug_on : false,
@@ -52,8 +65,18 @@ if global.first_launch
 //otherwise load the save file
 else
 {
-	global.user_preferences = buffer_load(SETTINGS_FILE_NAME)
+	var buff = buffer_load(SETTINGS_FILE_NAME)
+	var str = buffer_read(buff, buffer_string)
+	global.user_preferences = json_parse(str)
 }
+#endregion
+
+#region INITIATE GLOBALS
+room = lv_level1
+global.entity_move_speed = 4
+global.in_level = false
+global.debug_mode = global.user_preferences.debug_on
+
 #endregion
 
 #region GET THE CORRECT PLATFORM AND INPUT METHOD

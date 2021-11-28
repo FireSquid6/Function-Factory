@@ -1,8 +1,10 @@
 #macro LEVEL_FILE_EXTENTION ".funclevel"
 #macro SAVE_FILE_EXTENTION ".funcsave"
 #macro META_FILE_EXTENTION ".funcmeta"
+#macro PREFERENCE_FILE_EXTENTION ".funcpref"
 #macro WELCOME_FILE_NAME "README.txt"
 #macro SETTINGS_FILE_NAME "preferences.funcpref"
+#macro DEV_FILE_NAME "devoptions.funcpref"
 
 //colors
 #macro WALL_COLOR make_color_rgb(21, 19, 48)
@@ -19,10 +21,3 @@
 #macro OPERATOR_COLOR make_color_rgb(255, 70, 54)
 #macro BLOCK_COLOR make_color_rgb(230, 230, 230)
 #macro TELEPORTER_COLOR make_color_rgb(252, 99, 255)
-
-//config
-#macro DEV_MODE false
-#macro OUTPUT_SPRITES false
-#macro DeveloperMode:DEV_MODE true
-#macro InitiateSprite:OUTPUT_SPRITES true
-
