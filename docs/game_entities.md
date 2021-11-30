@@ -10,6 +10,7 @@
 - Number blocks start out in dispensers as specified amounts and can change over time
 ### Rails
 - VARYING COLOR
+- The designer can decide how many of a certain rail color can be place by the player
 - lines draw to connect cells
 - Rails are the fundamental building block of each level
 - Number blocks will travel along them after they are dispensed
@@ -68,6 +69,11 @@
   - Can't have anything in them
   - Can only be placed when in level designer mode
   - Stop any rails that match the same color as them
+  
+### Junctions
+  - Split color between the rails it conjoins
+  - Conjoins two different rail lines
+  - The level designer gives the player a specific amount of these to use
 ### Teleporters
   - COLOR: AQUA
   - Hexagonal shape with an arrow

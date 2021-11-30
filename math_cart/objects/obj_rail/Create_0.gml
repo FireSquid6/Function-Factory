@@ -14,8 +14,10 @@ funnel_index = -1
 tool_ref = -1
 
 //EDITING FUNCTIONS
+#region THIS CODE IS BAD DO NOT LOOK HERE
 on_place = function()
 {
+	
 	//get the correct color
 	image_blend = tool_ref.rail_color
 	
@@ -124,6 +126,7 @@ on_place = function()
 	}
 	#endregion
 }
+#endregion
 
 on_destroy = function()
 {
