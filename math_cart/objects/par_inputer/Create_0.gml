@@ -32,8 +32,6 @@ input_positions = []
 output_positions = []
 
 dir = 0
-offset_x = CELL_SIZE
-offset_y = 0
 
 //adds an input to the input array
 add_input = function(_cellX, _cellY)

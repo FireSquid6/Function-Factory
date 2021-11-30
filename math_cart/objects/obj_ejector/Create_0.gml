@@ -6,6 +6,8 @@ image_index = 2
 completed = false //whether the ejector has the correct value or not
 pinged = false //whether the ejector has pinged a block to move into it
 
+add_input(cell_x, cell_y - 1)
+
 //methods
 on_place = function()
 {
@@ -50,19 +52,14 @@ on_tick = function()
 {
 	if !pinged //if no block has been told to move into me
 	{
-		//check if there's a block in the cell i'm facing
-		var list = instances_in_cell(cell_x + check_x_addend, cell_y + check_y_addend, obj_block, true)
-	
-		if list != 0
+		var list = check_inputs()
+		for (var i = 0; i < array_length(list); i++)
 		{
-			//check if it has the correct number
-			var blockid = list[|0]
-			if blockid.block_value == block_value
+			if list[i].block_value == block_value
 			{
-				list[|0].ping_self(cell_x, cell_y) //ping block to move to self
-				pinged = true //set pinged to true
+				pinged = true
+				input_block(list[i])
 			}
-			
 		}
 	}
 	else if !completed
