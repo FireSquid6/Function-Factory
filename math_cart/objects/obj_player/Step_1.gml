@@ -1,6 +1,9 @@
 //reset broadcast
 global.events = []
 
+//reset in gui
+in_gui = false
+
 //get input
 switch global.controller_type
 {
@@ -47,7 +50,7 @@ cell_y = cursor_y div CELL_SIZE
 pixel_x = cell_x * CELL_SIZE
 pixel_y = cell_y * CELL_SIZE
 
-//editing
+#region EDITING
 if global.editing
 {	
 	if global.designing
@@ -70,6 +73,7 @@ if global.editing
 				key_use = false
 				key_modify = false
 				key_destroy = false
+				in_gui = true
 			}
 			//if the mouse isn't in the toolbox, set toolbox_selected to false
 			else
@@ -92,9 +96,21 @@ if global.editing
 			}
 		}
 	}
+	else
+	//if not designing, edit the railbox
+	{
+		railbox_canvas.update()
+	}
 	
 	//PLACE OBJECTS
-	global.tool = toolbox[tool_selected]
+	if global.designing
+	{
+		global.tool = toolbox[tool_selected]
+	}
+	else
+	{
+		global.tool = railbox[railbox_selected]
+	}
 
 	if key_use global.tool.use()
 	if key_modify global.tool.modify()
@@ -112,7 +128,8 @@ if global.editing
 		global.ejectors_completed = 0
 	}
 }
-//playing
+#endregion
+#region PLAYING
 else
 {
 	//switch back to editing
@@ -140,3 +157,4 @@ else
 		//do whatever is neccessary for puzzle completion
 	}
 }
+#endregion

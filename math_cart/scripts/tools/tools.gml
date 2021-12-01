@@ -25,9 +25,11 @@ function tool_parent() constructor
 	}
 }
 
-function tool_rail(_color = PRIMARY_RAIL_COLOR) : tool_parent() constructor
+function tool_rail(_color = PRIMARY_RAIL_COLOR, _amount = 0) : tool_parent() constructor
 {
 	rail_color = _color
+	max_amount = _amount
+	amount = max_amount
 	created_entity = obj_rail
 	
 	sprite = ico_rail_base
@@ -47,9 +49,17 @@ function tool_rail(_color = PRIMARY_RAIL_COLOR) : tool_parent() constructor
 		var has_wall = cell_has_wall(cell_x, cell_y)
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
-		if (in_cell == 0 && !has_wall) 
+		if in_cell == 0 && !has_wall
 		{
-			place_entity(cell_x, cell_y, created_entity, "lay_rails", self)
+			if amount > 0
+			{
+				place_entity(cell_x, cell_y, created_entity, "lay_rails", self)
+				amount --
+			}
+			else
+			{
+				//add some juice here later
+			}
 		}
 	}
 	
@@ -63,6 +73,7 @@ function tool_rail(_color = PRIMARY_RAIL_COLOR) : tool_parent() constructor
 			{
 				var target = ds_list_find_value(list, i)
 				target.on_destroy()
+				amount ++
 			}
 		}
 	}

@@ -15,6 +15,8 @@
 #macro SECONDARY_RAIL_COLOR make_color_rgb(141, 167, 255)
 #macro TERTIARY_RAIL_COLOR make_color_rgb(167, 255, 141)
 
+global.rail_colors_array = [PRIMARY_RAIL_COLOR, SECONDARY_RAIL_COLOR, TERTIARY_RAIL_COLOR]
+
 #macro DISPENSER_COLOR make_color_rgb(252, 157, 33)
 #macro EVALUATOR_COLOR make_color_rgb(0, 21, 160)
 #macro EJECTOR_COLOR make_color_rgb(62, 176, 49)

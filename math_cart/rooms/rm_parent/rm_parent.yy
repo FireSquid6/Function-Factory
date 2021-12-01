@@ -46,7 +46,7 @@
     {"spriteId":{"name":"spr_background_tile","path":"sprites/spr_background_tile/spr_background_tile.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":30.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":64,"gridY":64,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"bgd_tile","tags":[],"resourceType":"GMRBackgroundLayer",},
   ],
   "inheritLayers": false,
-  "creationCodeFile": "",
+  "creationCodeFile": "${project_dir}/rooms/rm_parent/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [],
   "inheritCreationOrder": false,

@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": 375.761474609375,
-  "Pan.Y": -256.66204833984375,
-  "ZoomLevel": 3,
+  "Pan.X": 1006.6063232421875,
+  "Pan.Y": -316.9810485839844,
+  "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -2389,6 +2389,18 @@
         [1, 1, 1, 1], 
         [1, 1, 1, 1]
       ]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 224,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "toolboxes not showing 0.5 alpha outline when elements are selected",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Nov 30 2021 23:16:42"
     }
   ]
 }

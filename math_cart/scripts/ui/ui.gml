@@ -33,11 +33,17 @@ function toolbox_tool(_sprite, _outline, _pos) : modui_button_sprite(_sprite, 1,
 	
 	add_method(MODUI_EVENTS.POSTDRAW, function()
 	{
-		//if player's selected tool equals array_position, draw an outlin
+		//if player's selected tool equals array_position, draw an outline
 		if obj_player.tool_selected == array_position
 		{
 			draw_sprite_ext(outline_sprite, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 		}
+		//if i'm selected
+		else if selected
+		{
+			draw_sprite_ext(outline_sprite, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, 0.5)
+		}
+		
 	})
 }
 

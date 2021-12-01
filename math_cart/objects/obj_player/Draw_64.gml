@@ -11,6 +11,10 @@ if global.designing
 		unselected_toolbox.Draw()
 	}
 }
+else
+{
+	railbox_canvas.draw()
+}
 
 //draw red outline if playing
 var gui_width = display_get_width()
