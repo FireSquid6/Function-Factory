@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Data",
-    "path": "folders/Math Cart/Code/Scripts/Data.yy",
+    "name": "Scripts",
+    "path": "folders/Math Cart/Code/Scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "macros",

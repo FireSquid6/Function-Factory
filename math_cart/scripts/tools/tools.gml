@@ -46,10 +46,9 @@ function tool_rail(_color = PRIMARY_RAIL_COLOR, _amount = 0) : tool_parent() con
 		var cell_x = obj_player.cell_x
 		var cell_y = obj_player.cell_y
 		
-		var has_wall = cell_has_wall(cell_x, cell_y)
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
-		if in_cell == 0 && !has_wall
+		if in_cell == 0
 		{
 			if amount > 0
 			{
@@ -72,8 +71,11 @@ function tool_rail(_color = PRIMARY_RAIL_COLOR, _amount = 0) : tool_parent() con
 			for (var i = 0; i < ds_list_size(list); i++)
 			{
 				var target = ds_list_find_value(list, i)
-				target.on_destroy()
-				amount ++
+				if target.image_blend == rail_color
+				{
+					target.on_destroy()
+					amount ++
+				}
 			}
 		}
 	}
@@ -103,10 +105,9 @@ function tool_dispenser() : tool_parent() constructor
 		var cell_x = obj_player.cell_x
 		var cell_y = obj_player.cell_y
 		
-		var has_wall = cell_has_wall(cell_x, cell_y)
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
-		if (in_cell == 0 && !has_wall) 
+		if (in_cell == 0) 
 		{
 			block_value = 0
 			
@@ -164,7 +165,6 @@ function tool_operator() : tool_dispenser() constructor
 		var cell_x = obj_player.cell_x
 		var cell_y = obj_player.cell_y
 		
-		var has_wall = cell_has_wall(cell_x, cell_y)
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
 		if (in_cell == 0 && !has_wall) 

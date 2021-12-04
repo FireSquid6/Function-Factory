@@ -34,7 +34,7 @@ global.events = [] //broadcasted events
 in_gui = false
 
 //setup toolbox
-toolbox = [new tool_dispenser(), new tool_ejector(), new tool_operator()]
+toolbox = [new tool_rail(c_white, infinity), new tool_dispenser(), new tool_ejector(), new tool_operator()]
 tool_selected = 0
 toolbox_selected = false
 last_toolbox_selected = false

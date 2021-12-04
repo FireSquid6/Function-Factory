@@ -89,8 +89,6 @@ check_inputs = function()
 				set = true //set the variable "set" to true
 			}
 		}
-		
-		if !set array[i] = noone
 	}
 	
 	return array

@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": 1006.6063232421875,
-  "Pan.Y": -316.9810485839844,
+  "Pan.X": 989.3031616210938,
+  "Pan.Y": -261.99053955078125,
   "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -2401,6 +2401,42 @@
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Nov 30 2021 23:16:42"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 240,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Blocks not moving after once rail",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 2 2021 20:44:55"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 256,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Rails won't link to an inputer if the inputer is placed after the rail",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 2 2021 20:45:09"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 272,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "block acts unreliably",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 2 2021 20:56:30"
     }
   ]
 }
