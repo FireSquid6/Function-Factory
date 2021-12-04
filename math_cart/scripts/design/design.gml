@@ -1,15 +1,13 @@
 function sh_designer_mode(args)
 {
-	global.designing = !global.designing
+	switch_design_mode(!global.designing)
 	if global.designing
 	{
-		//give all tools
 		return "Now in designer mode"
 	}
 	else
 	{
-		//load in correct tools
-		return "Now exiting designer mode"
+		return "Now in player mode"
 	}
 }
 

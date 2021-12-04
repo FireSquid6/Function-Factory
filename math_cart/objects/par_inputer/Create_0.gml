@@ -102,6 +102,28 @@ input_block = function(_id)
 	return _id.block_value
 }
 
+move_io = function(list)
+{
+	for (var i = 0; i < array_length(list); i++)
+	{
+		var target = list[i]
+		
+		//move
+		var _dir = point_direction(cell_x, cell_y, target.x, target.y)
+		_dir -= 90
+		_dir = loop(_dir, 0, 270)
+		
+		var ldirx = lengthdir_x(1, _dir)
+		var ldiry = lengthdir_y(1, _dir)
+		
+		target.x = cell_x + ldirx
+		target.y = cell_y + ldiry
+		
+		list[i] = target
+		return list
+	}
+}
+
 //rotates the object
 rotate = function()
 {	
@@ -110,32 +132,39 @@ rotate = function()
 	if index > 3 index = 0
 	
 	//move io
-	var target
-	var varlist = ["input_positions", "output_positions"]
-	for (var i = 0; i < array_length(varlist); i++)
-	{
-		var array = variable_instance_get(id, varlist[i])
-		for (var j = 0; j < array_length(array); j++)
-		{
-			target = array[j]
+	#region Origional way I did this. I'm leaving it here because gamemaker's reference system belongs in a museum.
+	//var target
+	//var varlist = ["input_positions", "output_positions"]
+	//for (var i = 0; i < array_length(varlist); i++)
+	//{
+	//	var array = variable_instance_get(id, varlist[i])
+	//	for (var j = 0; j < array_length(array); j++)
+	//	{
+	//		target = array[j]
 			
-			//move
-			var _dir = point_direction(cell_x, cell_y, target.x, target.y)
-			_dir -= 90
-			_dir = loop(_dir, 0, 270)
+	//		//move
+	//		var _dir = point_direction(cell_x, cell_y, target.x, target.y)
+	//		_dir -= 90
+	//		_dir = loop(_dir, 0, 270)
 			
-			var ldirx = lengthdir_x(1, _dir)
-			var ldiry = lengthdir_y(1, _dir)
+	//		var ldirx = lengthdir_x(1, _dir)
+	//		var ldiry = lengthdir_y(1, _dir)
 			
-			target.x = cell_x + ldirx
-			target.y = cell_y + ldiry
+	//		target.x = cell_x + ldirx
+	//		target.y = cell_y + ldiry
 			
-			//set
-			array[j] = target
-		}
+	//		//set
+	//		array[j] = target
+	//	}
 		
-		variable_instance_set(id, varlist[i], array)
-	}
+	//	variable_instance_set(id, varlist[i], array)
+	//}
+	#endregion
+	
+	//good way to do this
+	input_positions = move_io(input_positions)
+	output_positions = move_io(output_positions)
+	
 }
 
 on_modify = function()

@@ -17,7 +17,6 @@ tool_ref = -1
 #region THIS CODE IS BAD DO NOT LOOK HERE
 on_place = function()
 {
-	
 	//get the correct color
 	image_blend = tool_ref.rail_color
 	
@@ -52,81 +51,100 @@ on_place = function()
 	
 	//link to those rails
 	orientation = get_orientation(link_top, link_left, link_right, link_bottom)
-	
 
-
-	#region this code sucks
-	
 	//update the surrounding rails' links
 	if instance_exists(top_id) top_id.link_bottom = link_top
 	if instance_exists(right_id) right_id.link_left = link_right
 	if instance_exists(left_id) left_id.link_right = link_left
 	if instance_exists(bottom_id) bottom_id.link_top = link_bottom
 	
-	//check if there's an inputer I need to link to
-	//create an array
-	var inputer_list = 
-	[
-		collision_point(x, y - CELL_SIZE, par_inputer, false, true), //top
-		collision_point(x + CELL_SIZE, y, par_inputer, false, true), //right
-		collision_point(x - CELL_SIZE, y, par_inputer, false, true), //left
-		collision_point(x, y + CELL_SIZE, par_inputer, false, true) //bottom
-	]
-	
-	//stupid evil dumb hack to get it to detect inputers
-	//add up all the elements
-	//they will equal (-4 * (length - 1)) if there's no inputers around the rail since noone is really just -4 in disguise
-	var array_total = 0
-	var length = array_length(inputer_list)
-	for (var i = 0; i < length; i++)
+	link_to_inputer()
+}
+#endregion
+
+event_place = function()
+{
+	link_to_inputer()
+}
+
+event_modify = function()
+{
+	link_to_inputer()
+}
+
+event_destroy = function()
+{
+	link_to_inputer()
+}
+
+link_to_inputer = function()
+{
+	if links < 2
 	{
-		array_total += inputer_list[i]
-	}
+		//check if there's an inputer I need to link to
+		//create an array
+		var inputer_list = 
+		[
+			collision_point(x, y - CELL_SIZE, par_inputer, false, true), //top
+			collision_point(x + CELL_SIZE, y, par_inputer, false, true), //right
+			collision_point(x - CELL_SIZE, y, par_inputer, false, true), //left
+			collision_point(x, y + CELL_SIZE, par_inputer, false, true) //bottom
+		]
 	
-	if array_total != (-4 * length) //stupid evil hack based on the way gamemaker works
-	{
+		//stupid evil dumb hack to get it to detect inputers
+		//add up all the elements
+		//they will equal (-4 * (length - 1)) if there's no inputers around the rail since noone is really just -4 in disguise
+		var array_total = 0
+		var length = array_length(inputer_list)
 		for (var i = 0; i < length; i++)
 		{
-			if inputer_list[i] != noone //if there is an id
+			array_total += inputer_list[i]
+		}
+	
+		if array_total != (-4 * length) //stupid evil hack based on the way gamemaker works
+		{
+			for (var i = 0; i < length; i++)
 			{
-				var a = inputer_list[i].input_positions
-				var b = inputer_list[i].output_positions
-				var array = array_push_array(a, b)
-				var has_pos = false
-				for (var j = 0; j < array_length(array); j++)
+				if inputer_list[i] != noone //if there is an id
 				{
-					if array[j].x == cell_x && array[j].y == cell_y 
+					var a = inputer_list[i].input_positions
+					var b = inputer_list[i].output_positions
+					var array = array_combine(a, b)
+					var has_pos = false
+					for (var j = 0; j < array_length(array); j++)
 					{
-						has_pos = true
+						if array[j].x == cell_x && array[j].y == cell_y 
+						{
+							has_pos = true
+						}
 					}
-				}
 				
-				if has_pos //if the input object wants to accept blocks on my as an input
-				{ 
-					funnel = true
-					switch i
-					{
-						case 0: //up
-							funnel_index = global.rail_orientations.inputs.up
-							break
-						case 1: //right
-							funnel_index = global.rail_orientations.inputs.right
-							break
-						case 2: //down
-							funnel_index = global.rail_orientations.inputs.down
-							break
-						case 3: //left
-							funnel_index = global.rail_orientations.inputs.left
-							break
+					if has_pos //if the input object wants to accept blocks on my as an input
+					{ 
+						funnel = true
+						switch i
+						{
+							case 0: //up
+								funnel_index = global.rail_orientations.inputs.up
+								break
+							case 1: //right
+								funnel_index = global.rail_orientations.inputs.right
+								break
+							case 2: //down
+								funnel_index = global.rail_orientations.inputs.down
+								break
+							case 3: //left
+								funnel_index = global.rail_orientations.inputs.left
+								break
+						}
+						//exit the for loop
+						break
 					}
-					break
 				}
 			}
 		}
 	}
-	#endregion
 }
-#endregion
 
 on_destroy = function()
 {

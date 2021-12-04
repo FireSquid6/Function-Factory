@@ -1442,8 +1442,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": -1120,
-      "Position.Y": 208,
+      "Position.X": -1104,
+      "Position.Y": 320,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -2393,7 +2393,7 @@
     {
       "BoardIndex": 0,
       "Position.X": -1120,
-      "Position.Y": 224,
+      "Position.Y": 208,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -2404,20 +2404,20 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": -1120,
-      "Position.Y": 240,
-      "Checkbox.Checked": false,
+      "Position.X": -1104,
+      "Position.Y": 288,
+      "Checkbox.Checked": true,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "Blocks not moving after once rail",
-      "Selected": true,
+      "Description": "Blocks not moving after one rail",
+      "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Dec 2 2021 20:44:55"
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": -1120,
-      "Position.Y": 256,
+      "Position.X": -1104,
+      "Position.Y": 272,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -2429,14 +2429,50 @@
     {
       "BoardIndex": 0,
       "Position.X": -1120,
-      "Position.Y": 272,
+      "Position.Y": 240,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
-      "Description": "block acts unreliably",
+      "Description": "New system infant mortality",
       "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Dec 2 2021 20:56:30"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1104,
+      "Position.Y": 256,
+      "Checkbox.Checked": true,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Inputers rotate incorrectly after being linked to by a rail and the puzzle is played\n",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 4 2021 11:54:03"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 224,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Inputers rotate ~1 pixel off from where they should be",
+      "Selected": false,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 4 2021 13:04:30"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1104,
+      "Position.Y": 304,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Blocks get confused as to which cell they are in",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 4 2021 13:22:03"
     }
   ]
 }

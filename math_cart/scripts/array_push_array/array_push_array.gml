@@ -1,8 +1,13 @@
-function array_push_array(array, append)
+function array_combine(array1, array2)
 {
-	for (var i = 0; i < array_length(append); i++)
+	var newarray = []
+	for (var i = 0; i < array_length(array1); i++)
 	{
-		array_push(array, append[i])
+		array_push(newarray, array1[i])
 	}
-	return array
+	for (var i = 0; i < array_length(array2); i++)
+	{
+		array_push(newarray, array2[i])
+	}
+	return newarray
 }

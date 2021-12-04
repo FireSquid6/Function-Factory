@@ -25,7 +25,7 @@ debug_draw = function()
 {
 	draw_io()
 	draw_coordinates()
-	draw_text(x, y-30, "DIR: "+string(dir))
+	draw_text(x, y-30, "DIR: " + string(dir))
 }
 
 surface_draw = function()
