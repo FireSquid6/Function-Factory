@@ -2,6 +2,7 @@ event_inherited()
 
 orientation = global.rail_orientations.nodes.isolated
 links = 0
+image_speed = 0
 
 link_top = false
 link_right = false
@@ -200,11 +201,7 @@ edit_step = function()
 debug_draw = function()
 {
 	draw_coordinates()
-	var half_cell = CELL_SIZE div 2
-	draw_text(x + half_cell, y, string(link_top))
-	draw_text(x + CELL_SIZE - 6, y + half_cell, string(link_right))
-	draw_text(x, y + half_cell, string(link_left))
-	draw_text(x + half_cell, y + CELL_SIZE - 6, string(link_bottom))
+	draw_text(x, y + 30, "O: " + string(orientation))
 }
 
 surface_draw = function()

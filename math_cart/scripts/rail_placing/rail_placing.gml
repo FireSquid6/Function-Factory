@@ -16,8 +16,8 @@ global.rail_orientations =
 	
 	sides : 
 	{
-		horizontal : 5, //2
-		vertical : 6 //1
+		horizontal : 6, //2
+		vertical : 5 //1
 	},
 	
 	corners:
@@ -70,8 +70,8 @@ function get_orientation(link_top, link_left, link_right, link_bottom)
 	
 	if links == 2
 	{
-		if link_top && link_bottom return global.rail_orientations.sides.horizontal
-		if link_left && link_right return global.rail_orientations.sides.vertical
+		if link_top && link_bottom return global.rail_orientations.sides.vertical
+		if link_left && link_right return global.rail_orientations.sides.horizontal
 		
 		if link_top && link_right return global.rail_orientations.corners.top_right
 		if link_top && link_left return global.rail_orientations.corners.top_left

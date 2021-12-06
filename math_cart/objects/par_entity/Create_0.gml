@@ -80,8 +80,8 @@ draw_coordinates = function()
 	draw_set_color(c_white)
 	draw_set_alpha(1)
 	draw_set_font(fnt_default)
-	draw_text(x, y, "CELLX: "+string(cell_x))
-	draw_text(x, y+15, "CELLY: "+string(cell_y))
+	draw_text(x, y, "X: "+string(cell_x))
+	draw_text(x, y+15, "Y: "+string(cell_y))
 }
 
 //other vars

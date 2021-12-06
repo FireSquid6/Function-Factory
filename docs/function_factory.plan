@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": 989.3031616210938,
-  "Pan.Y": -261.99053955078125,
+  "Pan.X": 908.5342407226562,
+  "Pan.Y": -329.787109375,
   "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -2470,9 +2470,21 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Blocks get confused as to which cell they are in",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 0,
       "CreationTime": "Dec 4 2021 13:22:03"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -1104,
+      "Position.Y": 336,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Rails sometimes get confused as to what orientation it is",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 5 2021 10:10:27"
     }
   ]
 }
