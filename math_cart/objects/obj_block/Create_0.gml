@@ -157,3 +157,16 @@ ping_self = function(ping_cell_x, ping_cell_y)
 	
 	calculate_movement()
 }
+
+surface_draw = function()
+{
+	draw_self()
+	draw_set_halign(fa_center)
+	draw_set_valign(fa_middle)
+	draw_set_color(c_white)
+	draw_set_font(fnt_droid_sans_mono)
+	var xx = x + (CELL_SIZE div 2)
+	var yy = y + (CELL_SIZE div 2)
+	
+	draw_text(xx, yy, string(block_value))
+}

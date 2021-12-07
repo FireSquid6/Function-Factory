@@ -17,52 +17,17 @@ divide = function(n1, n2)
 {
 	return n1 div n2
 }
-raise_to = function(n1, n2)
-{
-	return power(n1, n2)
-}
-
-operator_symbols = 
-{
-	addition : "+",
-	subtraction : "-",
-	multiplication: "×",
-	division : "÷",
-	exponential : "^",
-	equate : "=",
-	modulus: "%"
-}
-
 #endregion
 
 dir = 0
 operation = add
+operation_symbol = "+"
 
 add_input(cell_x, cell_y - 1)
 add_input(cell_x + 1, cell_y)
 add_output(cell_x, cell_y + 1)
 
 block_cache = []
-
-
-switch operation
-{
-	case add:
-		operation_symbol = "+"
-		break
-	case subtract:
-		operation_symbol = "-"
-		break
-	case multiply:
-		operation_symbol = "×"
-		break
-	case divide:
-		operation_symbol = "÷"
-		break
-	default:
-		operation_symbol = "?"
-		break
-}
 
 on_place = function()
 {
@@ -80,6 +45,25 @@ on_place = function()
 			break
 		case "/":
 			operation = divide 
+			break
+	}
+	
+	switch operation
+	{
+		case add:
+			operation_symbol = "+"
+			break
+		case subtract:
+			operation_symbol = "-"
+			break
+		case multiply:
+			operation_symbol = "×"
+			break
+		case divide:
+			operation_symbol = "÷"
+			break
+		default:
+			operation_symbol = "?"
 			break
 	}
 }
