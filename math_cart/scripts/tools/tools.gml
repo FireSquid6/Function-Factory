@@ -167,7 +167,7 @@ function tool_operator() : tool_dispenser() constructor
 		
 		var in_cell = instances_in_cell(cell_x, cell_y, obj_rail, true)
 		
-		if (in_cell == 0 && !has_wall) 
+		if (in_cell == 0) 
 		{
 			place_entity(cell_x, cell_y, created_entity, "lay_level", self)
 		}

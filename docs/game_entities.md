@@ -80,3 +80,6 @@
   - A teleporter comes in two blocks, one an input and one an output
   - The outputted block's direction is chosen by the direction of the teleporter
   - Teleporters are rotated 90 degrees when modified
+### Cloners
+- COLOR: PURPLE
+- Takes one input and outputs two of the same block

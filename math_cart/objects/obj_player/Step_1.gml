@@ -145,7 +145,9 @@ else
 		tick_time = global.tick_speed
 		global.tick_count ++
 		
+		broadcast_event(global.EVENTS.PUZZLE_TICK_START)
 		broadcast_event(global.EVENTS.PUZZLE_TICK)
+		broadcast_event(global.EVENTS.PUZZLE_TICK_END)
 	}
 	tick_time --
 	

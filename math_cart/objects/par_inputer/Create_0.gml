@@ -60,7 +60,7 @@ output_block = function(_number, _index)
 	var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
 	inst.init_self(
 		point_direction(cell_x, cell_y, output_positions[_index].x, output_positions[_index].y),
-		_number)
+		_number, id, _index)
 }
 
 //checks if there's a block in all of hte inputs
@@ -82,12 +82,8 @@ check_inputs = function()
 		{
 			target = list[| 0]
 			
-			//if the block isn't moving
-			if !target.moving
-			{
-				array[i] = target.id //set the current array index to the target's id
-				set = true //set the variable "set" to true
-			}
+			array[i] = target.id //set the current array index to the target's id
+			set = true //set the variable "set" to true
 		}
 	}
 	

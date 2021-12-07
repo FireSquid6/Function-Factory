@@ -21,7 +21,9 @@ global.EVENTS =
 	PUZZLE_STARTED : "event_start",
 	PUZZLE_STOPPED : "event_stop",
 	PUZZLE_COMPLETED : "event_complete",
-	PUZZLE_TICK: "on_tick"
+	PUZZLE_TICK: "on_tick",
+	PUZZLE_TICK_START: "on_tick_start",
+	PUZZLE_TICK_END: "on_tick_end"
 }
 #endregion
 

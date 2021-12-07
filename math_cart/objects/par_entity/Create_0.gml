@@ -2,7 +2,17 @@ cell_x = x div CELL_SIZE
 cell_y = y div CELL_SIZE
 
 //while playing
+on_tick_start = function()
+{
+	
+}
+
 on_tick = function()
+{
+	
+}
+
+on_tick_end = function()
 {
 	
 }
