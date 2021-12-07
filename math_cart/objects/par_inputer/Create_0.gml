@@ -67,11 +67,9 @@ output_block = function(_number, _index)
 //returns an array filled with the id of each block or noone
 check_inputs = function()
 {
-	var xx, yy, list, array = [], target, set
+	var xx, yy, list, array = [], target
 	for (var i = 0; i < array_length(input_positions); i++)
 	{
-		set = false
-		
 		//get the numbers in the cell
 		xx = input_positions[i].x
 		yy = input_positions[i].y
@@ -82,8 +80,7 @@ check_inputs = function()
 		{
 			target = list[| 0]
 			
-			array[i] = target.id //set the current array index to the target's id
-			set = true //set the variable "set" to true
+			array_push(target.id) //set the current array index to the target's id
 		}
 	}
 	
