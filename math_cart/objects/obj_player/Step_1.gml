@@ -157,6 +157,11 @@ else
 		broadcast_event(global.EVENTS.PUZZLE_COMPLETED)
 		global.editing = true
 		//do whatever is neccessary for puzzle completion
+		
+		with obj_block
+		{
+			instance_destroy()
+		}
 	}
 }
 #endregion

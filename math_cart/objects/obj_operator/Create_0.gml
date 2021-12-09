@@ -73,7 +73,7 @@ on_tick = function()
 	//tell all blocks in my input squares to move into me
 	var array = check_inputs()
 	for (var i = 0; i < array_length(array); i++)
-	{
+	{  
 		if array[i] != noone
 		{
 			array[i].ping_self(cell_x, cell_y)
@@ -97,6 +97,7 @@ on_tick = function()
 	{
 		var num = operation(block_cache[0], block_cache[1])
 		output_block(num, 0)
+		block_cache = []
 	}
 }
 

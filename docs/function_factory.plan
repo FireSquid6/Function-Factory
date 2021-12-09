@@ -4,8 +4,8 @@
   "BoardIndex": 0,
   "BoardCount": 1,
   "AutoSave": true,
-  "Pan.X": -1476.7626953125,
-  "Pan.Y": -914.5885009765625,
+  "Pan.X": 1074.31396484375,
+  "Pan.Y": -414.46417236328125,
   "ZoomLevel": 4,
   "TaskTransparency": 5,
   "OutlineTasks": true,
@@ -2787,7 +2787,7 @@
       "Progression.Current": 0,
       "Progression.Max": 0,
       "Description": "Very little competition",
-      "Selected": true,
+      "Selected": false,
       "TaskType.CurrentChoice": 2,
       "CreationTime": "Dec 6 2021 22:33:34"
     }, 
@@ -2819,4 +2819,17 @@
       "BezierLines": false,
       "LineEndings": [1696, 464]
     }, 
-    
+    {
+      "BoardIndex": 0,
+      "Position.X": -1120,
+      "Position.Y": 400,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "Inputers will still output if there's no rail to output to",
+      "Selected": true,
+      "TaskType.CurrentChoice": 0,
+      "CreationTime": "Dec 8 2021 22:21:01"
+    }
+  ]
+}

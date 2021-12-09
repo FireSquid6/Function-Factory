@@ -8,7 +8,7 @@ function rail_in_cell(cell_x, cell_y, color)
 	
 	for (var i = 0; i < ds_list_size(list); i++)
 	{
-		if list[| i].image_blend == color 
+		if list[| i].image_blend == color || color = "any"
 		{
 			return list[|i]
 		}

@@ -57,10 +57,16 @@ add_output = function(_cellX, _cellY)
 //creates a block and tells it to move into the output position of a specified index
 output_block = function(_number, _index)
 {
-	var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
-	inst.init_self(
-		point_direction(cell_x, cell_y, output_positions[_index].x, output_positions[_index].y),
-		_number, id, _index)
+	if rail_in_cell(output_positions[_index].x, output_positions[_index.y], "any") != noone
+	{
+		var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
+		inst.init_self(
+			point_direction(cell_x, cell_y, output_positions[_index].x, output_positions[_index].y),
+			_number, id, _index)
+			
+		return true
+	}
+	return false
 }
 
 //checks if there's a block in all of hte inputs
@@ -80,7 +86,7 @@ check_inputs = function()
 		{
 			target = list[| 0]
 			
-			array_push(target.id) //set the current array index to the target's id
+			array_push(array, target.id) //set the current array index to the target's id
 		}
 	}
 	
