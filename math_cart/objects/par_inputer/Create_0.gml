@@ -57,7 +57,7 @@ add_output = function(_cellX, _cellY)
 //creates a block and tells it to move into the output position of a specified index
 output_block = function(_number, _index)
 {
-	if rail_in_cell(output_positions[_index].x, output_positions[_index.y], "any") != noone
+	if rail_in_cell(output_positions[_index].x, output_positions[_index].y, "any") != noone
 	{
 		var inst = instance_create_layer(x, y, "lay_numbers", obj_block)
 		inst.init_self(
