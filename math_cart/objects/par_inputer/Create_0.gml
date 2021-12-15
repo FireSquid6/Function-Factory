@@ -34,12 +34,14 @@ output_positions = []
 dir = 0
 
 //adds an input to the input array
-add_input = function(_cellX, _cellY)
+add_input = function(_cellX, _cellY, _number = "any", _open = true)
 {	
 	array_push(input_positions,
 	{
 		x : _cellX,
-		y : _cellY
+		y : _cellY,
+		n : _number,
+		o : _open
 	})
 }
 
@@ -91,6 +93,17 @@ check_inputs = function()
 	}
 	
 	return array
+}
+
+//returns true if the specified block id is:
+	//in the correct cell position
+	//the correct input is open
+	//has the correct number
+wants_me = function(_id)
+{
+	var xx = _id.cell_x
+	var yy = _id.cell_y
+	
 }
 
 //tells a specific block to come inside the inputer
