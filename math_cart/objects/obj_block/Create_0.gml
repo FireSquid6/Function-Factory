@@ -66,7 +66,7 @@ on_tick_start = function()
 	var continue_state_machine = false
 	switch state
 	{
-		case ASLEEP:
+		case BLOCK_STATES.ASLEEP:
 			
 			break
 		
