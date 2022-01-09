@@ -1,5 +1,6 @@
 ![Alt Text](previews/titlescreen.gif)
-  
+**Note: The project is currently on hold as I am busy with IRL stuff as well as needing to switch engines from Gamemaker to Godot for technical reasons.**
+
 # Function Factory
 Function Factory is a math-based puzzle game where the player links up various objects to complete circuits. It's a hard game to explain with words, so look at the gif above.  
   
@@ -11,8 +12,10 @@ If you wanna learn more about the game, feel free to dive into the game's source
  - alpha v0.1 tech demo
      - Empty room in design mode
      - Just a showcase of what the different entities do
+ - alpha v0.2
+     - Switch engines to Godot since having nodes and signals will be much easier for this game
 
-# Features
+# Planned Features
  - Free to play version with access to:
     - Around 50% of the game's content
     - No ads
@@ -23,7 +26,7 @@ If you wanna learn more about the game, feel free to dive into the game's source
     - Level editor
     - Access to levels that use entities from the extra level packs
 
-# Platforms
+# Planned Platforms
  - Free demo on HTML
  - Steam version (Steam deck optimized)
  - Android version
