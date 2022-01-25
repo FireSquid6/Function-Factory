@@ -11,7 +11,12 @@ config_version=4
 [application]
 
 config/name="Function Factory"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [physics]
 
