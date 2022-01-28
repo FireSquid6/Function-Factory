@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barrier.png-de1a3ab4b5eafb2716e4fc441ca932e8.stex"
+path="res://.import/evaluator.png-5853b56fe00169fa04a1a921105b4e82.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/entities/barrier.png"
-dest_files=[ "res://.import/barrier.png-de1a3ab4b5eafb2716e4fc441ca932e8.stex" ]
+source_file="res://resources/textures/entities/evaluator.png"
+dest_files=[ "res://.import/evaluator.png-5853b56fe00169fa04a1a921105b4e82.stex" ]
 
 [params]
 
