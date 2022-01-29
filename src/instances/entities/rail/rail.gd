@@ -3,7 +3,7 @@ class_name Rail
 
 signal process_links()
 
-var sprites = [
+onready var sprites = [
 	get_node("Sprites/RailUp"),
 	get_node("Sprites/RailRight"),
 	get_node("Sprites/RailDown"),
@@ -12,6 +12,12 @@ var sprites = [
 onready var iso_rail = get_node("Sprites/RailIso")
 onready var can_process_links = true
 onready var physics_processed = false
+
+onready var box_list = [
+	get_node("AdjacentCells/CellUp"), 
+	get_node("AdjacentCells/CellRight"), 
+	get_node("AdjacentCells/CellDown"),
+	get_node("AdjacentCells/CellLeft")]
 
 var link_list = [false, false, false, false]
 
@@ -40,12 +46,6 @@ func self_place(cell_pos):
 
 
 func process_links():
-	var box_list = [
-	get_node("AdjacentCells/CellUp"), 
-	get_node("AdjacentCells/CellRight"), 
-	get_node("AdjacentCells/CellDown"),
-	get_node("AdjacentCells/CellLeft")]
-
 	# iterate through boxes
 	for i in range(0, len(box_list)):
 		# get the list of collided bodies in this box
