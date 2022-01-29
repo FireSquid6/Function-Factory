@@ -23,6 +23,10 @@ var input_modify
 
 
 # METHODS
+func _ready():
+	Global.controller = self
+
+
 func _process(delta):
 	# get inputs
 	input_place = Input.is_action_just_pressed("place")

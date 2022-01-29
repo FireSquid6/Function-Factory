@@ -12,8 +12,15 @@ const LAYERS = {
 }
 const CELL_SIZE = 16
 
-# onready vars
+# references
 onready var cursor_pos = Vector2(0, 0)
+onready var cursor_box = null
+
+onready var camera = null
+
+onready var controller = null
+
+onready var tilemap = null
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
