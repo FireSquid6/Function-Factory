@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wires.png-ad53d04f3ddff1fd5cfbc6167e5cd2e4.stex"
+path="res://.import/rails.png-092c784a6a1096af767ff322bde45743.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/entities/wires.png"
-dest_files=[ "res://.import/wires.png-ad53d04f3ddff1fd5cfbc6167e5cd2e4.stex" ]
+source_file="res://resources/textures/entities/rails.png"
+dest_files=[ "res://.import/rails.png-092c784a6a1096af767ff322bde45743.stex" ]
 
 [params]
 
