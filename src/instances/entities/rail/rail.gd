@@ -1,4 +1,4 @@
-extends Node2D
+extends Entity
 
 
 onready var sprites = [
@@ -12,6 +12,8 @@ onready var iso_rail = get_node("Sprites/RailIso")
 onready var link_list = [false, false, false, false]
 onready var link_amount = 0
 
+func create():
+	z_index = Global.LAYERS.RAILS
 
 func _process(delta):
 	# set correct rails
