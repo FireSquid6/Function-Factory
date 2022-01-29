@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Entity",
 "language": "GDScript",
 "path": "res://instances/entity.gd"
+}, {
+"base": "Entity",
+"class": "Rail",
+"language": "GDScript",
+"path": "res://instances/entities/rail/rail.gd"
 } ]
 _global_script_class_icons={
-"Entity": ""
+"Entity": "",
+"Rail": ""
 }
 
 [application]

@@ -29,9 +29,9 @@ func _ready():
 
 func _process(delta):
 	# get inputs
-	input_place = Input.is_action_just_pressed("place")
-	input_remove = Input.is_action_just_pressed("remove")
-	input_modify = Input.is_action_just_pressed("modify")
+	input_place = Input.is_action_just_released("place")
+	input_remove = Input.is_action_just_released("remove")
+	input_modify = Input.is_action_just_released("modify")
 	
 	# state machine
 	match mode:
