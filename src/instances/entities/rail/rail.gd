@@ -26,8 +26,36 @@ var link_amount = 0
 func create():
 	z_index = Global.LAYERS.RAILS
 
-func _process(delta):
-	# set correct rails
+
+func self_place(cell_pos):
+	# get to new position
+	position = cell_pos * Global.CELL_SIZE
+
+
+func _physics_process(delta):
+	# check which rails to link to
+	if link_amount < 2:
+		for i in range(0, len(box_list)):
+			# get the list of collided bodies in this box
+			var collided = box_list[i].get_overlapping_areas()
+			
+			# if another rail is detected
+			if len(collided) > 0:
+				var other_rail = collided[0].get_parent()
+				if other_rail.link_amount < 2: # if the other rail can be linked to
+					#get the other_index
+					var other_index = i + 2
+					if other_index > 3:
+						other_index -= 4
+					
+					# change the link list
+					link_list[i] = true
+					other_rail.link_list[other_index] = true
+					
+					link_amount += 1
+					other_rail.link_amount += 1
+	
+	# set correct rail sprites
 	link_amount = 0
 	for i in range(0, len(link_list)):
 		
@@ -36,44 +64,4 @@ func _process(delta):
 			sprites[i].visible = true # set that sprite visible
 		
 	# set rail iso to true if neccessary
-	if link_amount < 2:
-		iso_rail.visible = true
-
-
-func self_place(cell_pos):
-	# get to new position
-	position = cell_pos * Global.CELL_SIZE
-
-
-func process_links():
-	# iterate through boxes
-	for i in range(0, len(box_list)):
-		# get the list of collided bodies in this box
-		var collided = box_list[i].get_overlapping_areas()
-		
-		# iterate through those bodies
-		for j in range(0, len(collided)):
-			# check if the detected box can be collided with
-			var other = collided[j].get_parent()
-			if other.is_class("Rail"):
-				if other.link_amount < 2:
-					# set the correct links for self
-					link_list[i] = true
-					link_amount += 1
-					
-					# set collided object's links
-					var other_i = i + 2
-					if other_i > 3:
-						other_i -= 1
-					
-					other.links[other_i] = true
-					other.link_amount += 1
-					
-					# break
-					break
-		
-		# break if link_amount > 1
-		if link_amount > 1:
-			break
-	
-	can_process_links = false
+	iso_rail.visible = (link_amount < 2)
