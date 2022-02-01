@@ -31,10 +31,13 @@ func self_place(cell_pos):
 	# get to new position
 	position = cell_pos * Global.CELL_SIZE
 
-
 func _physics_process(delta):
 	# check which rails to link to
 	if link_amount < 2:
+		
+		if Input.is_action_pressed("modify"):
+			var imposter = "sus"
+		
 		for i in range(0, len(box_list)):
 			# get the list of collided bodies in this box
 			var collided = box_list[i].get_overlapping_areas()
@@ -42,7 +45,7 @@ func _physics_process(delta):
 			# if another rail is detected
 			if len(collided) > 0:
 				var other_rail = collided[0].get_parent()
-				if other_rail.link_amount < 2: # if the other rail can be linked to
+				if other_rail.link_amount < 2 and other_rail != self: # if the other rail can be linked to and isn't just myself
 					#get the other_index
 					var other_index = i + 2
 					if other_index > 3:
@@ -65,3 +68,5 @@ func _physics_process(delta):
 		
 	# set rail iso to true if neccessary
 	iso_rail.visible = (link_amount < 2)
+	
+	#print(str(self) + " at " + str(position) + "has the following links: " + str(link_list))
