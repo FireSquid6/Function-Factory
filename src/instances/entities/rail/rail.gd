@@ -44,8 +44,25 @@ func _physics_process(delta):
 			
 			# if another rail is detected
 			if len(collided) > 0:
+				if Input.is_action_pressed("modify"):
+					pass
+				
+				# get the parent of the other rail
 				var other_rail = collided[0].get_parent()
-				if other_rail.link_amount < 2 and other_rail != self: # if the other rail can be linked to and isn't just myself
+				
+				# create a rectangle for collision checking
+				var pos = collided[0].position
+				var size = Vector2(pos.x + Global.CELL_SIZE, pos.y + Global.CELL_SIZE)
+				var rect = Rect2(pos, size)
+				
+				# get the position of the self box's center
+				var center = collided[0].get_node("Center")
+				
+				# check if the center is in the rect
+				var has_center = rect.has_point(center.position)
+				
+				# if the other rail can be linked to and isn't just myself and im not just confused and hitting the corner
+				if other_rail.link_amount < 2 and other_rail != self and has_center: 
 					#get the other_index
 					var other_index = i + 2
 					if other_index > 3:
