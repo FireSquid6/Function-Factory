@@ -8,26 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node2D",
-"class": "Entity",
-"language": "GDScript",
-"path": "res://instances/entity.gd"
-}, {
-"base": "Entity",
-"class": "Rail",
-"language": "GDScript",
-"path": "res://instances/entities/rail/rail.gd"
-} ]
-_global_script_class_icons={
-"Entity": "",
-"Rail": ""
-}
-
 [application]
 
 config/name="Function Factory"
-run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -91,9 +74,11 @@ pan_down={
 
 [layer_names]
 
-2d_physics/layer_1="Rail Base"
-2d_physics/layer_2="Rail Adjacent"
-2d_physics/layer_3="Entities"
+2d_physics/layer_1="system"
+2d_physics/layer_2="rails"
+2d_physics/layer_3="submaps"
+2d_physics/layer_4="entities"
+2d_physics/layer_5="blocks"
 
 [physics]
 
