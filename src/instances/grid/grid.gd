@@ -27,11 +27,21 @@ export var update_speed = 0.2
 
 # METHODS
 func entities_in_cell(cell_position):
-	pass
+	var entities = []
+	for entity in stored_entities:
+		if entity.cell_position == cell_position:
+			entities.append(entity)
+	
+	return entities
 
 
 func submaps_in_cell(cell_position):
-	pass
+	var submaps = []
+	for map in stored_submaps:
+		if map.get_cellv(cell_position) != INVALID_CELL:
+			submaps.append(map)
+	
+	return submaps
 
 
 func request_move(start_position, move_position, requester):
