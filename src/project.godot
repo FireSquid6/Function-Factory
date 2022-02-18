@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "PuzzleObject",
+"language": "GDScript",
+"path": "res://instances/puzzle_object/puzzle_object.gd"
+} ]
+_global_script_class_icons={
+"PuzzleObject": ""
+}
+
 [application]
 
 config/name="Function Factory"
