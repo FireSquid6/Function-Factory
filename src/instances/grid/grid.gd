@@ -89,3 +89,4 @@ func _ready():
 		var children = container_list[i].get_children()
 		for child in children:
 			storage_list[i].append(child)
+			child.initialize()
