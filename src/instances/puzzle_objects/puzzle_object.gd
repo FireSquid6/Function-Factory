@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 class_name PuzzleObject
 
 
@@ -9,7 +9,15 @@ var grid = null
 # get grid node and connect signals
 func initialize():
 	grid = get_parent().get_parent()
-	grid.connect()
+	grid.connect_puzzle_object(self)
+
+
+func update_position():
+	cell_position = position * grid.cell_size
+
+
+func _physics_process(delta):
+	update_position()
 
 
 func on_entity_placed(entity):

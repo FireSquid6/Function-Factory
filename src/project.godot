@@ -9,24 +9,35 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
+"base": "PuzzleObject",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://instances/puzzle_objects/entities/entity.gd"
+}, {
+"base": "Area2D",
 "class": "PuzzleObject",
 "language": "GDScript",
-"path": "res://instances/puzzle_object/puzzle_object.gd"
+"path": "res://instances/puzzle_objects/puzzle_object.gd"
 } ]
 _global_script_class_icons={
+"Entity": "",
 "PuzzleObject": ""
 }
 
 [application]
 
 config/name="Function Factory"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://singletons/global.gd"
 Signaler="*res://singletons/signaler.gd"
+
+[display]
+
+window/stretch/aspect="expand"
 
 [importer_defaults]
 
