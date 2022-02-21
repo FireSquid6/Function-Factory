@@ -8,8 +8,8 @@ script = ExtResource( 1 )
 
 [node name="update_timer" type="Timer" parent="."]
 
-[node name="Entities" type="Node" parent="."]
-
 [node name="Submaps" type="Node" parent="."]
+
+[node name="Entities" type="Node" parent="."]
 
 [node name="Blocks" type="Node" parent="."]

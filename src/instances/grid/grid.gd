@@ -1,47 +1,58 @@
 extends TileMap
 
 
+# define constants
+const signal_prefex = "puzzle"
+
 # get children
 onready var update_timer = get_node("update_timer")
 onready var submap_container = get_node("Submaps")
 onready var entity_container = get_node("Entities")
 onready var block_container = get_node("Blocks")
+onready var cursor = get_node("Cursor")
 
 # load entities
 var dispenser = preload("res://instances/puzzle_objects/entities/dispenser/dispenser.tscn")
 
+# create toolbox
+export var tool_selected = 0
+onready var toolbox = [
+	tool_entity.new(dispenser, self)]
+
 # declare signals
-signal entity_placed(entity)
-signal entity_destroyed(entity)
-signal block_spawned(block)
-signal tile_placed(submap, tile_id, cell_position)
+signal puzzle_entity_placed(entity)
+signal puzzle_entity_destroyed(entity)
+signal puzzle_block_spawned(block)
+signal puzzle_tile_placed(submap, tile_id, cell_position)
 signal puzzle_restarted()
 signal puzzle_stoped()
 signal puzzle_completed()
-signal grid_update()
-signal entity_update()
-signal submap_update()
-signal block_update()
+signal puzzle_grid_update()
+signal puzzle_entity_update()
+signal puzzle_submap_update()
+signal puzzle_block_update()
 
 
 # declare exported variables
-export var stored_submaps = []
-export var stored_entities = []
-export var stored_blocks = []
+var stored_submaps = []
+var stored_entities = []
+var stored_blocks = []
 
 export var update_rate = 0.2
 
 # other variables
-onready var container_list = [entity_container, submap_container, block_container]
-onready var storage_list = [stored_entities, stored_submaps, stored_blocks]
+export var cursor_cell = Vector2.ZERO
+export var cursor_position = Vector2.ZERO
 
 
 # CALLABLE METHODS
 func connect_puzzle_object(node):
 	# links the specified puzzle object to all user defined methods
-	var signals = get_script().get_signal_list()
+	var signals = get_signal_list()
 	for sig in signals:
-		connect(sig, node, "on_" + sig)
+		var name: String = sig["name"]
+		if name.begins_with(signal_prefex):
+			connect(name, node, "on_" + name)
 
 
 func entities_in_cell(cell_position):
@@ -62,12 +73,16 @@ func submaps_in_cell(cell_position):
 	return submaps
 
 
-func request_move(start_position, move_position, requester):
-	pass
-
-
 func request_place(place_position, entity):
-	pass
+	var in_cell = entities_in_cell(place_position)
+	if len(in_cell) > 0:
+		return false
+	else:
+		stored_entities.append(entity)
+		entity_container.add_child(entity)
+		
+		entity.initialize()
+		entity.move_to(place_position)
 
 
 func request_spawn(spawn_position, value):
@@ -80,13 +95,33 @@ func request_tile(tile_position, submap, tile_id):
 
 # PROCESSING METHODS
 func _process(delta):
-	pass
+	# get cursor position
+	cursor_position = get_global_mouse_position()
+	cursor_cell = (cursor_position / cell_size).floor()
+	
+	# place objects
+	if Input.is_action_just_pressed("place"):
+		toolbox[tool_selected].place(cursor_cell)
 
 
 func _ready():
-	# get all children
-	for i in range(len(container_list)):
-		var children = container_list[i].get_children()
-		for child in children:
-			storage_list[i].append(child)
-			child.initialize()
+	# get all predefined submaps
+	var children = submap_container.get_children()
+	for child in children:
+		stored_submaps.append(child)
+		child.initialize()
+
+
+# TOOL CLASSES
+class tool_entity:
+	var placed_entity = null
+	var grid_ref = null
+	
+	func _init(placed_entity, grid_ref):
+		self.grid_ref = grid_ref
+		self.placed_entity = placed_entity 
+	
+	func place(cell_position):
+		var new_entity = placed_entity.instance()
+		grid_ref.request_place(cell_position, new_entity)
+		

@@ -13,26 +13,32 @@ func initialize():
 
 
 func update_position():
-	cell_position = position * grid.cell_size
+	cell_position = (position / grid.cell_size).floor()
 
 
-func _physics_process(delta):
+func move_to(new_position):
+	position = new_position * grid.cell_size
 	update_position()
 
 
-func on_entity_placed(entity):
+func _process(delta):
+	update_position()
+
+
+# RECIEVED SIGNALS
+func on_puzzle_entity_placed(entity):
 	pass
 
 
-func on_entity_destroyed(entity):
+func on_puzzle_entity_destroyed(entity):
 	pass
 
 
-func on_block_spawned(block):
+func on_puzzle_block_spawned(block):
 	pass
 
 
-func on_tile_placed(submap, tile_id, tile_position):
+func on_puzzle_tile_placed(submap, tile_id, tile_position):
 	pass
 
 
@@ -48,17 +54,17 @@ func on_puzzle_completed():
 	pass
 
 
-func on_grid_update():
+func on_puzzle_grid_update():
 	pass
 
 
-func on_entity_update():
+func on_puzzle_entity_update():
 	pass
 
 
-func on_block_update():
+func on_puzzle_block_update():
 	pass
 
 
-func on_submap_update():
+func on_puzzle_submap_update():
 	pass
