@@ -3,13 +3,17 @@ extends TileMap
 
 # define constants
 const signal_prefex = "puzzle"
+enum STATES {
+	EDITING
+	DESIGNING
+	PLAYING
+}
 
 # get children
 onready var update_timer = get_node("update_timer")
 onready var submap_container = get_node("Submaps")
 onready var entity_container = get_node("Entities")
 onready var block_container = get_node("Blocks")
-onready var cursor = get_node("Cursor")
 
 # load entities
 var dispenser = preload("res://instances/puzzle_objects/entities/dispenser/dispenser.tscn")
@@ -43,6 +47,7 @@ export var update_rate = 0.2
 # other variables
 export var cursor_cell = Vector2.ZERO
 export var cursor_position = Vector2.ZERO
+export var state = STATES.DESIGNING
 
 
 # CALLABLE METHODS
@@ -95,13 +100,22 @@ func request_tile(tile_position, submap, tile_id):
 
 # PROCESSING METHODS
 func _process(delta):
-	# get cursor position
-	cursor_position = get_global_mouse_position()
-	cursor_cell = (cursor_position / cell_size).floor()
-	
-	# place objects
-	if Input.is_action_just_pressed("place"):
-		toolbox[tool_selected].place(cursor_cell)
+	match state:
+		STATES.DESIGNING:
+			# get cursor position
+			cursor_position = get_global_mouse_position()
+			cursor_cell = (cursor_position / cell_size).floor()
+			
+			# place objects
+			if Input.is_action_just_pressed("place"):
+				toolbox[tool_selected].place(cursor_cell)
+			
+			# modify objects
+			if Input.is_action_just_pressed("modify"):
+				var in_cell = entities_in_cell(cursor_cell)
+				if len(in_cell) > 0:
+					for entity in in_cell:
+						entity.modify()
 
 
 func _ready():
@@ -124,4 +138,3 @@ class tool_entity:
 	func place(cell_position):
 		var new_entity = placed_entity.instance()
 		grid_ref.request_place(cell_position, new_entity)
-		
