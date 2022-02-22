@@ -12,3 +12,8 @@ func initialize():
 
 func request_tile(tile_position, tile_index):
 	return false
+
+
+func remove_tile(tile_position):
+	set_cell(tile_position.x, tile_position.y, INVALID_CELL)
+	update_bitmask_region()

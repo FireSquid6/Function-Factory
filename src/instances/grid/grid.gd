@@ -5,7 +5,6 @@ extends TileMap
 const signal_prefex = "puzzle"
 enum STATES {
 	EDITING
-	DESIGNING
 	PLAYING
 }
 
@@ -14,14 +13,17 @@ onready var update_timer = get_node("update_timer")
 onready var submap_container = get_node("Submaps")
 onready var entity_container = get_node("Entities")
 onready var block_container = get_node("Blocks")
+onready var cell_marker = get_node("CellMarker")
 
 # load entities
 var dispenser = preload("res://instances/puzzle_objects/entities/dispenser/dispenser.tscn")
+onready var rails = get_node("Submaps/Rails")
 
 # create toolbox
-export var tool_selected = 0
+export var tool_selected = 1
 onready var toolbox = [
-	tool_entity.new(dispenser, self)]
+	tool_entity.new(dispenser, self),
+	tool_submap.new(rails, self)]
 
 # declare signals
 signal puzzle_entity_placed(entity)
@@ -47,7 +49,8 @@ export var update_rate = 0.2
 # other variables
 export var cursor_cell = Vector2.ZERO
 export var cursor_position = Vector2.ZERO
-export var state = STATES.DESIGNING
+export var state = STATES.EDITING
+export var designing = true
 
 
 # CALLABLE METHODS
@@ -100,14 +103,16 @@ func request_tile(tile_position, submap, tile_id):
 
 # PROCESSING METHODS
 func _process(delta):
+	
 	match state:
-		STATES.DESIGNING:
+		STATES.EDITING:
 			# get cursor position
 			cursor_position = get_global_mouse_position()
 			cursor_cell = (cursor_position / cell_size).floor()
+			cell_marker.position = cursor_cell * cell_size
 			
 			# place objects
-			if Input.is_action_just_pressed("place"):
+			if Input.is_action_pressed("place"):
 				toolbox[tool_selected].place(cursor_cell)
 			
 			# modify objects
@@ -130,11 +135,24 @@ func _ready():
 class tool_entity:
 	var placed_entity = null
 	var grid_ref = null
+	var count = 0
 	
-	func _init(placed_entity, grid_ref):
+	func _init(placed_entity, grid_ref, count = INF):
 		self.grid_ref = grid_ref
 		self.placed_entity = placed_entity 
+		self.count = count
 	
 	func place(cell_position):
 		var new_entity = placed_entity.instance()
 		grid_ref.request_place(cell_position, new_entity)
+
+
+class tool_submap:
+	var grid_ref = null
+	var submap = null
+	func _init(submap, grid_ref):
+		self.grid_ref = grid_ref
+		self.submap = submap
+	
+	func place(cell_position):
+		submap.request_tile(cell_position, 0)
