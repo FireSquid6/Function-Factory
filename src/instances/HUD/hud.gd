@@ -1,0 +1,25 @@
+extends Control
+
+
+const max_tools = 8
+
+onready var vbox = get_node("CenterContainer/VBoxContainer")
+onready var toolbox = get_node("Toolbox")
+
+onready var mouse_in_ui = false
+
+signal change_tool(tool_index)
+
+func _process(delta):
+	Global.hud_ref = self
+
+func _on_ColorRect_mouse_entered():
+	mouse_in_ui = true
+
+
+func _on_ColorRect_mouse_exited():
+	mouse_in_ui = false
+
+
+func add_tool(linked_index, sprite):
+	pass

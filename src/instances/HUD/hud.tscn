@@ -1,16 +1,90 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://instances/HUD/hud.gd" type="Script" id=1]
+[ext_resource path="res://instances/HUD/toolbox.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[node name="Hud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Toolbox" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+margin_right = 152.0
+mouse_filter = 1
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Toolbox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_bottom = 1.0
-margin_right = 152.0
-color = Color( 0.235294, 0.235294, 0.235294, 1 )
+[node name="VBoxContainer" type="VBoxContainer" parent="Toolbox/CenterContainer"]
+margin_left = 44.0
+margin_top = 9.0
+margin_right = 108.0
+margin_bottom = 591.0
+custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect2" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 64.0
+margin_bottom = 138.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect3" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 64.0
+margin_bottom = 212.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect4" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 222.0
+margin_right = 64.0
+margin_bottom = 286.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect5" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 296.0
+margin_right = 64.0
+margin_bottom = 360.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect6" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 370.0
+margin_right = 64.0
+margin_bottom = 434.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect7" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 444.0
+margin_right = 64.0
+margin_bottom = 508.0
+texture = ExtResource( 3 )
+
+[node name="TextureRect8" type="TextureRect" parent="Toolbox/CenterContainer/VBoxContainer"]
+margin_top = 518.0
+margin_right = 64.0
+margin_bottom = 582.0
+texture = ExtResource( 3 )
+
+[connection signal="mouse_entered" from="Toolbox" to="." method="_on_ColorRect_mouse_entered"]
+[connection signal="mouse_exited" from="Toolbox" to="." method="_on_ColorRect_mouse_exited"]

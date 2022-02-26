@@ -111,16 +111,18 @@ func _process(delta):
 			cursor_cell = (cursor_position / cell_size).floor()
 			cell_marker.position = cursor_cell * cell_size
 			
-			# place objects
-			if Input.is_action_pressed("place"):
-				toolbox[tool_selected].place(cursor_cell)
-			
-			# modify objects
-			if Input.is_action_just_pressed("modify"):
-				var in_cell = entities_in_cell(cursor_cell)
-				if len(in_cell) > 0:
-					for entity in in_cell:
-						entity.modify()
+			# make sure the player isn't interacting with UI
+			if !Global.hud_ref.mouse_in_ui:
+				# place objects
+				if Input.is_action_pressed("place"):
+					toolbox[tool_selected].place(cursor_cell)
+				
+				# modify objects
+				if Input.is_action_just_pressed("modify"):
+					var in_cell = entities_in_cell(cursor_cell)
+					if len(in_cell) > 0:
+						for entity in in_cell:
+							entity.modify()
 
 
 func _ready():
@@ -156,3 +158,8 @@ class tool_submap:
 	
 	func place(cell_position):
 		submap.request_tile(cell_position, 0)
+
+
+# linked stuff
+func _on_Hud_change_tool(tool_index):
+	tool_selected = tool_index
