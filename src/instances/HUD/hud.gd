@@ -13,13 +13,14 @@ signal change_tool(tool_index)
 func _process(delta):
 	Global.hud_ref = self
 
-func _on_ColorRect_mouse_entered():
-	mouse_in_ui = true
-
-
-func _on_ColorRect_mouse_exited():
-	mouse_in_ui = false
-
 
 func add_tool(linked_index, sprite):
 	pass
+
+
+func _on_CenterContainer_mouse_entered():
+	mouse_in_ui = true
+
+
+func _on_CenterContainer_mouse_exited():
+	mouse_in_ui = false

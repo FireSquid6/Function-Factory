@@ -32,5 +32,6 @@ polygon = PoolVector2Array( 4, 4, 4, 60, 60, 60, 60, 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource( 4 )]
+mouse_filter = 1
 
 [connection signal="change_tool" from="CanvasLayer/Hud" to="." method="_on_Hud_change_tool"]

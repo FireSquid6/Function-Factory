@@ -14,6 +14,7 @@ onready var submap_container = get_node("Submaps")
 onready var entity_container = get_node("Entities")
 onready var block_container = get_node("Blocks")
 onready var cell_marker = get_node("CellMarker")
+onready var hud = get_node("CanvasLayer/Hud")
 
 # load entities
 var dispenser = preload("res://instances/puzzle_objects/entities/dispenser/dispenser.tscn")
@@ -112,7 +113,7 @@ func _process(delta):
 			cell_marker.position = cursor_cell * cell_size
 			
 			# make sure the player isn't interacting with UI
-			if !Global.hud_ref.mouse_in_ui:
+			if !hud.mouse_in_ui:
 				# place objects
 				if Input.is_action_pressed("place"):
 					toolbox[tool_selected].place(cursor_cell)
