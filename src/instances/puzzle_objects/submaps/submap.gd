@@ -15,5 +15,8 @@ func request_tile(tile_position, tile_index):
 
 
 func remove_tile(tile_position):
+	if get_cell(tile_position.x, tile_position.y) == INVALID_CELL:
+		return false
 	set_cell(tile_position.x, tile_position.y, INVALID_CELL)
 	update_bitmask_region()
+	return true

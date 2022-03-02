@@ -1,7 +1,6 @@
 extends TextureRect
 class_name Tool
 
-
 var selected_material = preload("res://instances/HUD/tool/clicked_material.tres")
 var hovered_material = preload("res://instances/HUD/tool/selected_material.tres")
 onready var toolbox = get_parent().get_parent().get_parent()
@@ -21,7 +20,7 @@ func _process(_delta):
 	# if clicked
 	if hovered and Input.is_action_pressed("click"):
 		# emit a signal to change the current tool and set other stuff
-		toolbox.emit_signal("clicked", self)
+		toolbox.emit_signal("tool_clicked", self)
 	
 	# figure out what material im supposed to have
 	if selected:
