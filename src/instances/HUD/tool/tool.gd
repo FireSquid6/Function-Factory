@@ -31,5 +31,14 @@ func _process(_delta):
 	else:
 		set_material(null)
 
+
 func on_tool_clicked(node):
 	selected = (node == self)
+
+
+func place()
+	pass
+
+
+func remove()
+	pass
