@@ -3,7 +3,7 @@ extends Control
 
 const max_tools = 8
 
-onready var vbox = get_node("CenterContainer/VBoxContainer")
+onready var vbox = get_node("Toolbox/CenterContainer/VBoxContainer")
 onready var toolbox = get_node("Toolbox")
 
 onready var mouse_in_ui = false

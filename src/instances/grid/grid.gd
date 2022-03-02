@@ -146,20 +146,32 @@ class tool_entity:
 		self.count = count
 	
 	func place(cell_position):
-		var new_entity = placed_entity.instance()
-		grid_ref.request_place(cell_position, new_entity)
+		if count > 0:
+			var new_entity = placed_entity.instance()
+			grid_ref.request_place(cell_position, new_entity)
+			count -= 1
+	
+	func remove(cell_position):
+		pass
 
 
 class tool_submap:
 	var grid_ref = null
 	var submap = null
-	func _init(submap, grid_ref):
+	var count = 0
+	func _init(submap, grid_ref, count = INF):
 		self.grid_ref = grid_ref
 		self.submap = submap
+		self.count = count
 	
 	func place(cell_position):
-		submap.request_tile(cell_position, 0)
-
+		if count > 0:
+			submap.request_tile(cell_position, 0)
+			count -= 1
+	
+	func destroy(cell_position):
+		if submap.remove_tile(cell_position):
+			count += 1
 
 # linked stuff
 func _on_Hud_change_tool(tool_index):
