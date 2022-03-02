@@ -35,9 +35,9 @@ func on_tool_clicked(node):
 	selected = (node == self)
 
 
-func place()
+func place():
 	pass
 
 
-func remove()
+func remove():
 	pass

@@ -21,10 +21,7 @@ var dispenser = preload("res://instances/puzzle_objects/entities/dispenser/dispe
 onready var rails = get_node("Submaps/Rails")
 
 # create toolbox
-export var tool_selected = 1
-onready var toolbox = [
-	tool_entity.new(dispenser, self),
-	tool_submap.new(rails, self)]
+var tool_selected = null
 
 # declare signals
 signal puzzle_entity_placed(entity)
@@ -51,7 +48,6 @@ export var update_rate = 0.2
 export var cursor_cell = Vector2.ZERO
 export var cursor_position = Vector2.ZERO
 export var state = STATES.EDITING
-export var designing = true
 
 
 # CALLABLE METHODS
@@ -112,11 +108,11 @@ func _process(delta):
 			cursor_cell = (cursor_position / cell_size).floor()
 			cell_marker.position = cursor_cell * cell_size
 			
-			# make sure the player isn't interacting with UI
-			if !hud.mouse_in_ui:
+			# make sure the player isn't interacting with UI and that there is a tool selected
+			if !hud.mouse_in_ui and tool_selected != null:
 				# place objects
 				if Input.is_action_pressed("place"):
-					toolbox[tool_selected].place(cursor_cell)
+					tool_selected.place(cursor_cell)
 				
 				# modify objects
 				if Input.is_action_just_pressed("modify"):
