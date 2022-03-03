@@ -31,13 +31,17 @@ func _process(_delta):
 		set_material(null)
 
 
+func set_sprite(sprite):
+	texture = sprite
+
+
 func on_tool_clicked(node):
 	selected = (node == self)
 
 
-func place()
+func place(cell_position):
 	pass
-
-
-func remove()
+'
+'
+func remove(cell_position):
 	pass

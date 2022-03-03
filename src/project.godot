@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://instances/puzzle_objects/entities/entity.gd"
 }, {
+"base": "Tool",
+"class": "EntityTool",
+"language": "GDScript",
+"path": "res://instances/HUD/tool/entity_tool.gd"
+}, {
 "base": "Reference",
 "class": "IPC",
 "language": "GDScript",
@@ -134,6 +139,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://instances/puzzle_objects/submaps/submap.gd"
 }, {
+"base": "Tool",
+"class": "SubmapTool",
+"language": "GDScript",
+"path": "res://instances/HUD/tool/submap_tool.gd"
+}, {
 "base": "TextureRect",
 "class": "Tool",
 "language": "GDScript",
@@ -168,6 +178,7 @@ _global_script_class_icons={
 "DiscordRPC": "",
 "DiscordRPCEnum": "",
 "Entity": "",
+"EntityTool": "",
 "IPC": "",
 "IPCModule": "",
 "IPCPayload": "",
@@ -190,6 +201,7 @@ _global_script_class_icons={
 "SteamUserStats": "",
 "StreamPeerUnix": "",
 "Submap": "",
+"SubmapTool": "",
 "Tool": "",
 "URLUtil": "",
 "UUID": "",
