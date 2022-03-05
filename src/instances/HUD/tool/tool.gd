@@ -31,6 +31,10 @@ func _process(_delta):
 		set_material(null)
 
 
+func set_sprite(sprite):
+	texture = sprite
+
+
 func on_tool_clicked(node):
 	selected = (node == self)
 
