@@ -122,6 +122,10 @@ func _process(delta):
 							entity.modify()
 
 
+func _enter_tree():
+	Global.grid_ref = self
+
+
 func _ready():
 	# get all predefined submaps
 	var children = submap_container.get_children()

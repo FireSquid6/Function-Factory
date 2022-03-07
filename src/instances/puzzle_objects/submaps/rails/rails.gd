@@ -35,6 +35,10 @@ func is_open(x, y):
 
 
 func can_place(tile_position):
+	# make sure that the selected tile isn't full
+	if get_cell(tile_position.x, tile_position.y) != INVALID_CELL:
+		return false
+	
 	# get the adjacent cells
 	var adjacent_cells = [
 		!is_open(tile_position.x, tile_position.y - 1),

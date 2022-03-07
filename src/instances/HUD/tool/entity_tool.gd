@@ -3,7 +3,6 @@ class_name EntityTool
 
 
 export(PackedScene) var placed_entity
-export var count = INF
 
 onready var grid_ref = null
 

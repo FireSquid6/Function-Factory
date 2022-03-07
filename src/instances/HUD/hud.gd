@@ -8,7 +8,12 @@ onready var toolbox = get_node("Toolbox")
 
 onready var mouse_in_ui = false
 
-signal change_tool(tool_index)
+
+signal tool_clicked(tool_index)
+
+
+func _enter_tree():
+	Global.hud_ref = self
 
 
 func _process(delta):
