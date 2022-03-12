@@ -15,4 +15,7 @@ func place(cell_position):
 
 
 func remove(cell_position):
-	pass
+	var entities = Global.grid_ref.entities_in_cell(cell_position)
+	for entity in entities:
+		if entity.get_filename() == placed_entity.get_path():
+			Global.grid_ref.destroy_entity(entity)

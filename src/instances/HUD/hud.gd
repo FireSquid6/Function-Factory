@@ -13,6 +13,7 @@ signal tool_clicked(tool_index)
 
 
 func _enter_tree():
+	visible = true
 	Global.hud_ref = self
 
 

@@ -24,16 +24,27 @@ onready var rails = get_node("Submaps/Rails")
 var tool_selected = null
 
 # declare signals
+# warning-ignore:unused_signal
 signal puzzle_entity_placed(entity)
+# warning-ignore:unused_signal
 signal puzzle_entity_destroyed(entity)
+# warning-ignore:unused_signal
 signal puzzle_block_spawned(block)
+# warning-ignore:unused_signal
 signal puzzle_tile_placed(submap, tile_id, cell_position)
+# warning-ignore:unused_signal
 signal puzzle_restarted()
+# warning-ignore:unused_signal
 signal puzzle_stoped()
+# warning-ignore:unused_signal
 signal puzzle_completed()
+# warning-ignore:unused_signal
 signal puzzle_grid_update()
+# warning-ignore:unused_signal
 signal puzzle_entity_update()
+# warning-ignore:unused_signal
 signal puzzle_submap_update()
+# warning-ignore:unused_signal
 signal puzzle_block_update()
 
 
@@ -57,6 +68,7 @@ func connect_puzzle_object(node):
 	for sig in signals:
 		var name: String = sig["name"]
 		if name.begins_with(signal_prefex):
+# warning-ignore:return_value_discarded
 			connect(name, node, "on_" + name)
 
 
@@ -90,15 +102,27 @@ func request_place(place_position, entity):
 		entity.move_to(place_position)
 
 
+func destroy_entity(entity):
+	for i in range(len(stored_entities)):
+		if stored_entities[i] == entity:
+			stored_entities.remove(i)
+	entity.queue_free()
+
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
 func request_spawn(spawn_position, value):
 	pass
 
 
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
 func request_tile(tile_position, submap, tile_id):
 	pass
 
 
 # PROCESSING METHODS
+# warning-ignore:unused_argument
 func _process(delta):
 	
 	match state:
@@ -113,6 +137,9 @@ func _process(delta):
 				# place objects
 				if Input.is_action_pressed("place"):
 					tool_selected.place(cursor_cell)
+				
+				if Input.is_action_pressed("remove"):
+					tool_selected.remove(cursor_cell)
 				
 				# modify objects
 				if Input.is_action_just_pressed("modify"):
@@ -140,6 +167,9 @@ class tool_entity:
 	var grid_ref = null
 	var count = 0
 	
+# warning-ignore:shadowed_variable
+# warning-ignore:shadowed_variable
+# warning-ignore:shadowed_variable
 	func _init(placed_entity, grid_ref, count = INF):
 		self.grid_ref = grid_ref
 		self.placed_entity = placed_entity 
@@ -151,6 +181,7 @@ class tool_entity:
 			grid_ref.request_place(cell_position, new_entity)
 			count -= 1
 	
+# warning-ignore:unused_argument
 	func remove(cell_position):
 		pass
 
@@ -159,6 +190,9 @@ class tool_submap:
 	var grid_ref = null
 	var submap = null
 	var count = 0
+# warning-ignore:shadowed_variable
+# warning-ignore:shadowed_variable
+# warning-ignore:shadowed_variable
 	func _init(submap, grid_ref, count = INF):
 		self.grid_ref = grid_ref
 		self.submap = submap

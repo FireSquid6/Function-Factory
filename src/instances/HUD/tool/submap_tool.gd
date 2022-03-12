@@ -17,4 +17,5 @@ func place(cell_position):
 			count -= 1
 
 func remove(cell_position):
-	pass
+	if submap_ref.remove_tile(cell_position):
+		count += 1

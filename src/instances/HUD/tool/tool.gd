@@ -1,8 +1,8 @@
 extends TextureRect
 class_name Tool
 
-var selected_material = preload("res://instances/HUD/tool/clicked_material.tres")
-var hovered_material = preload("res://instances/HUD/tool/selected_material.tres")
+var selected_material = preload("res://assets/materials/clicked_material.tres")
+var hovered_material = preload("res://assets/materials/selected_material.tres")
 onready var hud = get_parent().get_parent().get_parent().get_parent()
 onready var label = get_node("Label")
 

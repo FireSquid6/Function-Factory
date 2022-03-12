@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://instances/HUD/hud.gd" type="Script" id=1]
 [ext_resource path="res://instances/HUD/tool/submap_tool.tscn" type="PackedScene" id=2]
 [ext_resource path="res://instances/puzzle_objects/submaps/rails/rails.tscn" type="PackedScene" id=3]
+[ext_resource path="res://instances/HUD/tool/entity_tool.tscn" type="PackedScene" id=4]
+[ext_resource path="res://instances/puzzle_objects/entities/dispenser/dispenser.tscn" type="PackedScene" id=5]
 
 [node name="Hud" type="Control"]
 anchor_right = 1.0
@@ -33,9 +35,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Toolbox/CenterContainer"]
 margin_left = 44.0
-margin_top = 268.0
+margin_top = 230.0
 margin_right = 108.0
-margin_bottom = 332.0
+margin_bottom = 370.0
 custom_constants/separation = 12
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,6 +46,12 @@ __meta__ = {
 [node name="SubmapTool" parent="Toolbox/CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
 count = 50.0
 submap = ExtResource( 3 )
+
+[node name="EntityTool" parent="Toolbox/CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 76.0
+margin_bottom = 140.0
+count = 50.0
+placed_entity = ExtResource( 5 )
 
 [node name="Time" type="ColorRect" parent="."]
 anchor_left = 0.813477
