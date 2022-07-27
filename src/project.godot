@@ -19,15 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_editor_discord_presence/Discord RPC/DiscordRPCEnum.gd"
 }, {
-"base": "PuzzleObject",
-"class": "Entity",
+"base": "TileMap",
+"class": "Grid",
 "language": "GDScript",
-"path": "res://instances/puzzle_objects/entities/entity.gd"
-}, {
-"base": "Tool",
-"class": "EntityTool",
-"language": "GDScript",
-"path": "res://instances/HUD/tool/entity_tool.gd"
+"path": "res://instances/grid.gd"
 }, {
 "base": "Reference",
 "class": "IPC",
@@ -53,11 +48,6 @@ _global_script_classes=[ {
 "class": "IPCUtil",
 "language": "GDScript",
 "path": "res://addons/godot_editor_discord_presence/Discord RPC/util/IPCUtil.gd"
-}, {
-"base": "Area2D",
-"class": "PuzzleObject",
-"language": "GDScript",
-"path": "res://instances/puzzle_objects/puzzle_object.gd"
 }, {
 "base": "Reference",
 "class": "RichPresence",
@@ -134,21 +124,6 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://addons/godot_editor_discord_presence/godot-unix-socket/unix-socket.gdns"
 }, {
-"base": "TileMap",
-"class": "Submap",
-"language": "GDScript",
-"path": "res://instances/puzzle_objects/submaps/submap.gd"
-}, {
-"base": "Tool",
-"class": "SubmapTool",
-"language": "GDScript",
-"path": "res://instances/HUD/tool/submap_tool.gd"
-}, {
-"base": "TextureRect",
-"class": "Tool",
-"language": "GDScript",
-"path": "res://instances/HUD/tool/tool.gd"
-}, {
 "base": "Reference",
 "class": "URLUtil",
 "language": "GDScript",
@@ -177,14 +152,12 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "DiscordRPC": "",
 "DiscordRPCEnum": "",
-"Entity": "",
-"EntityTool": "",
+"Grid": "",
 "IPC": "",
 "IPCModule": "",
 "IPCPayload": "",
 "IPCPipe": "",
 "IPCUtil": "",
-"PuzzleObject": "",
 "RichPresence": "",
 "RichPresenceButton": "",
 "RichPresenceModule": "",
@@ -200,9 +173,6 @@ _global_script_class_icons={
 "SteamLeaderboardScoresDownloaded": "",
 "SteamUserStats": "",
 "StreamPeerUnix": "",
-"Submap": "",
-"SubmapTool": "",
-"Tool": "",
 "URLUtil": "",
 "UUID": "",
 "UnixPipe": "",
@@ -213,7 +183,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Function Factory"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/level.tscn"
 config/icon="res://icon.png"
 
 [autoload]
