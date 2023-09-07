@@ -1,5 +1,5 @@
+**This project has been discontinued**
 ![Alt Text](previews/titlescreen.gif)
-**Note: The project is currently on hold as I am busy with IRL stuff as well as needing to switch engines from Gamemaker to Godot for technical reasons.**
 
 # Function Factory
 Function Factory is a math-based puzzle game where the player links up various objects to complete circuits. It's a hard game to explain with words, so look at the gif above.  
